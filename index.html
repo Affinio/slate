@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>API Reference Test 2000</title>
 
     <link href="stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
     <link href="stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
@@ -13,7 +13,7 @@
 
       <script>
         $(function() {
-          setupLanguages(["shell","ruby","python"]);
+          setupLanguages(["shell","javascript","python"]);
         });
       </script>
   </head>
@@ -29,7 +29,7 @@
       <img src="images/logo.png" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
+              <a href="#" data-language-name="javascript">javascript</a>
               <a href="#" data-language-name="python">python</a>
         </div>
         <div class="search">
@@ -39,8 +39,8 @@
       <div id="toc">
       </div>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='https://api.affin.io' target="_blank">Dashboard</a></li>
+            <li><a href='https://affin.io/api-signup/' target="_blank">Sign Up for a Developer Key</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -48,87 +48,83 @@
       <div class="content">
         <h1 id="introduction">Introduction</h1>
 
-<p>Welcome to the Kittern API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+<p>aHi this is a test</p>
 
-<p>We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>Welcome to the Affinio API! You can use our API to access Affinio Reports, Tribes, Ads, and other endpoints.</p>
 
-<p>This example API documentation page was created with <a href="http://github.com/tripit/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&rsquo;s documentation.</p>
+<p>We have language bindings in Shell, Python, and Javascript; You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+
+<p>If you have any questions, please don&rsquo;t hesitate to reach out to <a href="mailto:phil@affin.io" target="_blank">Phil Renaud</a> (or <a href="https://twitter.com/phil_renaud" target="_blank">on twitter</a>).</p>
 
 <h1 id="authentication">Authentication</h1>
-
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
+<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
+<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
 </code></pre>
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
 </code></pre>
 <pre class="highlight shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
+curl <span class="s2">"API_ENDPOINT_HERE"</span>
+  -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
 </code></pre>
-
-<blockquote>
-<p>Make sure to replace <code class="prettyprint">meowmeowmeow</code> with your API key.</p>
-</blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code class="prettyprint">Authorization: meowmeowmeow</code></p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+We are limiting access to our API to specific partners at the present time. Please reach out to <a href='mailto:phil@affin.io' target="_blank">Phil Renaud</a> to request access.
 </aside>
 
-<h1 id="kittens">Kittens</h1>
+<p>Affinio uses unique keys to allow access to our API. You can register a new Affinio API key at our <a href='https://affin.io/api-signup/' target="_blank">Developer Portal</a>.</p>
 
-<h2 id="get-all-kittens">Get All Kittens</h2>
-<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h1 id="tribes-and-reports">Tribes and Reports</h1>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
+<h2 id="get-my-reports-and-public-reports">Get My Reports (and Public Reports)</h2>
+<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
+<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">campaigns</span><span class="p">.</span><span class="nx">get</span><span class="p">()</span>
 </code></pre>
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">campaigns</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
 </code></pre>
-<pre class="highlight shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/campaigns"</span>
+  -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
 </code></pre>
 
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
+<h3 id="expected-return">Expected Return</h3>
 <pre class="highlight json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12345</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Affinio Followers Demo Report"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"number_of_clusters"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Twitter"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"phil@affin.io"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"belongs_to"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"phil@affin.io"</span><span class="p">,</span><span class="s2">"stephen@affin.io"</span><span class="p">],</span><span class="w">
+    </span><span class="nt">"resource_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"12345_0"</span><span class="p">,</span><span class="s2">"12345_1"</span><span class="p">,</span><span class="s2">"12345_2"</span><span class="p">,</span><span class="s2">"12345_3"</span><span class="p">,</span><span class="s2">"..."</span><span class="p">,</span><span class="s2">"12345_18"</span><span class="p">,</span><span class="s2">"12345_19"</span><span class="p">],</span><span class="w">
+    </span><span class="nt">"filters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"bio_location"</span><span class="p">:</span><span class="s2">"Canada"</span><span class="p">,</span><span class="nt">"followers_of"</span><span class="p">:</span><span class="s2">"affinioinc,phil_renaud,t1mburke"</span><span class="p">},</span><span class="w">
+    </span><span class="nt">"members_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">999999</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"started"</span><span class="p">:</span><span class="w"> </span><span class="mi">1428682154</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Isis"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12346</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Affinio Followers Demo Report 2"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"number_of_clusters"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Instagram"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stephen@affin.io"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"belongs_to"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"phil@affin.io"</span><span class="p">,</span><span class="s2">"stephen@affin.io"</span><span class="p">,</span><span class="s2">"brian@affin.io"</span><span class="p">],</span><span class="w">
+    </span><span class="nt">"resource_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"12345_0"</span><span class="p">,</span><span class="s2">"12345_1"</span><span class="p">,</span><span class="s2">"12345_2"</span><span class="p">,</span><span class="s2">"12345_3"</span><span class="p">,</span><span class="s2">"..."</span><span class="p">,</span><span class="s2">"12345_18"</span><span class="p">,</span><span class="s2">"12345_19"</span><span class="p">],</span><span class="w">
+    </span><span class="nt">"filters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"followers_of"</span><span class="p">:</span><span class="s2">"mlb"</span><span class="p">},</span><span class="w">
+    </span><span class="nt">"members_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">9999999</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"started"</span><span class="p">:</span><span class="w"> </span><span class="mi">1428682154</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
+</blockquote>
 
-<p>This endpoint retrieves all kittens.</p>
+<p>This endpoint retrieves basic details about all Reports to which you have access.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://example.com/api/kittens</code></p>
+<p><code class="prettyprint">GET http://api.affin.io/v1/campaigns</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -140,67 +136,1403 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
+<td>owned_only</td>
 <td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>If set to true, the results will be limited to those reports you created yourself.</td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>created_before</td>
+<td>null</td>
+<td>Returns all campaigns created before a certain date (in milliseconds)</td>
+</tr>
+<tr>
+<td>created_after</td>
+<td>null</td>
+<td>Returns all campaigns created after a certain date (in milliseconds)</td>
+</tr>
+<tr>
+<td>public</td>
+<td>false</td>
+<td>Returns public-domain tribes published by Affinio, such as &ldquo;Digital Strategists&rdquo; and &ldquo;Fashionistas&rdquo;. Useful for testing.</td>
 </tr>
 </tbody></table>
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-<h2 id="get-a-specific-kitten">Get a Specific Kitten</h2>
-<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<h2 id="get-a-specific-report">Get a specific report</h2>
+<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
+<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">campaigns</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span>
 </code></pre>
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">campaigns</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span>
 </code></pre>
-<pre class="highlight shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/campaigns/12345"</span>
+  -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
 </code></pre>
 
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
+<h3 id="expected-return">Expected Return</h3>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Isis"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12345</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Affinio Followers Demo Report"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"number_of_clusters"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Twitter"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"phil@affin.io"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"belongs_to"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"phil@affin.io"</span><span class="p">,</span><span class="s2">"stephen@affin.io"</span><span class="p">],</span><span class="w">
+  </span><span class="nt">"resource_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"12345_0"</span><span class="p">,</span><span class="s2">"12345_1"</span><span class="p">,</span><span class="s2">"12345_2"</span><span class="p">,</span><span class="s2">"12345_3"</span><span class="p">,</span><span class="s2">"..."</span><span class="p">,</span><span class="s2">"12345_18"</span><span class="p">,</span><span class="s2">"12345_19"</span><span class="p">],</span><span class="w">
+  </span><span class="nt">"filters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"bio_location"</span><span class="p">:</span><span class="s2">"Canada"</span><span class="p">,</span><span class="nt">"followers_of"</span><span class="p">:</span><span class="s2">"affinioinc,phil_renaud,t1mburke"</span><span class="p">},</span><span class="w">
+  </span><span class="nt">"members_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">999999</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"started"</span><span class="p">:</span><span class="w"> </span><span class="mi">1428682154</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+</blockquote>
 
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">If you&rsquo;re not using an administrator API key, note that some kittens will return 403 Forbidden if they are hidden for admins only.</aside>
+<p>This endpoint retrieves basic details about a given report to which you have access.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://example.com/kittens/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">GET http://api.affin.io/v1/campaigns/12345</code></p>
 
-<h3 id="url-parameters">URL Parameters</h3>
+<h3 id="query-parameters">Query Parameters</h3>
 
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>n/a</td>
+<td>The ID of the campaign you&rsquo;re trying to retrieve</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-all-tribes-of-a-report">Get All Tribes of a Report</h2>
+<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
+<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">tribes</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">tribes</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/tribes"</span>
+  -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
+</code></pre>
+
+<blockquote>
+<h3 id="expected-return">Expected Return</h3>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345_0"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Couponing Moms"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">23451</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"density"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.33</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"average_affinity_score"</span><span class="p">:</span><span class="w"> </span><span class="mf">25.51</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tweets_per_month"</span><span class="p">:</span><span class="w"> </span><span class="mf">135.54</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345_1"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fashionistas"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">23451</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"density"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.33</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"average_affinity_score"</span><span class="p">:</span><span class="w"> </span><span class="mf">25.51</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tweets_per_month"</span><span class="p">:</span><span class="w"> </span><span class="mf">135.54</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+</blockquote>
+
+<p>This endpoint retrieves information about all Tribes of a given Report.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.affin.io/v1/tribes/12345</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>false</td>
+<td>The ID of the report from which you&rsquo;d like tribes</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+If the ID is in a tribe format (&ldquo;12345_5&rdquo; as opposed to &ldquo;12345&rdquo;), a single tribe will be returned.
+</aside>
+
+<h1 id="tribe-monitoring">Tribe Monitoring</h1>
+
+<h2 id="get-gained-lost-numbers-about-a-given-tribe-or-report">Get Gained/Lost Numbers about a given Tribe or Report</h2>
+<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
+<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">updates</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">12345</span><span class="nx">_10</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">updates</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">12345</span><span class="n">_10</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/updates/12345_10"</span>
+  -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
+</code></pre>
+
+<blockquote>
+<h3 id="expected-return">Expected Return</h3>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"timeline"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+</span><span class="p">{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1424215563000</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2324</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1424316109877</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2334</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1424402595481</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2340</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1424488938672</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2344</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1424575309125</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2347</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1424661720085</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2349</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1424748181169</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2353</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1425007423502</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2361</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1425093891752</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2362</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1425180132382</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2365</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1425266575857</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2368</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1425352921362</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2367</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1425439393128</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2381</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1425525746959</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2397</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1425612128734</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2399</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1425698633694</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2401</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1425784975264</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2409</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1425871390577</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2407</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1425957799567</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2406</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1426044230400</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2409</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1426168105296</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2414</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1426217028517</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2416</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1426303308619</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2418</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1426389754188</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2417</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1426562543741</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2422</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1426735529692</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2423</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1426821734675</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2423</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1426908013114</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2425</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1427080839882</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2426</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1427167327357</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2425</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1427253706159</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2426</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1427340075070</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2429</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1427426472959</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2430</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1427512857909</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2434</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1427599239115</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2435</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1427685698864</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2435</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1427772160485</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2434</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1427858469772</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2433</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1427944879772</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2434</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1428031231275</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2437</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1428117629611</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2438</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1428204143810</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2438</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1428290428330</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2438</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1428376870161</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2439</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1428463308706</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2440</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1428549736858</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2441</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1428636107319</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2440</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1428722489094</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2442</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1428808840243</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2442</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1428895287584</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2443</span><span class="p">},{</span><span class="nt">"date"</span><span class="p">:</span><span class="mi">1428981693969</span><span class="p">,</span><span class="nt">"count"</span><span class="p">:</span><span class="mi">2444</span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</blockquote>
+
+<p>Retrieves the members count (often followers count) of a given tribe or report over time. The date property is formated in milliseconds.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.affin.io/v1/updates/12345_10</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>n/a</td>
+<td>The ID of the tribe or campaign you&rsquo;re trying to retrieve</td>
+</tr>
+</tbody></table>
+
+<h1 id="content-and-bios">Content and Bios</h1>
+
+<h2 id="most-discussed-topics">Most Discussed Topics</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/topics/12345_10"</span>
+  -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
+</code></pre>
+
+<blockquote>
+<h3 id="expected-return">Expected Return</h3>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"topic"</span><span class="p">:</span><span class="s2">"Hillary Clinton is running for President in 2016"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"percent_discussing"</span><span class="p">:</span><span class="mf">9.13</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"sentiment"</span><span class="p">:</span><span class="mf">65.53</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tweets_discussing"</span><span class="p">:[</span><span class="s2">"120938123"</span><span class="p">,</span><span class="s2">"120938123"</span><span class="p">,</span><span class="s2">"120938123"</span><span class="p">,</span><span class="s2">"120938123"</span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"topic"</span><span class="p">:</span><span class="s2">"Hillary Swank wins Best Actress"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"percent_discussing"</span><span class="p">:</span><span class="mf">8.51</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"sentiment"</span><span class="p">:</span><span class="mf">91.33</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tweets_discussing"</span><span class="p">:[</span><span class="s2">"120938123"</span><span class="p">,</span><span class="s2">"120938123"</span><span class="p">,</span><span class="s2">"120938123"</span><span class="p">,</span><span class="s2">"120938123"</span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"topic"</span><span class="p">:</span><span class="s2">"Affinio is Providing Rad Documentation"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"percent_discussing"</span><span class="p">:</span><span class="mf">3.31</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"sentiment"</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tweets_discussing"</span><span class="p">:[</span><span class="s2">"120938123"</span><span class="p">,</span><span class="s2">"120938123"</span><span class="p">,</span><span class="s2">"120938123"</span><span class="p">,</span><span class="s2">"120938123"</span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"topic"</span><span class="p">:</span><span class="s2">"Snowstorms affect many flights"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"percent_discussing"</span><span class="p">:</span><span class="mf">3.14</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"sentiment"</span><span class="p">:</span><span class="mf">11.15</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tweets_discussing"</span><span class="p">:[</span><span class="s2">"120938123"</span><span class="p">,</span><span class="s2">"120938123"</span><span class="p">,</span><span class="s2">"120938123"</span><span class="p">,</span><span class="s2">"120938123"</span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+</blockquote>
+
+<p>Performs a Topic Modelling analysis of a given tribe.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.affin.io/v1/topics/12345_10</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>n/a</td>
+<td>The ID of the tribe or campaign you&rsquo;re trying to retrieve</td>
+</tr>
+</tbody></table>
+
+<h2 id="top-hashtags">Top Hashtags</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_hashtags?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
+</code></pre>
+
+<blockquote>
+<h3 id="expected-return">Expected Return</h3>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"tbt"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">910</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"oscars"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">845</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"socialmedia"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">331</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"socialmediaweek"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">313</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+</blockquote>
+
+<p>Retrieves the top 100 hashtags for a given tribe or report.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://api.affin.io/v1/content/top_hashtags</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>n/a</td>
+<td>Your API key</td>
+</tr>
+<tr>
+<td>tribe_id</td>
+<td>n/a</td>
+<td>The ID of the tribe you&rsquo;re trying to retrieve</td>
+</tr>
+</tbody></table>
+
+<h2 id="top-mentions">Top Mentions</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_mentions?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
+</code></pre>
+
+<blockquote>
+<h3 id="expected-return">Expected Return</h3>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"tbt"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">910</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"oscars"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">845</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"socialmedia"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">331</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"socialmediaweek"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">313</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+</blockquote>
+
+<p>Retrieves the top mentions for a given tribe or report.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.affin.io/v1/content/top_mentions</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>n/a</td>
+<td>Your API key</td>
+</tr>
+<tr>
+<td>tribe_id</td>
+<td>n/a</td>
+<td>The ID of the tribe you&rsquo;re trying to retrieve</td>
+</tr>
+</tbody></table>
+
+<h2 id="top-tweet-keywords">Top Tweet Keywords</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_tweetkeywords?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
+</code></pre>
+
+<blockquote>
+<h3 id="expected-return">Expected Return</h3>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"tbt"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">910</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"oscars"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">845</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"socialmedia"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">331</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"socialmediaweek"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">313</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+</blockquote>
+
+<p>Retrieves the top tweet keywords for a given tribe or report.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.affin.io/v1/content/top_tweetkeywords</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>n/a</td>
+<td>Your API key</td>
+</tr>
+<tr>
+<td>tribe_id</td>
+<td>n/a</td>
+<td>The ID of the tribe you&rsquo;re trying to retrieve</td>
+</tr>
+</tbody></table>
+
+<h2 id="top-bio-keywords">Top Bio Keywords</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_biokeywords?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
+</code></pre>
+
+<blockquote>
+<h3 id="expected-return">Expected Return</h3>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"tbt"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">910</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"oscars"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">845</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"socialmedia"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">331</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"socialmediaweek"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">313</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+</blockquote>
+
+<p>Retrieves the top bio keywords for a given tribe or report.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.affin.io/v1/content/top_biokeywords</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>n/a</td>
+<td>Your API key</td>
+</tr>
+<tr>
+<td>tribe_id</td>
+<td>n/a</td>
+<td>The ID of the tribe you&rsquo;re trying to retrieve</td>
+</tr>
+</tbody></table>
+
+<h2 id="top-categories">Top Categories</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_categories?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
+</code></pre>
+
+<blockquote>
+<h3 id="expected-return">Expected Return</h3>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"tbt"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">910</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"oscars"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">845</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"socialmedia"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">331</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"socialmediaweek"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">313</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+</blockquote>
+
+<p>Retrieves the top 100 hashtags for a given tribe or report.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.affin.io/v1/content/top_categories</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>n/a</td>
+<td>Your API key</td>
+</tr>
+<tr>
+<td>tribe_id</td>
+<td>n/a</td>
+<td>The ID of the tribe you&rsquo;re trying to retrieve</td>
+</tr>
+</tbody></table>
+
+<h2 id="top-apps">Top Apps</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_apps?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
+</code></pre>
+
+<blockquote>
+<h3 id="expected-return">Expected Return</h3>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"tbt"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">910</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"oscars"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">845</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"socialmedia"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">331</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"socialmediaweek"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">313</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+</blockquote>
+
+<p>Retrieves the top 100 hashtags for a given tribe or report.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.affin.io/v1/content/top_apps</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>n/a</td>
+<td>Your API key</td>
+</tr>
+<tr>
+<td>tribe_id</td>
+<td>n/a</td>
+<td>The ID of the tribe you&rsquo;re trying to retrieve</td>
+</tr>
+</tbody></table>
+
+<h2 id="top-favorites">Top Favorites</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_favorites?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
+</code></pre>
+
+<blockquote>
+<h3 id="expected-return">Expected Return</h3>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"tbt"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">910</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"oscars"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">845</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"socialmedia"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">331</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"socialmediaweek"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">313</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+</blockquote>
+
+<p>Retrieves the top favorites for a given tribe or report.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.affin.io/v1/content/top_favorites</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>n/a</td>
+<td>Your API key</td>
+</tr>
+<tr>
+<td>tribe_id</td>
+<td>n/a</td>
+<td>The ID of the tribe you&rsquo;re trying to retrieve</td>
+</tr>
+</tbody></table>
+
+<h2 id="top-locations">Top Locations</h2>
+<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
+<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">hashtags</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"12345_10"</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">hashtags</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"12345_10"</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/hashtags/12345_10"</span>
+  -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
+</code></pre>
+
+<blockquote>
+<h3 id="expected-return">Expected Return</h3>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"tbt"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">910</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"oscars"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">845</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"socialmedia"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">331</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"socialmediaweek"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">313</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+</blockquote>
+
+<p>Retrieves the top 100 hashtags for a given tribe or report.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.affin.io/v1/hashtags/12345_10</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>n/a</td>
+<td>Your API key</td>
+</tr>
+<tr>
+<td>tribe_id</td>
+<td>n/a</td>
+<td>The ID of the tribe you&rsquo;re trying to retrieve</td>
+</tr>
+</tbody></table>
+
+<h2 id="top-urls">Top URLs</h2>
+<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
+<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">hashtags</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"12345_10"</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">hashtags</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"12345_10"</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/hashtags/12345_10"</span>
+  -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
+</code></pre>
+
+<blockquote>
+<h3 id="expected-return">Expected Return</h3>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"tbt"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">910</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"oscars"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">845</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"socialmedia"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">331</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"socialmediaweek"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">313</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+</blockquote>
+
+<p>Retrieves the top 100 hashtags for a given tribe or report.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.affin.io/v1/hashtags/12345_10</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>n/a</td>
+<td>Your API key</td>
+</tr>
+<tr>
+<td>tribe_id</td>
+<td>n/a</td>
+<td>The ID of the tribe you&rsquo;re trying to retrieve</td>
+</tr>
+</tbody></table>
+
+<h2 id="top-domains">Top Domains</h2>
+<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
+<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">hashtags</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"12345_10"</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">hashtags</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"12345_10"</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/hashtags/12345_10"</span>
+  -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
+</code></pre>
+
+<blockquote>
+<h3 id="expected-return">Expected Return</h3>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"tbt"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">910</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"oscars"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">845</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"socialmedia"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">331</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"socialmediaweek"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">313</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+</blockquote>
+
+<p>Retrieves the top 100 hashtags for a given tribe or report.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.affin.io/v1/hashtags/12345_10</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>n/a</td>
+<td>Your API key</td>
+</tr>
+<tr>
+<td>tribe_id</td>
+<td>n/a</td>
+<td>The ID of the tribe you&rsquo;re trying to retrieve</td>
+</tr>
+</tbody></table>
+
+<h2 id="top-influencers">Top Influencers</h2>
+<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
+<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">hashtags</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"12345_10"</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">hashtags</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"12345_10"</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/hashtags/12345_10"</span>
+  -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
+</code></pre>
+
+<blockquote>
+<h3 id="expected-return">Expected Return</h3>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"tbt"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">910</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"oscars"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">845</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"socialmedia"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">331</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"socialmediaweek"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">313</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+</blockquote>
+
+<p>Retrieves the top 100 hashtags for a given tribe or report.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.affin.io/v1/hashtags/12345_10</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>n/a</td>
+<td>Your API key</td>
+</tr>
+<tr>
+<td>tribe_id</td>
+<td>n/a</td>
+<td>The ID of the tribe you&rsquo;re trying to retrieve</td>
+</tr>
+</tbody></table>
+
+<h2 id="competitive-breakdown">Competitive Breakdown</h2>
+<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
+<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">hashtags</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"12345_10"</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">hashtags</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"12345_10"</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/hashtags/12345_10"</span>
+  -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
+</code></pre>
+
+<blockquote>
+<h3 id="expected-return">Expected Return</h3>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"tbt"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">910</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"oscars"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">845</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"socialmedia"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">331</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"socialmediaweek"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">313</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+</blockquote>
+
+<p>Retrieves the top 100 hashtags for a given tribe or report.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.affin.io/v1/hashtags/12345_10</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>n/a</td>
+<td>Your API key</td>
+</tr>
+<tr>
+<td>tribe_id</td>
+<td>n/a</td>
+<td>The ID of the tribe you&rsquo;re trying to retrieve</td>
+</tr>
+</tbody></table>
+
+<h1 id="affinity-search-api">Affinity Search API</h1>
+
+<h2 id="tribes-influenced-by-a-user">Tribes influenced by a User</h2>
+<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
+<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">influenced_by</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"phil_renaud"</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">influenced_by</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"phil_renaud"</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/influenced_by/phil_renaud"</span>
+  -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
+</code></pre>
+
+<blockquote>
+<h3 id="expected-return">Expected Return</h3>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Halifax Locals"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"@Collide_Halifax followers"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tribe_id"</span><span class="p">:</span><span class="s2">"12345_10"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"report_id"</span><span class="p">:</span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"affinity_score"</span><span class="p">:</span><span class="w"> </span><span class="mf">150305.35</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"affinity_rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"affinity_score_percentage"</span><span class="p">:</span><span class="w"> </span><span class="mf">31.51</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Designers/Devs"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"@Collide_Halifax followers"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tribe_id"</span><span class="p">:</span><span class="s2">"12345_3"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"report_id"</span><span class="p">:</span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"affinity_score"</span><span class="p">:</span><span class="w"> </span><span class="mf">155305.35</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"affinity_rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"affinity_score_percentage"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Ad Agency Alumni"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"Formerly Phoenician"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tribe_id"</span><span class="p">:</span><span class="s2">"12346_10"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"report_id"</span><span class="p">:</span><span class="s2">"12346"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"affinity_score"</span><span class="p">:</span><span class="w"> </span><span class="mf">150305.35</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"affinity_rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">185</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"affinity_score_percentage"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.51</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+</blockquote>
+
+<p>Finds all tribes over which a given user has significant influence.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.affin.io/v1/influenced_by/phil_renaud</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>handle</td>
+<td>n/a</td>
+<td>The handle of the user you&rsquo;re looking for</td>
+</tr>
+<tr>
+<td>tribe</td>
+<td>null</td>
+<td>If you know the ID of a tribe you&rsquo;d like to limit your search to.</td>
+</tr>
+</tbody></table>
+
+<h2 id="tribes-containing-a-member">Tribes containing a Member</h2>
+<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
+<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">contains_member</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"phil_renaud"</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">contains_member</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"phil_renaud"</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/contains_member/phil_renaud"</span>
+  -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
+</code></pre>
+
+<blockquote>
+<h3 id="expected-return">Expected Return</h3>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Halifax Locals"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"@Collide_Halifax followers"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tribe_id"</span><span class="p">:</span><span class="s2">"12345_10"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"report_id"</span><span class="p">:</span><span class="s2">"12345"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Designers/Devs"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"@Collide_Halifax followers"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tribe_id"</span><span class="p">:</span><span class="s2">"12345_3"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"report_id"</span><span class="p">:</span><span class="s2">"12345"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Ad Agency Alumni"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"Formerly Phoenician"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tribe_id"</span><span class="p">:</span><span class="s2">"12346_10"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"report_id"</span><span class="p">:</span><span class="s2">"12346"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+</blockquote>
+
+<p>Finds all tribes to which a given user belongs.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.affin.io/v1/contains_member/phil_renaud</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>handle</td>
+<td>n/a</td>
+<td>The handle of the user you&rsquo;re looking for</td>
+</tr>
+<tr>
+<td>tribe</td>
+<td>null</td>
+<td>If you know the ID of a tribe you&rsquo;d like to limit your search to.</td>
+</tr>
+</tbody></table>
+
+<h2 id="tribes-that-use-a-hashtag">Tribes that use a Hashtag</h2>
+<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
+<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">uses_term</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"tbt"</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">uses_term</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"tbt"</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/uses_term/tbt"</span>
+  -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
+</code></pre>
+
+<blockquote>
+<h3 id="expected-return">Expected Return</h3>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Halifax Locals"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"@Collide_Halifax followers"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tribe_id"</span><span class="p">:</span><span class="s2">"12345_10"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"report_id"</span><span class="p">:</span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"number_using"</span><span class="p">:</span><span class="w"> </span><span class="mi">435</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"percent_using"</span><span class="p">:</span><span class="w"> </span><span class="mf">31.51</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Designers/Devs"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"@Collide_Halifax followers"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tribe_id"</span><span class="p">:</span><span class="s2">"12345_3"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"report_id"</span><span class="p">:</span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"number_using"</span><span class="p">:</span><span class="w"> </span><span class="mi">435</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"percent_using"</span><span class="p">:</span><span class="w"> </span><span class="mf">31.51</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Ad Agency Alumni"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"Formerly Phoenician"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tribe_id"</span><span class="p">:</span><span class="s2">"12346_10"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"report_id"</span><span class="p">:</span><span class="s2">"12346"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"number_using"</span><span class="p">:</span><span class="w"> </span><span class="mi">435</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"percent_using"</span><span class="p">:</span><span class="w"> </span><span class="mf">31.51</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+</blockquote>
+
+<p>Finds all tribes using a specific term (hashtag, mention, etc.)</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.affin.io/v1/uses_term/tbt</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>term</td>
+<td>n/a</td>
+<td>The term you&rsquo;re looking for</td>
+</tr>
+<tr>
+<td>metric</td>
+<td>&lsquo;hashtag&rsquo;</td>
+<td>The type of metric you&rsquo;re looking up</td>
+</tr>
+<tr>
+<td>tribe</td>
+<td>null</td>
+<td>If you know the ID of a tribe you&rsquo;d like to limit your search to.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Possible metrics include &ldquo;hashtag&rdquo;, &ldquo;mention&rdquo;, &ldquo;keyword&rdquo;, &ldquo;bio_keyword&rdquo;, &ldquo;location&rdquo;, &ldquo;url&rdquo;, and &ldquo;domain&rdquo;.
+</aside>
+
+<h2 id="users-in-a-tribe-who-used-a-hashtag">Users in a Tribe who used a Hashtag</h2>
+<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
+<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">uses_term_members</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"tbt"</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">uses_term_members</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"tbt"</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/uses_term_members/tbt"</span>
+  -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
+</code></pre>
+
+<blockquote>
+<h3 id="expected-return">Expected Return</h3>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"handle"</span><span class="p">:</span><span class="s2">"phil_renaud"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tweet_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3654321</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tweet_content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hey! #tbt to that time I wrote Affinio's API Documentation"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"handle"</span><span class="p">:</span><span class="s2">"phil_renaud"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tweet_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3654321</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tweet_content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hey! #tbt to that time I wrote Affinio's API Documentation"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"handle"</span><span class="p">:</span><span class="s2">"phil_renaud"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tweet_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3654321</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tweet_content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hey! #tbt to that time I wrote Affinio's API Documentation"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"handle"</span><span class="p">:</span><span class="s2">"phil_renaud"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tweet_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3654321</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tweet_content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hey! #tbt to that time I wrote Affinio's API Documentation"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+</blockquote>
+
+<p>Finds the list of users using a specific term (hashtag, mention, etc.)</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.affin.io/v1/uses_term_members/tbt?tribe=12345_10</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>term</td>
+<td>n/a</td>
+<td>The term you&rsquo;re looking for</td>
+</tr>
+<tr>
+<td>metric</td>
+<td>&#39;hashtag&rsquo;</td>
+<td>The type of metric you&rsquo;re looking up</td>
+</tr>
+<tr>
+<td>tribe</td>
+<td>null</td>
+<td>If you know the ID of a tribe you&rsquo;d like to limit your search to.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Possible metrics include &ldquo;hashtag&rdquo;, &ldquo;mention&rdquo;, &ldquo;keyword&rdquo;, &ldquo;bio_keyword&rdquo;, &ldquo;location&rdquo;, &ldquo;url&rdquo;, and &ldquo;domain&rdquo;.
+</aside>
+
+<h1 id="cross-platform-api">Cross-Platform API</h1>
+
+<h2 id="all-known-social-media-accounts-of-a-given-user">All known Social Media accounts of a given user</h2>
+<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
+<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">cross_platform</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"phil_renaud"</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">cross_platform</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"phil_renaud"</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/cross_platform/phil_renaud"</span>
+  -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
+</code></pre>
+
+<blockquote>
+<h3 id="expected-return">Expected Return</h3>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"twitter"</span><span class="p">:</span><span class="s2">"phil_renaud"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"twitter_id"</span><span class="p">:</span><span class="s2">"123456789"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"instagram"</span><span class="p">:</span><span class="s2">"phil_renaud"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"email"</span><span class="p">:</span><span class="s2">"phil@affin.io"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"flickr"</span><span class="p">:</span><span class="s2">"philrenaud1984"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"youtube"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"facebook"</span><span class="p">:</span><span class="s2">"philrenaud"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"dribbble"</span><span class="p">:</span><span class="s2">"phil_renaud"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"pinterest"</span><span class="p">:</span><span class="s2">"phil_renaud"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"angellist"</span><span class="p">:</span><span class="w"> </span><span class="s2">"philrenaud0"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</blockquote>
+
+<p>Finds all social media account handles / IDs for a given user. Assumes twitter by search.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.affin.io/v1/cross_platform/phil_renaud</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>handle</td>
+<td>n/a</td>
+<td>The handle of the user you&rsquo;re looking for</td>
+</tr>
+<tr>
+<td>network</td>
+<td>&ldquo;twitter&rdquo;</td>
+<td>The network that the aforementioned handle belongs to</td>
+</tr>
+</tbody></table>
+
+<h1 id="classification-api">Classification API</h1>
+
+<h2 id="profile-a-user-by-analyzing-content-and-favorites">Profile a user by analyzing content and favorites</h2>
+<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
+<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">classify</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"phil_renaud"</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">classify</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"phil_renaud"</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/classify/phil_renaud"</span>
+  -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
+</code></pre>
+
+<blockquote>
+<h3 id="expected-return">Expected Return</h3>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"technology"</span><span class="p">:</span><span class="w"> </span><span class="mf">21.5</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"advertising"</span><span class="p">:</span><span class="w"> </span><span class="mf">17.85</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"design"</span><span class="p">:</span><span class="w"> </span><span class="mf">15.51</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"..."</span><span class="p">:</span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"fashion"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.31</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</blockquote>
+
+<p>Reads tweets and favorites by a given user and uses machine learning / classification to determine their personality archetype.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.affin.io/v1/classify/phil_renaud</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>handle</td>
+<td>n/a</td>
+<td>The handle of the user you&rsquo;re looking for</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Possible classifications include &ldquo;Technophiles&rdquo;, &ldquo;Auto Enthusiasts&rdquo;, &ldquo;Avid Investors&rdquo;, &ldquo;Foodies&rdquo;, &ldquo;Fashionistas&rdquo;, &hellip;
+</aside>
+
+<h1 id="misc">Misc</h1>
+
+<h2 id="translate-a-country-into-cities-regions">Translate a Country into Cities/Regions</h2>
+<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
+<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">citify</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"Canada"</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">citify</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"Canada"</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/citify/Canada"</span>
+  -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
+</code></pre>
+
+<blockquote>
+<h3 id="expected-return">Expected Return</h3>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="s2">"Canada"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Toronto"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Vancouver"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Montreal"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Ontario"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Halifax"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Quebec"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"British Columbia"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"..."</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+</blockquote>
+
+<p>Translates a country or region into smaller parts (regions, cities, neighbourhoods).</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.affin.io/v1/citify/canada</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>country</td>
+<td>n/a</td>
+<td>The country to dive into</td>
 </tr>
 </tbody></table>
 
@@ -266,7 +1598,7 @@ Remember — a happy kitten is an authenticated kitten!
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
+                <a href="#" data-language-name="javascript">javascript</a>
                 <a href="#" data-language-name="python">python</a>
           </div>
       </div>
