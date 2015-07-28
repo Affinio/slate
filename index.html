@@ -162,18 +162,14 @@ api.campaigns.get()
 </tbody></table>
 
 <h2 id="get-a-specific-report">Get a specific report</h2>
-
-<!-- ```javascript
-require 'affinio'
-api = Affinio.APIClient.authorize('YOUR_API_KEY')
-api.campaigns.get(12345)
-```
-
-```python
-import affinio
-api = affinio.authorize('YOUR_API_KEY')
-api.campaigns.get(12345)
-``` -->
+<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
+<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">campaigns</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">campaigns</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span>
+</code></pre>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/campaigns/12345"</span>
   -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
 </code></pre>
@@ -773,8 +769,7 @@ If the ID is in a tribe format (&ldquo;12345_5&rdquo; as opposed to &ldquo;12345
 <span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
 <span class="n">api</span><span class="o">.</span><span class="n">hashtags</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"12345_10"</span><span class="p">)</span>
 </code></pre>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/hashtags/12345_10"</span>
-  -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_locations?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
 </code></pre>
 
 <blockquote>
@@ -800,11 +795,11 @@ If the ID is in a tribe format (&ldquo;12345_5&rdquo; as opposed to &ldquo;12345
 </span></code></pre>
 </blockquote>
 
-<p>Retrieves the top 100 hashtags for a given tribe or report.</p>
+<p>Retrieves the top locations for a given tribe.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.affin.io/v1/hashtags/12345_10</code></p>
+<p><code class="prettyprint">GET http://api.affin.io/v1/content/top_locations</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -836,8 +831,7 @@ If the ID is in a tribe format (&ldquo;12345_5&rdquo; as opposed to &ldquo;12345
 <span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
 <span class="n">api</span><span class="o">.</span><span class="n">hashtags</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"12345_10"</span><span class="p">)</span>
 </code></pre>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/hashtags/12345_10"</span>
-  -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_urls?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
 </code></pre>
 
 <blockquote>
@@ -863,11 +857,11 @@ If the ID is in a tribe format (&ldquo;12345_5&rdquo; as opposed to &ldquo;12345
 </span></code></pre>
 </blockquote>
 
-<p>Retrieves the top 100 hashtags for a given tribe or report.</p>
+<p>Retrieves the top URLs for a given tribe.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.affin.io/v1/hashtags/12345_10</code></p>
+<p><code class="prettyprint">GET http://api.affin.io/v1/content/top_urls</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -899,8 +893,7 @@ If the ID is in a tribe format (&ldquo;12345_5&rdquo; as opposed to &ldquo;12345
 <span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
 <span class="n">api</span><span class="o">.</span><span class="n">hashtags</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"12345_10"</span><span class="p">)</span>
 </code></pre>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/hashtags/12345_10"</span>
-  -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_domains?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
 </code></pre>
 
 <blockquote>
@@ -926,11 +919,11 @@ If the ID is in a tribe format (&ldquo;12345_5&rdquo; as opposed to &ldquo;12345
 </span></code></pre>
 </blockquote>
 
-<p>Retrieves the top 100 hashtags for a given tribe or report.</p>
+<p>Retrieves the top domains for a given tribe.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.affin.io/v1/hashtags/12345_10</code></p>
+<p><code class="prettyprint">GET http://api.affin.io/v1/content/top_domains?api_key=YOUR_API_KEY&amp;tribe_id=12345_10</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -962,8 +955,7 @@ If the ID is in a tribe format (&ldquo;12345_5&rdquo; as opposed to &ldquo;12345
 <span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
 <span class="n">api</span><span class="o">.</span><span class="n">hashtags</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"12345_10"</span><span class="p">)</span>
 </code></pre>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/hashtags/12345_10"</span>
-  -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
 </code></pre>
 
 <blockquote>
@@ -989,11 +981,11 @@ If the ID is in a tribe format (&ldquo;12345_5&rdquo; as opposed to &ldquo;12345
 </span></code></pre>
 </blockquote>
 
-<p>Retrieves the top 100 hashtags for a given tribe or report.</p>
+<p>Retrieves the top 1000 influencers for a given tribe.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.affin.io/v1/hashtags/12345_10</code></p>
+<p><code class="prettyprint">GET http://api.affin.io/content/top_influencers</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1025,8 +1017,7 @@ If the ID is in a tribe format (&ldquo;12345_5&rdquo; as opposed to &ldquo;12345
 <span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
 <span class="n">api</span><span class="o">.</span><span class="n">hashtags</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"12345_10"</span><span class="p">)</span>
 </code></pre>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/hashtags/12345_10"</span>
-  -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_competitivebreakdown?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
 </code></pre>
 
 <blockquote>
@@ -1052,11 +1043,11 @@ If the ID is in a tribe format (&ldquo;12345_5&rdquo; as opposed to &ldquo;12345
 </span></code></pre>
 </blockquote>
 
-<p>Retrieves the top 100 hashtags for a given tribe or report.</p>
+<p>Retrieves the competitive breakdown for a given tribe.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.affin.io/v1/hashtags/12345_10</code></p>
+<p><code class="prettyprint">GET http://api.affin.io/v1/content/top_competitivebreakdown</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
