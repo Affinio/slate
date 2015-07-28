@@ -980,8 +980,7 @@ api.influenced_by.get("phil_renaud")
 ```
 
 ```shell
-curl "https://api.affin.io/v1/influenced_by/phil_renaud"
-  -H "Authorization: YOUR_API_KEY"
+curl "https://api.affin.io/v1/influenced_by?api_key=YOUR_API_KEY&handle=phil_renaud"
 ```
 
 > ###Expected Return
@@ -991,11 +990,10 @@ curl "https://api.affin.io/v1/influenced_by/phil_renaud"
   {
     "tribe":"Halifax Locals",
     "report":"@Collide_Halifax followers",
-    "tribe_id":"12345_10",
-    "report_id":"12345",
+    "tribeid":"12345_10",
+    "campaignid":"12345",
     "affinity_score": 150305.35,
-    "affinity_rank": 8,
-    "affinity_score_percentage": 31.51
+    "affinity_rank": 8
   },
   {
     "tribe":"Designers/Devs",
@@ -1003,8 +1001,7 @@ curl "https://api.affin.io/v1/influenced_by/phil_renaud"
     "tribe_id":"12345_3",
     "report_id":"12345",
     "affinity_score": 155305.35,
-    "affinity_rank": 1,
-    "affinity_score_percentage": 100
+    "affinity_rank": 1
   },
   {
     "tribe":"Ad Agency Alumni",
@@ -1012,8 +1009,7 @@ curl "https://api.affin.io/v1/influenced_by/phil_renaud"
     "tribe_id":"12346_10",
     "report_id":"12346",
     "affinity_score": 150305.35,
-    "affinity_rank": 185,
-    "affinity_score_percentage": 3.51
+    "affinity_rank": 185
   }
 ]
 ```
@@ -1022,15 +1018,16 @@ Finds all tribes over which a given user has significant influence.
 
 ### HTTP Request
 
-`GET http://api.affin.io/v1/influenced_by/phil_renaud`
+`GET http://api.affin.io/v1/affinity_search/influenced_by`
 
 ### Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
+api_key | n/a | Your API Key
 handle | n/a | The handle of the user you're looking for
-tribe | null | If you know the ID of a tribe you'd like to limit your search to.
-
+<!-- tribe | null | If you know the ID of a tribe you'd like to limit your search to.
+ -->
 
 ## Tribes containing a Member
 
@@ -1047,8 +1044,7 @@ api.contains_member.get("phil_renaud")
 ```
 
 ```shell
-curl "https://api.affin.io/v1/contains_member/phil_renaud"
-  -H "Authorization: YOUR_API_KEY"
+curl "https://api.affin.io/v1/contains_member?api_key=YOUR_API_KEY&handle=phil_renaud"
 ```
 
 > ###Expected Return
@@ -1080,14 +1076,15 @@ Finds all tribes to which a given user belongs.
 
 ### HTTP Request
 
-`GET http://api.affin.io/v1/contains_member/phil_renaud`
+`GET http://api.affin.io/v1/contains_member`
 
 ### Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
+api_key | n/a | Your API Key
 handle | n/a | The handle of the user you're looking for
-tribe | null | If you know the ID of a tribe you'd like to limit your search to.
+<!-- tribe | null | If you know the ID of a tribe you'd like to limit your search to. -->
 
 
 
@@ -1108,8 +1105,7 @@ api.uses_term.get("tbt")
 ```
 
 ```shell
-curl "https://api.affin.io/v1/uses_term/tbt"
-  -H "Authorization: YOUR_API_KEY"
+curl "https://api.affin.io/v1/uses_term?api_key=YOUR_API_KEY&term=javascript&metric=hashtag"
 ```
 
 > ###Expected Return
@@ -1119,11 +1115,10 @@ curl "https://api.affin.io/v1/uses_term/tbt"
   {
     "tribe":"Halifax Locals",
     "report":"@Collide_Halifax followers",
-    "tribe_id":"12345_10",
-    "report_id":"12345",
+    "tribeid":"12345_10",
+    "campaignid":"12345",
     "rank": 3,
-    "number_using": 435,
-    "percent_using": 31.51
+    "number_using": 435
   },
   {
     "tribe":"Designers/Devs",
@@ -1131,8 +1126,7 @@ curl "https://api.affin.io/v1/uses_term/tbt"
     "tribe_id":"12345_3",
     "report_id":"12345",
     "rank": 3,
-    "number_using": 435,
-    "percent_using": 31.51
+    "number_using": 435
   },
   {
     "tribe":"Ad Agency Alumni",
@@ -1140,8 +1134,7 @@ curl "https://api.affin.io/v1/uses_term/tbt"
     "tribe_id":"12346_10",
     "report_id":"12346",
     "rank": 3,
-    "number_using": 435,
-    "percent_using": 31.51
+    "number_using": 435
   }
 ]
 ```
@@ -1150,22 +1143,23 @@ Finds all tribes using a specific term (hashtag, mention, etc.)
 
 ### HTTP Request
 
-`GET http://api.affin.io/v1/uses_term/tbt`
+`GET http://api.affin.io/v1/uses_term`
 
 ### Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
+api_key | n/a | Your API Key
 term | n/a | The term you're looking for
 metric | 'hashtag' | The type of metric you're looking up
-tribe | null | If you know the ID of a tribe you'd like to limit your search to.
+<!-- tribe | null | If you know the ID of a tribe you'd like to limit your search to. -->
 
 <aside class="notice">
 Possible metrics include "hashtag", "mention", "keyword", "bio_keyword", "location", "url", and "domain".
 </aside>
 
 
-
+<!-- 
 ## Users in a Tribe who used a Hashtag
 
 ```javascript
@@ -1229,7 +1223,7 @@ tribe | null | If you know the ID of a tribe you'd like to limit your search to.
 <aside class="notice">
 Possible metrics include "hashtag", "mention", "keyword", "bio_keyword", "location", "url", and "domain".
 </aside>
-
+ -->
 
 
 
