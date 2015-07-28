@@ -129,7 +129,7 @@ public | false | Returns public-domain tribes published by Affinio, such as "Dig
 
 ## Get a specific report
 
-<!-- ```javascript
+```javascript
 require 'affinio'
 api = Affinio.APIClient.authorize('YOUR_API_KEY')
 api.campaigns.get(12345)
@@ -139,7 +139,7 @@ api.campaigns.get(12345)
 import affinio
 api = affinio.authorize('YOUR_API_KEY')
 api.campaigns.get(12345)
-``` -->
+```
 
 ```shell
 curl "https://api.affin.io/v1/campaigns/12345"
@@ -687,8 +687,7 @@ api.hashtags.get("12345_10")
 ```
 
 ```shell
-curl "https://api.affin.io/v1/hashtags/12345_10"
-  -H "Authorization: YOUR_API_KEY"
+curl "https://api.affin.io/v1/content/top_locations?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
 
 > ###Expected Return
@@ -714,11 +713,11 @@ curl "https://api.affin.io/v1/hashtags/12345_10"
 ]
 ```
 
-Retrieves the top 100 hashtags for a given tribe or report.
+Retrieves the top locations for a given tribe.
 
 ### HTTP Request
 
-`GET http://api.affin.io/v1/hashtags/12345_10`
+`GET http://api.affin.io/v1/content/top_locations`
 
 ### Query Parameters
 
@@ -746,8 +745,7 @@ api.hashtags.get("12345_10")
 ```
 
 ```shell
-curl "https://api.affin.io/v1/hashtags/12345_10"
-  -H "Authorization: YOUR_API_KEY"
+curl "https://api.affin.io/v1/content/top_urls?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
 
 > ###Expected Return
@@ -773,11 +771,11 @@ curl "https://api.affin.io/v1/hashtags/12345_10"
 ]
 ```
 
-Retrieves the top 100 hashtags for a given tribe or report.
+Retrieves the top URLs for a given tribe.
 
 ### HTTP Request
 
-`GET http://api.affin.io/v1/hashtags/12345_10`
+`GET http://api.affin.io/v1/content/top_urls`
 
 ### Query Parameters
 
@@ -803,8 +801,7 @@ api.hashtags.get("12345_10")
 ```
 
 ```shell
-curl "https://api.affin.io/v1/hashtags/12345_10"
-  -H "Authorization: YOUR_API_KEY"
+curl "https://api.affin.io/v1/content/top_domains?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
 
 > ###Expected Return
@@ -830,11 +827,11 @@ curl "https://api.affin.io/v1/hashtags/12345_10"
 ]
 ```
 
-Retrieves the top 100 hashtags for a given tribe or report.
+Retrieves the top domains for a given tribe.
 
 ### HTTP Request
 
-`GET http://api.affin.io/v1/hashtags/12345_10`
+`GET http://api.affin.io/v1/content/top_domains?api_key=YOUR_API_KEY&tribe_id=12345_10`
 
 ### Query Parameters
 
@@ -861,8 +858,7 @@ api.hashtags.get("12345_10")
 ```
 
 ```shell
-curl "https://api.affin.io/v1/hashtags/12345_10"
-  -H "Authorization: YOUR_API_KEY"
+curl "https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
 
 > ###Expected Return
@@ -888,11 +884,11 @@ curl "https://api.affin.io/v1/hashtags/12345_10"
 ]
 ```
 
-Retrieves the top 100 hashtags for a given tribe or report.
+Retrieves the top 1000 influencers for a given tribe.
 
 ### HTTP Request
 
-`GET http://api.affin.io/v1/hashtags/12345_10`
+`GET http://api.affin.io/content/top_influencers`
 
 ### Query Parameters
 
@@ -919,8 +915,7 @@ api.hashtags.get("12345_10")
 ```
 
 ```shell
-curl "https://api.affin.io/v1/hashtags/12345_10"
-  -H "Authorization: YOUR_API_KEY"
+curl "https://api.affin.io/v1/content/top_competitivebreakdown?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
 
 > ###Expected Return
@@ -946,11 +941,11 @@ curl "https://api.affin.io/v1/hashtags/12345_10"
 ]
 ```
 
-Retrieves the top 100 hashtags for a given tribe or report.
+Retrieves the competitive breakdown for a given tribe.
 
 ### HTTP Request
 
-`GET http://api.affin.io/v1/hashtags/12345_10`
+`GET http://api.affin.io/v1/content/top_competitivebreakdown`
 
 ### Query Parameters
 
