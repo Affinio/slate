@@ -1140,14 +1140,7 @@ If the ID is in a tribe format (&ldquo;12345_5&rdquo; as opposed to &ldquo;12345
 <td>n/a</td>
 <td>The handle of the user you&rsquo;re looking for</td>
 </tr>
-<tr>
-<td>&lt;!&ndash; tribe</td>
-<td>null</td>
-<td>If you know the ID of a tribe you&rsquo;d like to limit your search to.</td>
-</tr>
 </tbody></table>
-
-<p>&ndash;&gt;</p>
 
 <h2 id="tribes-containing-a-member">Tribes containing a Member</h2>
 <pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
@@ -1210,11 +1203,6 @@ If the ID is in a tribe format (&ldquo;12345_5&rdquo; as opposed to &ldquo;12345
 <td>handle</td>
 <td>n/a</td>
 <td>The handle of the user you&rsquo;re looking for</td>
-</tr>
-<tr>
-<td>&lt;!&ndash; tribe</td>
-<td>null</td>
-<td>If you know the ID of a tribe you&rsquo;d like to limit your search to. &ndash;&gt;</td>
 </tr>
 </tbody></table>
 
@@ -1291,82 +1279,11 @@ If the ID is in a tribe format (&ldquo;12345_5&rdquo; as opposed to &ldquo;12345
 <td>&lsquo;hashtag&rsquo;</td>
 <td>The type of metric you&rsquo;re looking up</td>
 </tr>
-<tr>
-<td>&lt;!&ndash; tribe</td>
-<td>null</td>
-<td>If you know the ID of a tribe you&rsquo;d like to limit your search to. &ndash;&gt;</td>
-</tr>
 </tbody></table>
 
 <aside class="notice">
 Possible metrics include &ldquo;hashtag&rdquo;, &ldquo;mention&rdquo;, &ldquo;keyword&rdquo;, &ldquo;bio_keyword&rdquo;, &ldquo;location&rdquo;, &ldquo;url&rdquo;, and &ldquo;domain&rdquo;.
 </aside>
-
-<!-- 
-## Users in a Tribe who used a Hashtag
-
-```javascript
-require 'affinio'
-api = Affinio.APIClient.authorize('YOUR_API_KEY')
-api.uses_term_members.get("tbt")
-```
-
-```python
-import affinio
-api = affinio.authorize('YOUR_API_KEY')
-api.uses_term_members.get("tbt")
-```
-
-```shell
-curl "https://api.affin.io/v1/uses_term_members/tbt"
-  -H "Authorization: YOUR_API_KEY"
-```
-
-> ###Expected Return
-
-> &ldquo;`json
-[
-  {
-    &quot;handle&rdquo;:&ldquo;phil_renaud&rdquo;,
-    &ldquo;tweet_id&rdquo;: 3654321,
-    &ldquo;tweet_content&rdquo;: &ldquo;Hey! #tbt to that time I wrote Affinio&rsquo;s API Documentation&rdquo;
-  },
-  {
-    &ldquo;handle&rdquo;:&ldquo;phil_renaud&rdquo;,
-    &ldquo;tweet_id&rdquo;: 3654321,
-    &ldquo;tweet_content&rdquo;: &ldquo;Hey! #tbt to that time I wrote Affinio&rsquo;s API Documentation&rdquo;
-  },
-  {
-    &ldquo;handle&rdquo;:&ldquo;phil_renaud&rdquo;,
-    &ldquo;tweet_id&rdquo;: 3654321,
-    &ldquo;tweet_content&rdquo;: &ldquo;Hey! #tbt to that time I wrote Affinio&rsquo;s API Documentation&rdquo;
-  },
-  {
-    &ldquo;handle&rdquo;:&ldquo;phil_renaud&rdquo;,
-    &ldquo;tweet_id&rdquo;: 3654321,
-    &ldquo;tweet_content&rdquo;: &ldquo;Hey! #tbt to that time I wrote Affinio&rsquo;s API Documentation&rdquo;
-  }
-]
-&ldquo;`
-
-Finds the list of users using a specific term (hashtag, mention, etc.)
-
-### HTTP Request
-
-`GET http://api.affin.io/v1/uses_term_members/tbt?tribe=12345_10`
-
-### Query Parameters
-
-Parameter | Default | Description
-&mdash;&mdash;&mdash; | &mdash;&mdash;- | &mdash;&mdash;&mdash;&ndash;
-term | n/a | The term you&rsquo;re looking for
-metric | 'hashtag&rsquo; | The type of metric you&rsquo;re looking up
-tribe | null | If you know the ID of a tribe you&rsquo;d like to limit your search to.
-
-<aside class="notice">
-Possible metrics include &quot;hashtag&rdquo;, &ldquo;mention&rdquo;, &ldquo;keyword&rdquo;, &ldquo;bio_keyword&rdquo;, &ldquo;location&rdquo;, &ldquo;url&rdquo;, and &ldquo;domain&rdquo;.
-</aside>
- &ndash;>
 
 <h1 id="cross-platform-api">Cross-Platform API</h1>
 
