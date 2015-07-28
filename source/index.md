@@ -1026,8 +1026,7 @@ Parameter | Default | Description
 --------- | ------- | -----------
 api_key | n/a | Your API Key
 handle | n/a | The handle of the user you're looking for
-<!-- tribe | null | If you know the ID of a tribe you'd like to limit your search to.
- -->
+
 
 ## Tribes containing a Member
 
@@ -1084,7 +1083,6 @@ Parameter | Default | Description
 --------- | ------- | -----------
 api_key | n/a | Your API Key
 handle | n/a | The handle of the user you're looking for
-<!-- tribe | null | If you know the ID of a tribe you'd like to limit your search to. -->
 
 
 
@@ -1152,78 +1150,10 @@ Parameter | Default | Description
 api_key | n/a | Your API Key
 term | n/a | The term you're looking for
 metric | 'hashtag' | The type of metric you're looking up
-<!-- tribe | null | If you know the ID of a tribe you'd like to limit your search to. -->
 
 <aside class="notice">
 Possible metrics include "hashtag", "mention", "keyword", "bio_keyword", "location", "url", and "domain".
 </aside>
-
-
-<!-- 
-## Users in a Tribe who used a Hashtag
-
-```javascript
-require 'affinio'
-api = Affinio.APIClient.authorize('YOUR_API_KEY')
-api.uses_term_members.get("tbt")
-```
-
-```python
-import affinio
-api = affinio.authorize('YOUR_API_KEY')
-api.uses_term_members.get("tbt")
-```
-
-```shell
-curl "https://api.affin.io/v1/uses_term_members/tbt"
-  -H "Authorization: YOUR_API_KEY"
-```
-
-> ###Expected Return
-
-> ```json
-[
-  {
-    "handle":"phil_renaud",
-    "tweet_id": 3654321,
-    "tweet_content": "Hey! #tbt to that time I wrote Affinio's API Documentation"
-  },
-  {
-    "handle":"phil_renaud",
-    "tweet_id": 3654321,
-    "tweet_content": "Hey! #tbt to that time I wrote Affinio's API Documentation"
-  },
-  {
-    "handle":"phil_renaud",
-    "tweet_id": 3654321,
-    "tweet_content": "Hey! #tbt to that time I wrote Affinio's API Documentation"
-  },
-  {
-    "handle":"phil_renaud",
-    "tweet_id": 3654321,
-    "tweet_content": "Hey! #tbt to that time I wrote Affinio's API Documentation"
-  }
-]
-```
-
-Finds the list of users using a specific term (hashtag, mention, etc.)
-
-### HTTP Request
-
-`GET http://api.affin.io/v1/uses_term_members/tbt?tribe=12345_10`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-term | n/a | The term you're looking for
-metric | 'hashtag' | The type of metric you're looking up
-tribe | null | If you know the ID of a tribe you'd like to limit your search to.
-
-<aside class="notice">
-Possible metrics include "hashtag", "mention", "keyword", "bio_keyword", "location", "url", and "domain".
-</aside>
- -->
 
 
 
