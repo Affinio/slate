@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference Test 2000 --By Quan1</title>
+    <title>API Reference</title>
 
     <link href="stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
     <link href="stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
@@ -77,14 +77,18 @@ We are limiting access to our API to specific partners at the present time. Plea
 <h1 id="tribes-and-reports">Tribes and Reports</h1>
 
 <h2 id="get-my-reports-and-public-reports">Get My Reports (and Public Reports)</h2>
-<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
-<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="nx">api</span><span class="p">.</span><span class="nx">campaigns</span><span class="p">.</span><span class="nx">get</span><span class="p">()</span>
-</code></pre>
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
-<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">campaigns</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre>
+
+<!-- ```javascript
+require 'affinio'
+api = Affinio.APIClient.authorize('YOUR_API_KEY')
+api.campaigns.get()
+```
+
+```python
+import affinio
+api = affinio.authorize('YOUR_API_KEY')
+api.campaigns.get()
+``` -->
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/campaigns"</span>
   -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
 </code></pre>
@@ -158,14 +162,18 @@ We are limiting access to our API to specific partners at the present time. Plea
 </tbody></table>
 
 <h2 id="get-a-specific-report">Get a specific report</h2>
-<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
-<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="nx">api</span><span class="p">.</span><span class="nx">campaigns</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span>
-</code></pre>
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
-<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">campaigns</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span>
-</code></pre>
+
+<!-- ```javascript
+require 'affinio'
+api = Affinio.APIClient.authorize('YOUR_API_KEY')
+api.campaigns.get(12345)
+```
+
+```python
+import affinio
+api = affinio.authorize('YOUR_API_KEY')
+api.campaigns.get(12345)
+``` -->
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/campaigns/12345"</span>
   -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
 </code></pre>
