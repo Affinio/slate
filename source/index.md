@@ -1,5 +1,5 @@
 ---
-title: API Reference Test 2000 --By Quan1
+title: API Reference
 
 language_tabs:
   - shell
@@ -54,7 +54,7 @@ Affinio uses unique keys to allow access to our API. You can register a new Affi
 
 ## Get My Reports (and Public Reports)
 
-```javascript
+<!-- ```javascript
 require 'affinio'
 api = Affinio.APIClient.authorize('YOUR_API_KEY')
 api.campaigns.get()
@@ -64,7 +64,7 @@ api.campaigns.get()
 import affinio
 api = affinio.authorize('YOUR_API_KEY')
 api.campaigns.get()
-```
+``` -->
 
 ```shell
 curl "https://api.affin.io/v1/campaigns"
@@ -129,7 +129,7 @@ public | false | Returns public-domain tribes published by Affinio, such as "Dig
 
 ## Get a specific report
 
-```javascript
+<!-- ```javascript
 require 'affinio'
 api = Affinio.APIClient.authorize('YOUR_API_KEY')
 api.campaigns.get(12345)
@@ -139,7 +139,7 @@ api.campaigns.get(12345)
 import affinio
 api = affinio.authorize('YOUR_API_KEY')
 api.campaigns.get(12345)
-```
+``` -->
 
 ```shell
 curl "https://api.affin.io/v1/campaigns/12345"
