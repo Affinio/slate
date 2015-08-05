@@ -118,10 +118,7 @@ Parameter | Default | Description
 api_key | YOUR_API_KEY | Your API key
 from | 0 | The offset from the first result you want to fetch. 
 size | 10 | The maximum amount of campaigns to be returned.
-<!-- owned_only | false | If set to true, the results will be limited to those reports you created yourself.
-created_before | null | Returns all campaigns created before a certain date (in milliseconds)
-created_after | null | Returns all campaigns created after a certain date (in milliseconds)
-public | false | Returns public-domain tribes published by Affinio, such as "Digital Strategists" and "Fashionistas". Useful for testing. -->
+
 
 
 
@@ -282,20 +279,20 @@ curl "https://api.affin.io/content/top_hashtags?api_key=YOUR_API_KEY&tribe_id=12
 > ```json
 [
   {
-    term: "MH17",
-    count: 89
+    "term": "MH17",
+    "count": 89
   },
   {
-    term: "Gaza",
-    count: 76
+    "term": "Gaza",
+    "count": 76
   },
   {
-    term: "WorldCupFinal",
-    count: 76
+    "term": "WorldCupFinal",
+    "count": 76
   },
   {
-    term: "India",
-    count: 74
+    "term": "India",
+    "count": 74
   }
 ]
 ```
@@ -328,20 +325,20 @@ curl "https://api.affin.io/content/top_mentions?api_key=YOUR_API_KEY&tribe_id=12
 > ```json
 [
   {
-    term: "narendramodi",
-    count: 132
+    "term": "narendramodi",
+    "count": 132
   },
   {
-    term: "timesofindia",
-    count: 122
+    "term": "timesofindia",
+    "count": 122
   },
   {
-    term: "YouTube",
-    count: 99
+    "term": "YouTube",
+    "count": 99
   },
   {
-    term: "PMOIndia",
-    count: 80
+    "term": "PMOIndia",
+    "count": 80
   }
 ]
 ```
@@ -372,20 +369,20 @@ curl "https://api.affin.io/content/top_tweetkeywords?api_key=YOUR_API_KEY&tribe_
 > ```json
 [
   {
-    term: "people",
-    count: 152
+    "term": "people",
+    "count": 152
   },
   {
-    term: "roof",
-    count: 144
+    "term": "roof",
+    "count": 144
   },
   {
-    term: "time",
-    count: 140
+    "term": "time",
+    "count": 140
   },
   {
-    term: "today",
-    count: 132
+    "term": "today",
+    "count": 132
   }
 ]
 ```
@@ -415,20 +412,20 @@ curl "https://api.affin.io/content/top_biokeywords?api_key=YOUR_API_KEY&tribe_id
 > ```json
 [
   {
-    term: "writer",
-    count: 15
+    "term": "writer",
+    "count": 15
   },
   {
-    term: "nyc",
-    count: 8
+    "term": "nyc",
+    "count": 8
   },
   {
-    term: "nerd",
-    count: 8
+    "term": "nerd",
+    "count": 8
   },
   {
-    term: "student",
-    count: 8
+    "term": "student",
+    "count": 8
   },
 ]
 ```
@@ -459,20 +456,20 @@ curl "https://api.affin.io/content/top_categories?api_key=YOUR_API_KEY&tribe_id=
 > ```json
 [
   {
-    term: "Gaming",
-    count: 78
+    "term": "Gaming",
+    "count": 78
   },
   {
-    term: "Services",
-    count: 75
+    "term": "Services",
+    "count": 75
   },
   {
-    term: "Food/Travel",
-    count: 59
+    "term": "Food/Travel",
+    "count": 59
   },
   {
-    term: "Health",
-    count: 13
+    "term": "Health",
+    "count": 13
   }
 ]
 ```
@@ -602,20 +599,20 @@ curl "https://api.affin.io/content/top_locations?api_key=YOUR_API_KEY&tribe_id=1
 > ```json
 [
   {
-    term: "London",
-    count: 85
+    "term": "London",
+    "count": 85
   },
   {
-    term: "Los Angeles",
-    count: 77
+    "term": "Los Angeles",
+    "count": 77
   },
   {
-    term: "New York",
-    count: 64
+    "term": "New York",
+    "count": 64
   },
   {
-    term: "Toronto",
-    count: 49
+    "term": "Toronto",
+    "count": 49
   }
 ]
 ```
@@ -660,24 +657,24 @@ curl "https://api.affin.io/content/top_urls?api_key=YOUR_API_KEY&tribe_id=12345_
 > ```json
 [
   {
-    term: "http://www.si.com/nba/2014/07/11/lebron-james-cleveland-cavaliers",
-    count: 24
+    "term": "http://www.si.com/nba/2014/07/11/lebron-james-cleveland-cavaliers",
+    "count": 24
   },
   {
-    term: "https://twitter.com/i/t/worldcup",
-    count: 22
+    "term": "https://twitter.com/i/t/worldcup",
+    "count": 22
   },
   {
-    term: "http://bit.ly/1zu0IHz",
-    count: 22
+    "term": "http://bit.ly/1zu0IHz",
+    "count": 22
   },
   {
-    term: "https://vine.co/v/MtZ2xhIjDPe",
-    count: 16
+    "term": "https://vine.co/v/MtZ2xhIjDPe",
+    "count": 16
   },
   {
-    term: "http://uapp.ly",
-    count: 12
+    "term": "http://uapp.ly",
+    "count": 12
   }
 ]
 ```
@@ -720,24 +717,24 @@ curl "https://api.affin.io/content/top_domains?api_key=YOUR_API_KEY&tribe_id=123
 > ```json
 [
   {
-    term: "twitter.com",
-    count: 78
+    "term": "twitter.com",
+    "count": 78
   },
   {
-    term: "washingtonpost.com",
-    count: 31
+    "term": "washingtonpost.com",
+    "count": 31
   },
   {
-    term: "theguardian.com",
-    count: 29
+    "term": "theguardian.com",
+    "count": 29
   },
   {
-    term: "theatlantic.com",
-    count: 28
+    "term": "theatlantic.com",
+    "count": 28
   },
   {
-    term: "cnn.com",
-    count: 26
+    "term": "cnn.com",
+    "count": 26
   }
 ]
 ```
@@ -781,28 +778,28 @@ curl "https://api.affin.io/content/top_influencers?api_key=YOUR_API_KEY&tribe_id
 > ```json
 [
   {
-    id: 11740902,
-    name: "Tim Ferriss",
-    screen_name: "tferriss",
-    score: 64364.455959025
+    "id": 11740902,
+    "name": "Tim Ferriss",
+    "screen_name": "tferriss",
+    "score: 64364.455959025
   },
   {
-    id: 115485051,
-    name: "Conan O'Brien",
-    screen_name: "ConanOBrien",
-    score: 19607.535340593
+    "id": 115485051,
+    "name": "Conan O'Brien",
+    "screen_name": "ConanOBrien",
+    "score": 19607.535340593
   },
   {
-    id: 16303106,
-    name: "Stephen Colbert",
-    screen_name: "StephenAtHome",
-    score: 17965.386784869
+    "id": 16303106,
+    "name": "Stephen Colbert",
+    "screen_name": "StephenAtHome",
+    "score": 17965.386784869
   },
   {
-    id: 15485441,
-    name: "jimmy fallon",
-    screen_name: "jimmyfallon",
-    score: 17958.614459845
+    "id": 15485441,
+    "name": "jimmy fallon",
+    "screen_name": "jimmyfallon",
+    "score": 17958.614459845
   }
 ]
 ```
@@ -846,40 +843,36 @@ curl "https://api.affin.io/content/top_competitivebreakdown?api_key=YOUR_API_KEY
 > ```json
 [
   {
-    users: [ ],
-    size: 0
-  },
-  {
-    users: [
+    "users": [
       {
-        id: 74286565,
-        screen_name: "Microsoft",
-        followers_count: 6553243
+        "id": 74286565,
+        "screen_name": "Microsoft",
+        "followers_count": 6553243
       }
     ],
     size: 142211
   },
   {
-    users: [
+    "users": [
       {
-        id: 8633582,
-        screen_name: "Linux",
-        followers_count: 177523
+        "id": 8633582,
+        "screen_name": "Linux",
+        "followers_count": 177523
       }
     ],
     size: 1070
   },
   {
-    users: [
+    "users": [
       {
-        id: 74286565,
-        screen_name: "Microsoft",
-        followers_count: 6553243
+        "id": 74286565,
+        "screen_name": "Microsoft",
+        "followers_count": 6553243
       },
       {
-        id: 8633582,
-        screen_name: "Linux",
-        followers_count: 177523
+        "id": 8633582,
+        "screen_name": "Linux",
+        "followers_count": 177523
       }
     ],
     size: 669
