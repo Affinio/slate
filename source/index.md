@@ -149,8 +149,7 @@ api.campaigns.get(12345)
 ```
 
 ```shell
-curl "https://api.affin.io/tribes/campaigns/12345"
-  -H "Authorization: YOUR_API_KEY"
+curl "https://api.affin.io/tribes/campaigns?api_key=YOUR_API_KEY&tribe_id=12345"
 ```
 
 > ###Expected Return
@@ -165,16 +164,16 @@ curl "https://api.affin.io/tribes/campaigns/12345"
   "belongs_to": ["phil@affin.io","stephen@affin.io"],
   "tribes": [
       {
-        id: "12345_0",
-        name: "tribe 1"
+        "id": "12345_0",
+        "name": "tribe 1"
       },
       {
-        id: "12345_1",
-        name: "tribe 2"
+        "id": "12345_1",
+        "name": "tribe 2"
       },
       {
-        id: "12345_2",
-        name: "tribe 3"
+        "id": "12345_2",
+        "name": "tribe 3"
       }
     ],
   "filters": {"bio_location":"Canada","followers_of":"affinioinc,phil_renaud,t1mburke"},
@@ -187,7 +186,7 @@ This endpoint retrieves basic details about a given report to which you have acc
 
 ### HTTP Request
 
-`GET http://api.affin.io/tribes/campaigns/12345`
+`GET http://api.affin.io/tribes/campaigns`
 
 ### Query Parameters
 
