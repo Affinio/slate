@@ -153,26 +153,6 @@ from defaults to 0, and size defaults to 10.</p>
 <td>10</td>
 <td>The maximum amount of campaigns to be returned.</td>
 </tr>
-<tr>
-<td>&lt;!&ndash; owned_only</td>
-<td>false</td>
-<td>If set to true, the results will be limited to those reports you created yourself.</td>
-</tr>
-<tr>
-<td>created_before</td>
-<td>null</td>
-<td>Returns all campaigns created before a certain date (in milliseconds)</td>
-</tr>
-<tr>
-<td>created_after</td>
-<td>null</td>
-<td>Returns all campaigns created after a certain date (in milliseconds)</td>
-</tr>
-<tr>
-<td>public</td>
-<td>false</td>
-<td>Returns public-domain tribes published by Affinio, such as &ldquo;Digital Strategists&rdquo; and &ldquo;Fashionistas&rdquo;. Useful for testing. &ndash;&gt;</td>
-</tr>
 </tbody></table>
 
 <h2 id="get-a-specific-report">Get a specific report</h2>
@@ -301,20 +281,20 @@ from defaults to 0, and size defaults to 10.</p>
 <h3 id="expected-return">Expected Return</h3>
 <pre class="highlight json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"MH17"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">89</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MH17"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">89</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"Gaza"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">76</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gaza"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">76</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"WorldCupFinal"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">76</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WorldCupFinal"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">76</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"India"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">74</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"India"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">74</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
@@ -355,20 +335,20 @@ from defaults to 0, and size defaults to 10.</p>
 <h3 id="expected-return">Expected Return</h3>
 <pre class="highlight json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"narendramodi"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">132</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"narendramodi"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">132</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"timesofindia"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">122</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timesofindia"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">122</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"YouTube"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YouTube"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"PMOIndia"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PMOIndia"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
@@ -409,20 +389,20 @@ from defaults to 0, and size defaults to 10.</p>
 <h3 id="expected-return">Expected Return</h3>
 <pre class="highlight json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"people"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">152</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"people"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">152</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"roof"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">144</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"roof"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">144</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"time"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">140</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"time"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">140</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"today"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">132</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"today"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">132</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
@@ -463,20 +443,20 @@ from defaults to 0, and size defaults to 10.</p>
 <h3 id="expected-return">Expected Return</h3>
 <pre class="highlight json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"writer"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"writer"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"nyc"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nyc"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"nerd"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nerd"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"student"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"student"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
   </span><span class="p">},</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
@@ -517,20 +497,20 @@ from defaults to 0, and size defaults to 10.</p>
 <h3 id="expected-return">Expected Return</h3>
 <pre class="highlight json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"Gaming"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">78</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gaming"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">78</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"Services"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Services"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"Food/Travel"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">59</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Food/Travel"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">59</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"Health"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Health"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
@@ -687,20 +667,20 @@ from defaults to 0, and size defaults to 10.</p>
 <h3 id="expected-return">Expected Return</h3>
 <pre class="highlight json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"London"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">85</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"London"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">85</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"Los Angeles"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">77</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Los Angeles"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">77</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"New York"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">64</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">64</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"Toronto"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">49</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Toronto"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">49</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
@@ -749,24 +729,24 @@ from defaults to 0, and size defaults to 10.</p>
 <h3 id="expected-return">Expected Return</h3>
 <pre class="highlight json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"http://www.si.com/nba/2014/07/11/lebron-james-cleveland-cavaliers"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.si.com/nba/2014/07/11/lebron-james-cleveland-cavaliers"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"https://twitter.com/i/t/worldcup"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://twitter.com/i/t/worldcup"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"http://bit.ly/1zu0IHz"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://bit.ly/1zu0IHz"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"https://vine.co/v/MtZ2xhIjDPe"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://vine.co/v/MtZ2xhIjDPe"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"http://uapp.ly"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://uapp.ly"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
@@ -815,24 +795,24 @@ from defaults to 0, and size defaults to 10.</p>
 <h3 id="expected-return">Expected Return</h3>
 <pre class="highlight json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"twitter.com"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">78</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"twitter.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">78</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"washingtonpost.com"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"washingtonpost.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"theguardian.com"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"theguardian.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"theatlantic.com"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"theatlantic.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">term:</span><span class="w"> </span><span class="nt">"cnn.com"</span><span class="err">,</span><span class="w">
-    </span><span class="err">count</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span><span class="w">
+    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cnn.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
@@ -881,28 +861,28 @@ from defaults to 0, and size defaults to 10.</p>
 <h3 id="expected-return">Expected Return</h3>
 <pre class="highlight json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">id:</span><span class="w"> </span><span class="err">11740902,</span><span class="w">
-    </span><span class="err">name:</span><span class="w"> </span><span class="nt">"Tim Ferriss"</span><span class="err">,</span><span class="w">
-    </span><span class="err">screen_name</span><span class="p">:</span><span class="w"> </span><span class="s2">"tferriss"</span><span class="p">,</span><span class="w">
-    </span><span class="err">score</span><span class="p">:</span><span class="w"> </span><span class="mf">64364.455959025</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="err">id:</span><span class="w"> </span><span class="err">115485051,</span><span class="w">
-    </span><span class="err">name:</span><span class="w"> </span><span class="nt">"Conan O'Brien"</span><span class="err">,</span><span class="w">
-    </span><span class="err">screen_name</span><span class="p">:</span><span class="w"> </span><span class="s2">"ConanOBrien"</span><span class="p">,</span><span class="w">
-    </span><span class="err">score</span><span class="p">:</span><span class="w"> </span><span class="mf">19607.535340593</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="err">id:</span><span class="w"> </span><span class="err">16303106,</span><span class="w">
-    </span><span class="err">name:</span><span class="w"> </span><span class="nt">"Stephen Colbert"</span><span class="err">,</span><span class="w">
-    </span><span class="err">screen_name</span><span class="p">:</span><span class="w"> </span><span class="s2">"StephenAtHome"</span><span class="p">,</span><span class="w">
-    </span><span class="err">score</span><span class="p">:</span><span class="w"> </span><span class="mf">17965.386784869</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="err">id:</span><span class="w"> </span><span class="err">15485441,</span><span class="w">
-    </span><span class="err">name:</span><span class="w"> </span><span class="nt">"jimmy fallon"</span><span class="err">,</span><span class="w">
-    </span><span class="err">screen_name</span><span class="p">:</span><span class="w"> </span><span class="s2">"jimmyfallon"</span><span class="p">,</span><span class="w">
-    </span><span class="err">score</span><span class="p">:</span><span class="w"> </span><span class="mf">17958.614459845</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11740902</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tim Ferriss"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"screen_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tferriss"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"score: 64364.455959025
+  },
+  {
+    "</span><span class="err">id</span><span class="nt">": 115485051,
+    "</span><span class="err">name</span><span class="nt">": "</span><span class="err">Conan</span><span class="w"> </span><span class="err">O'Brien</span><span class="nt">",
+    "</span><span class="err">screen_name</span><span class="nt">": "</span><span class="err">ConanOBrien</span><span class="nt">",
+    "</span><span class="err">score</span><span class="nt">": 19607.535340593
+  },
+  {
+    "</span><span class="err">id</span><span class="nt">": 16303106,
+    "</span><span class="err">name</span><span class="nt">": "</span><span class="err">Stephen</span><span class="w"> </span><span class="err">Colbert</span><span class="nt">",
+    "</span><span class="err">screen_name</span><span class="nt">": "</span><span class="err">StephenAtHome</span><span class="nt">",
+    "</span><span class="err">score</span><span class="nt">": 17965.386784869
+  },
+  {
+    "</span><span class="err">id</span><span class="nt">": 15485441,
+    "</span><span class="err">name</span><span class="nt">": "</span><span class="err">jimmy</span><span class="w"> </span><span class="err">fallon</span><span class="nt">",
+    "</span><span class="err">screen_name</span><span class="nt">": "</span><span class="err">jimmyfallon</span><span class="nt">",
+    "</span><span class="err">score"</span><span class="p">:</span><span class="w"> </span><span class="mf">17958.614459845</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
@@ -951,45 +931,41 @@ from defaults to 0, and size defaults to 10.</p>
 <h3 id="expected-return">Expected Return</h3>
 <pre class="highlight json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">users:</span><span class="w"> </span><span class="err">[</span><span class="w"> </span><span class="err">],</span><span class="w">
-    </span><span class="err">size:</span><span class="w"> </span><span class="err">0</span><span class="w">
+    </span><span class="nt">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">74286565</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"screen_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Microsoft"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"followers_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">6553243</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="err">size</span><span class="p">:</span><span class="w"> </span><span class="mi">142211</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">users:</span><span class="w"> </span><span class="err">[</span><span class="w">
-      </span><span class="err">{</span><span class="w">
-        </span><span class="err">id:</span><span class="w"> </span><span class="err">74286565,</span><span class="w">
-        </span><span class="err">screen_name:</span><span class="w"> </span><span class="nt">"Microsoft"</span><span class="err">,</span><span class="w">
-        </span><span class="err">followers_count</span><span class="p">:</span><span class="w"> </span><span class="mi">6553243</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="err">,</span><span class="w">
-    </span><span class="err">size:</span><span class="w"> </span><span class="mi">142211</span><span class="w">
-  </span><span class="err">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="err">users:</span><span class="w"> </span><span class="err">[</span><span class="w">
-      </span><span class="err">{</span><span class="w">
-        </span><span class="err">id:</span><span class="w"> </span><span class="err">8633582,</span><span class="w">
-        </span><span class="err">screen_name:</span><span class="w"> </span><span class="nt">"Linux"</span><span class="err">,</span><span class="w">
-        </span><span class="err">followers_count</span><span class="p">:</span><span class="w"> </span><span class="mi">177523</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="err">],</span><span class="w">
-    </span><span class="err">size:</span><span class="w"> </span><span class="mi">1070</span><span class="w">
-  </span><span class="err">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="err">users:</span><span class="w"> </span><span class="err">[</span><span class="w">
-      </span><span class="err">{</span><span class="w">
-        </span><span class="err">id:</span><span class="w"> </span><span class="err">74286565,</span><span class="w">
-        </span><span class="err">screen_name:</span><span class="w"> </span><span class="nt">"Microsoft"</span><span class="err">,</span><span class="w">
-        </span><span class="err">followers_count</span><span class="p">:</span><span class="w"> </span><span class="mi">6553243</span><span class="w">
-      </span><span class="p">}</span><span class="err">,</span><span class="w">
+    </span><span class="nt">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="err">id:</span><span class="w"> </span><span class="err">8633582,</span><span class="w">
-        </span><span class="err">screen_name:</span><span class="w"> </span><span class="nt">"Linux"</span><span class="err">,</span><span class="w">
-        </span><span class="err">followers_count</span><span class="p">:</span><span class="w"> </span><span class="mi">177523</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8633582</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"screen_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Linux"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"followers_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">177523</span><span class="w">
       </span><span class="p">}</span><span class="w">
-    </span><span class="err">],</span><span class="w">
-    </span><span class="err">size:</span><span class="w"> </span><span class="mi">669</span><span class="w">
-  </span><span class="err">}</span><span class="w">
-</span><span class="err">]</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="err">size</span><span class="p">:</span><span class="w"> </span><span class="mi">1070</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">74286565</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"screen_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Microsoft"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"followers_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">6553243</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8633582</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"screen_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Linux"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"followers_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">177523</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="err">size</span><span class="p">:</span><span class="w"> </span><span class="mi">669</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre>
 </blockquote>
 
