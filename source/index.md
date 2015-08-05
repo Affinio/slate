@@ -54,7 +54,7 @@ Affinio uses unique keys to allow access to our API. You can register a new Affi
 
 ## Get My Reports (and Public Reports)
 
-<!-- ```javascript
+```javascript
 require 'affinio'
 api = Affinio.APIClient.authorize('YOUR_API_KEY')
 api.campaigns.get()
@@ -64,11 +64,11 @@ api.campaigns.get()
 import affinio
 api = affinio.authorize('YOUR_API_KEY')
 api.campaigns.get()
-``` -->
+``` 
 
 ```shell
-curl "https://api.affin.io/v1/campaigns"
-  -H "Authorization: YOUR_API_KEY"
+curl "https://api.affin.io/tribes/my_campaigns?api_key=YOUR_API_KEY"
+curl "https://api.affin.io/tribes/my_campaigns?api_key=YOUR_API_KEY&from=0&size=5"
 ```
 
 > ###Expected Return
@@ -104,18 +104,25 @@ curl "https://api.affin.io/v1/campaigns"
 
 This endpoint retrieves basic details about all Reports to which you have access.
 
+Note: Pagination of results can be done by using the from and size parameters. The from parameter defines the offset from the first result you want to fetch. The size parameter allows you to configure the maximum amount of hits to be returned.
+from defaults to 0, and size defaults to 10.
+
 ### HTTP Request
 
-`GET http://api.affin.io/v1/campaigns`
+`GET http://api.affin.io/tribes/campaigns`
 
 ### Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
-owned_only | false | If set to true, the results will be limited to those reports you created yourself.
+api_key | YOUR_API_KEY | Your API key
+from | 0 | The offset from the first result you want to fetch. 
+size | 10 | The maximum amount of campaigns to be returned.
+<!-- owned_only | false | If set to true, the results will be limited to those reports you created yourself.
 created_before | null | Returns all campaigns created before a certain date (in milliseconds)
 created_after | null | Returns all campaigns created after a certain date (in milliseconds)
-public | false | Returns public-domain tribes published by Affinio, such as "Digital Strategists" and "Fashionistas". Useful for testing.
+public | false | Returns public-domain tribes published by Affinio, such as "Digital Strategists" and "Fashionistas". Useful for testing. -->
+
 
 
 
@@ -142,7 +149,7 @@ api.campaigns.get(12345)
 ```
 
 ```shell
-curl "https://api.affin.io/v1/campaigns/12345"
+curl "https://api.affin.io/tribes/campaigns/12345"
   -H "Authorization: YOUR_API_KEY"
 ```
 
@@ -156,7 +163,20 @@ curl "https://api.affin.io/v1/campaigns/12345"
   "source": "Twitter",
   "email": "phil@affin.io",
   "belongs_to": ["phil@affin.io","stephen@affin.io"],
-  "resource_ids": ["12345_0","12345_1","12345_2","12345_3","...","12345_18","12345_19"],
+  "tribes": [
+      {
+        id: "12345_0",
+        name: "tribe 1"
+      },
+      {
+        id: "12345_1",
+        name: "tribe 2"
+      },
+      {
+        id: "12345_2",
+        name: "tribe 3"
+      }
+    ],
   "filters": {"bio_location":"Canada","followers_of":"affinioinc,phil_renaud,t1mburke"},
   "members_count": 999999,
   "started": 1428682154
@@ -167,74 +187,16 @@ This endpoint retrieves basic details about a given report to which you have acc
 
 ### HTTP Request
 
-`GET http://api.affin.io/v1/campaigns/12345`
+`GET http://api.affin.io/tribes/campaigns/12345`
 
 ### Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
+api_key | YOUR_API_KEY | Your API key
 id | n/a | The ID of the campaign you're trying to retrieve
 
 
-
-
-## Get All Tribes of a Report
-
-```javascript
-require 'affinio'
-api = Affinio.APIClient.authorize('YOUR_API_KEY')
-api.tribes.get(12345)
-```
-
-```python
-import affinio
-api = affinio.authorize('YOUR_API_KEY')
-api.tribes.get(12345)
-```
-
-```shell
-curl "https://api.affin.io/v1/tribes"
-  -H "Authorization: YOUR_API_KEY"
-```
-
-> ###Expected Return
-
-> ```json
-[
-  {
-    "id": "12345_0",
-    "name": "Couponing Moms",
-    "size": 23451,
-    "density": 1.33,
-    "average_affinity_score": 25.51,
-    "tweets_per_month": 135.54
-  },
-  {
-    "id": "12345_1",
-    "name": "Fashionistas",
-    "size": 23451,
-    "density": 1.33,
-    "average_affinity_score": 25.51,
-    "tweets_per_month": 135.54
-  }
-]
-```
-
-This endpoint retrieves information about all Tribes of a given Report.
-
-### HTTP Request
-
-`GET http://api.affin.io/v1/tribes/12345`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-ID | false | The ID of the report from which you'd like tribes
-
-<aside class="success">
-If the ID is in a tribe format ("12345_5" as opposed to "12345"), a single tribe will be returned.
-</aside>
 
 
 
@@ -267,7 +229,7 @@ api.updates.get(12345_10)
 ```
 
 ```shell
-curl "https://api.affin.io/v1/updates/12345_10"
+curl "https://api.affin.io/updates/12345_10"
   -H "Authorization: YOUR_API_KEY"
 ```
 
@@ -285,15 +247,13 @@ Retrieves the members count (often followers count) of a given tribe or report o
 
 ### HTTP Request
 
-`GET http://api.affin.io/v1/updates/12345_10`
+`GET http://api.affin.io/updates/12345_10`
 
 ### Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
 id | n/a | The ID of the tribe or campaign you're trying to retrieve
-
-
 
 
 
@@ -311,63 +271,11 @@ id | n/a | The ID of the tribe or campaign you're trying to retrieve
 
 # Content and Bios
 
-## Most Discussed Topics
-
-
-```shell
-curl "https://api.affin.io/v1/topics/12345_10"
-  -H "Authorization: YOUR_API_KEY"
-```
-
-> ###Expected Return
-
-> ```json
-[
-  {
-    "topic":"Hillary Clinton is running for President in 2016",
-    "percent_discussing":9.13,
-    "sentiment":65.53,
-    "tweets_discussing":["120938123","120938123","120938123","120938123"]
-  },
-  {
-    "topic":"Hillary Swank wins Best Actress",
-    "percent_discussing":8.51,
-    "sentiment":91.33,
-    "tweets_discussing":["120938123","120938123","120938123","120938123"]
-  },
-  {
-    "topic":"Affinio is Providing Rad Documentation",
-    "percent_discussing":3.31,
-    "sentiment":100,
-    "tweets_discussing":["120938123","120938123","120938123","120938123"]
-  },
-  {
-    "topic":"Snowstorms affect many flights",
-    "percent_discussing":3.14,
-    "sentiment":11.15,
-    "tweets_discussing":["120938123","120938123","120938123","120938123"]
-  }
-]
-```
-
-Performs a Topic Modelling analysis of a given tribe.
-
-### HTTP Request
-
-`GET http://api.affin.io/v1/topics/12345_10`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-id | n/a | The ID of the tribe or campaign you're trying to retrieve
-
-
 ## Top Hashtags
 
 
 ```shell
-curl "https://api.affin.io/v1/content/top_hashtags?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/content/top_hashtags?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
 
 > ###Expected Return
@@ -375,29 +283,29 @@ curl "https://api.affin.io/v1/content/top_hashtags?api_key=YOUR_API_KEY&tribe_id
 > ```json
 [
   {
-    "term":"tbt",
-    "count":910
+    term: "MH17",
+    count: 89
   },
   {
-    "term":"oscars",
-    "count":845
+    term: "Gaza",
+    count: 76
   },
   {
-    "term":"socialmedia",
-    "count":331
+    term: "WorldCupFinal",
+    count: 76
   },
   {
-    "term":"socialmediaweek",
-    "count":313
+    term: "India",
+    count: 74
   }
 ]
 ```
 
-Retrieves the top 100 hashtags for a given tribe or report.
+Retrieves the top 100 hashtags for a given tribe.
 
 ### HTTP Request
 
-`GET https://api.affin.io/v1/content/top_hashtags`
+`GET https://api.affin.io/content/top_hashtags`
 
 ### Query Parameters
 
@@ -413,7 +321,7 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 
 
 ```shell
-curl "https://api.affin.io/v1/content/top_mentions?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/content/top_mentions?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
 
 > ###Expected Return
@@ -421,29 +329,29 @@ curl "https://api.affin.io/v1/content/top_mentions?api_key=YOUR_API_KEY&tribe_id
 > ```json
 [
   {
-    "term":"tbt",
-    "count":910
+    term: "narendramodi",
+    count: 132
   },
   {
-    "term":"oscars",
-    "count":845
+    term: "timesofindia",
+    count: 122
   },
   {
-    "term":"socialmedia",
-    "count":331
+    term: "YouTube",
+    count: 99
   },
   {
-    "term":"socialmediaweek",
-    "count":313
+    term: "PMOIndia",
+    count: 80
   }
 ]
 ```
 
-Retrieves the top mentions for a given tribe or report.
+Retrieves the top mentions for a given tribe.
 
 ### HTTP Request
 
-`GET http://api.affin.io/v1/content/top_mentions`
+`GET http://api.affin.io/content/top_mentions`
 
 ### Query Parameters
 
@@ -457,7 +365,7 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 ## Top Tweet Keywords
 
 ```shell
-curl "https://api.affin.io/v1/content/top_tweetkeywords?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/content/top_tweetkeywords?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
 
 > ###Expected Return
@@ -465,29 +373,29 @@ curl "https://api.affin.io/v1/content/top_tweetkeywords?api_key=YOUR_API_KEY&tri
 > ```json
 [
   {
-    "term":"tbt",
-    "count":910
+    term: "people",
+    count: 152
   },
   {
-    "term":"oscars",
-    "count":845
+    term: "roof",
+    count: 144
   },
   {
-    "term":"socialmedia",
-    "count":331
+    term: "time",
+    count: 140
   },
   {
-    "term":"socialmediaweek",
-    "count":313
+    term: "today",
+    count: 132
   }
 ]
 ```
 
-Retrieves the top tweet keywords for a given tribe or report.
+Retrieves the top tweet keywords for a given tribe.
 
 ### HTTP Request
 
-`GET http://api.affin.io/v1/content/top_tweetkeywords`
+`GET http://api.affin.io/content/top_tweetkeywords`
 
 ### Query Parameters
 
@@ -500,7 +408,7 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 ## Top Bio Keywords
 
 ```shell
-curl "https://api.affin.io/v1/content/top_biokeywords?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/content/top_biokeywords?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
 
 > ###Expected Return
@@ -508,29 +416,29 @@ curl "https://api.affin.io/v1/content/top_biokeywords?api_key=YOUR_API_KEY&tribe
 > ```json
 [
   {
-    "term":"tbt",
-    "count":910
+    term: "writer",
+    count: 15
   },
   {
-    "term":"oscars",
-    "count":845
+    term: "nyc",
+    count: 8
   },
   {
-    "term":"socialmedia",
-    "count":331
+    term: "nerd",
+    count: 8
   },
   {
-    "term":"socialmediaweek",
-    "count":313
-  }
+    term: "student",
+    count: 8
+  },
 ]
 ```
 
-Retrieves the top bio keywords for a given tribe or report.
+Retrieves the top bio keywords for a given tribe.
 
 ### HTTP Request
 
-`GET http://api.affin.io/v1/content/top_biokeywords`
+`GET http://api.affin.io/content/top_biokeywords`
 
 ### Query Parameters
 
@@ -544,7 +452,7 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 ## Top Categories
 
 ```shell
-curl "https://api.affin.io/v1/content/top_categories?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/content/top_categories?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
 
 > ###Expected Return
@@ -552,29 +460,29 @@ curl "https://api.affin.io/v1/content/top_categories?api_key=YOUR_API_KEY&tribe_
 > ```json
 [
   {
-    "term":"tbt",
-    "count":910
+    term: "Gaming",
+    count: 78
   },
   {
-    "term":"oscars",
-    "count":845
+    term: "Services",
+    count: 75
   },
   {
-    "term":"socialmedia",
-    "count":331
+    term: "Food/Travel",
+    count: 59
   },
   {
-    "term":"socialmediaweek",
-    "count":313
+    term: "Health",
+    count: 13
   }
 ]
 ```
 
-Retrieves the top 100 hashtags for a given tribe or report.
+Retrieves the top categories for a given tribe.
 
 ### HTTP Request
 
-`GET http://api.affin.io/v1/content/top_categories`
+`GET http://api.affin.io/content/top_categories`
 
 ### Query Parameters
 
@@ -587,7 +495,7 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 ## Top Apps
 
 ```shell
-curl "https://api.affin.io/v1/content/top_apps?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/content/top_apps?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
 
 > ###Expected Return
@@ -595,29 +503,29 @@ curl "https://api.affin.io/v1/content/top_apps?api_key=YOUR_API_KEY&tribe_id=123
 > ```json
 [
   {
-    "term":"tbt",
+    "term":"Twitter for iPhone",
     "count":910
   },
   {
-    "term":"oscars",
+    "term":"Twitter for Websites",
     "count":845
   },
   {
-    "term":"socialmedia",
+    "term":"Twitter for Android",
     "count":331
   },
   {
-    "term":"socialmediaweek",
+    "term":"Twitter for iPad",
     "count":313
   }
 ]
 ```
 
-Retrieves the top 100 hashtags for a given tribe or report.
+Retrieves the top apps for a given tribe.
 
 ### HTTP Request
 
-`GET http://api.affin.io/v1/content/top_apps`
+`GET http://api.affin.io/content/top_apps`
 
 ### Query Parameters
 
@@ -632,7 +540,7 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 ## Top Favorites
 
 ```shell
-curl "https://api.affin.io/v1/content/top_favorites?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/content/top_favorites?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
 
 > ###Expected Return
@@ -658,11 +566,11 @@ curl "https://api.affin.io/v1/content/top_favorites?api_key=YOUR_API_KEY&tribe_i
 ]
 ```
 
-Retrieves the top favorites for a given tribe or report.
+Retrieves the top favorites for a given tribe.
 
 ### HTTP Request
 
-`GET http://api.affin.io/v1/content/top_favorites`
+`GET http://api.affin.io/content/top_favorites`
 
 ### Query Parameters
 
@@ -687,7 +595,7 @@ api.hashtags.get("12345_10")
 ```
 
 ```shell
-curl "https://api.affin.io/v1/content/top_locations?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/content/top_locations?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
 
 > ###Expected Return
@@ -695,20 +603,20 @@ curl "https://api.affin.io/v1/content/top_locations?api_key=YOUR_API_KEY&tribe_i
 > ```json
 [
   {
-    "term":"tbt",
-    "count":910
+    term: "London",
+    count: 85
   },
   {
-    "term":"oscars",
-    "count":845
+    term: "Los Angeles",
+    count: 77
   },
   {
-    "term":"socialmedia",
-    "count":331
+    term: "New York",
+    count: 64
   },
   {
-    "term":"socialmediaweek",
-    "count":313
+    term: "Toronto",
+    count: 49
   }
 ]
 ```
@@ -717,7 +625,7 @@ Retrieves the top locations for a given tribe.
 
 ### HTTP Request
 
-`GET http://api.affin.io/v1/content/top_locations`
+`GET http://api.affin.io/content/top_locations`
 
 ### Query Parameters
 
@@ -745,7 +653,7 @@ api.hashtags.get("12345_10")
 ```
 
 ```shell
-curl "https://api.affin.io/v1/content/top_urls?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/content/top_urls?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
 
 > ###Expected Return
@@ -753,20 +661,24 @@ curl "https://api.affin.io/v1/content/top_urls?api_key=YOUR_API_KEY&tribe_id=123
 > ```json
 [
   {
-    "term":"tbt",
-    "count":910
+    term: "http://www.si.com/nba/2014/07/11/lebron-james-cleveland-cavaliers",
+    count: 24
   },
   {
-    "term":"oscars",
-    "count":845
+    term: "https://twitter.com/i/t/worldcup",
+    count: 22
   },
   {
-    "term":"socialmedia",
-    "count":331
+    term: "http://bit.ly/1zu0IHz",
+    count: 22
   },
   {
-    "term":"socialmediaweek",
-    "count":313
+    term: "https://vine.co/v/MtZ2xhIjDPe",
+    count: 16
+  },
+  {
+    term: "http://uapp.ly",
+    count: 12
   }
 ]
 ```
@@ -775,7 +687,7 @@ Retrieves the top URLs for a given tribe.
 
 ### HTTP Request
 
-`GET http://api.affin.io/v1/content/top_urls`
+`GET http://api.affin.io/content/top_urls`
 
 ### Query Parameters
 
@@ -801,7 +713,7 @@ api.hashtags.get("12345_10")
 ```
 
 ```shell
-curl "https://api.affin.io/v1/content/top_domains?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/content/top_domains?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
 
 > ###Expected Return
@@ -809,20 +721,24 @@ curl "https://api.affin.io/v1/content/top_domains?api_key=YOUR_API_KEY&tribe_id=
 > ```json
 [
   {
-    "term":"tbt",
-    "count":910
+    term: "twitter.com",
+    count: 78
   },
   {
-    "term":"oscars",
-    "count":845
+    term: "washingtonpost.com",
+    count: 31
   },
   {
-    "term":"socialmedia",
-    "count":331
+    term: "theguardian.com",
+    count: 29
   },
   {
-    "term":"socialmediaweek",
-    "count":313
+    term: "theatlantic.com",
+    count: 28
+  },
+  {
+    term: "cnn.com",
+    count: 26
   }
 ]
 ```
@@ -831,7 +747,7 @@ Retrieves the top domains for a given tribe.
 
 ### HTTP Request
 
-`GET http://api.affin.io/v1/content/top_domains?api_key=YOUR_API_KEY&tribe_id=12345_10`
+`GET http://api.affin.io/content/top_domains?api_key=YOUR_API_KEY&tribe_id=12345_10`
 
 ### Query Parameters
 
@@ -858,7 +774,7 @@ api.hashtags.get("12345_10")
 ```
 
 ```shell
-curl "https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/content/top_influencers?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
 
 > ###Expected Return
@@ -866,20 +782,28 @@ curl "https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&tribe
 > ```json
 [
   {
-    "term":"tbt",
-    "count":910
+    id: 11740902,
+    name: "Tim Ferriss",
+    screen_name: "tferriss",
+    score: 64364.455959025
   },
   {
-    "term":"oscars",
-    "count":845
+    id: 115485051,
+    name: "Conan O'Brien",
+    screen_name: "ConanOBrien",
+    score: 19607.535340593
   },
   {
-    "term":"socialmedia",
-    "count":331
+    id: 16303106,
+    name: "Stephen Colbert",
+    screen_name: "StephenAtHome",
+    score: 17965.386784869
   },
   {
-    "term":"socialmediaweek",
-    "count":313
+    id: 15485441,
+    name: "jimmy fallon",
+    screen_name: "jimmyfallon",
+    score: 17958.614459845
   }
 ]
 ```
@@ -915,7 +839,7 @@ api.hashtags.get("12345_10")
 ```
 
 ```shell
-curl "https://api.affin.io/v1/content/top_competitivebreakdown?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/content/top_competitivebreakdown?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
 
 > ###Expected Return
@@ -923,20 +847,43 @@ curl "https://api.affin.io/v1/content/top_competitivebreakdown?api_key=YOUR_API_
 > ```json
 [
   {
-    "term":"tbt",
-    "count":910
+    users: [ ],
+    size: 0
   },
   {
-    "term":"oscars",
-    "count":845
+    users: [
+      {
+        id: 74286565,
+        screen_name: "Microsoft",
+        followers_count: 6553243
+      }
+    ],
+    size: 142211
   },
   {
-    "term":"socialmedia",
-    "count":331
+    users: [
+      {
+        id: 8633582,
+        screen_name: "Linux",
+        followers_count: 177523
+      }
+    ],
+    size: 1070
   },
   {
-    "term":"socialmediaweek",
-    "count":313
+    users: [
+      {
+        id: 74286565,
+        screen_name: "Microsoft",
+        followers_count: 6553243
+      },
+      {
+        id: 8633582,
+        screen_name: "Linux",
+        followers_count: 177523
+      }
+    ],
+    size: 669
   }
 ]
 ```
@@ -945,7 +892,7 @@ Retrieves the competitive breakdown for a given tribe.
 
 ### HTTP Request
 
-`GET http://api.affin.io/v1/content/top_competitivebreakdown`
+`GET http://api.affin.io/content/top_competitivebreakdown`
 
 ### Query Parameters
 
@@ -980,7 +927,9 @@ api.influenced_by.get("phil_renaud")
 ```
 
 ```shell
-curl "https://api.affin.io/v1/influenced_by?api_key=YOUR_API_KEY&handle=phil_renaud"
+curl "https://api.affin.io/affinity_search/influenced_by?api_key=YOUR_API_KEY&handle=phil_renaud
+curl "https://api.affin.io/affinity_search/influenced_by?api_key=YOUR_API_KEY&handle=phil_renaud&from=0&size=5
+curl "https://api.affin.io/affinity_search/influenced_by?api_key=YOUR_API_KEY&handle=phil_renaud&ids=12345_1,12345_5"
 ```
 
 > ###Expected Return
@@ -1016,9 +965,14 @@ curl "https://api.affin.io/v1/influenced_by?api_key=YOUR_API_KEY&handle=phil_ren
 
 Finds all tribes over which a given user has significant influence.
 
+Note: Pagination of results can be done by using the from and size parameters. The from parameter defines the offset from the first result you want to fetch. The size parameter allows you to configure the maximum amount of hits to be returned.
+from defaults to 0, and size defaults to 10.
+
+
+
 ### HTTP Request
 
-`GET http://api.affin.io/v1/affinity_search/influenced_by`
+`GET http://api.affin.io/affinity_search/influenced_by`
 
 ### Query Parameters
 
@@ -1026,6 +980,10 @@ Parameter | Default | Description
 --------- | ------- | -----------
 api_key | n/a | Your API Key
 handle | n/a | The handle of the user you're looking for
+ids | NULL | Tribe ids separated by comma. Note: If no tribe ids are passed in, all user owned campaigns will be searched. 
+from | 0 | The offset from the first result you want to fetch. 
+size | 10 | The maximum amount of campaigns to be returned.
+
 
 
 ## Tribes containing a Member
@@ -1043,7 +1001,7 @@ api.contains_member.get("phil_renaud")
 ```
 
 ```shell
-curl "https://api.affin.io/v1/contains_member?api_key=YOUR_API_KEY&handle=phil_renaud"
+curl "https://api.affin.io/affinity_search/contains_member?api_key=YOUR_API_KEY&handle=phil_renaud"
 ```
 
 > ###Expected Return
@@ -1073,9 +1031,14 @@ curl "https://api.affin.io/v1/contains_member?api_key=YOUR_API_KEY&handle=phil_r
 
 Finds all tribes to which a given user belongs.
 
+Note: Pagination of results can be done by using the from and size parameters. The from parameter defines the offset from the first result you want to fetch. The size parameter allows you to configure the maximum amount of hits to be returned.
+from defaults to 0, and size defaults to 10.
+
+
+
 ### HTTP Request
 
-`GET http://api.affin.io/v1/contains_member`
+`GET http://api.affin.io/affinity_search/contains_member`
 
 ### Query Parameters
 
@@ -1083,12 +1046,16 @@ Parameter | Default | Description
 --------- | ------- | -----------
 api_key | n/a | Your API Key
 handle | n/a | The handle of the user you're looking for
+ids | NULL | Tribe ids separated by comma. Note: If no tribe ids are passed in, all user owned campaigns will be searched. 
+from | 0 | The offset from the first result you want to fetch. 
+size | 10 | The maximum amount of campaigns to be returned.
 
 
 
 
 
-## Tribes that use a Hashtag
+
+## Tribes that use a term
 
 ```javascript
 require 'affinio'
@@ -1103,7 +1070,7 @@ api.uses_term.get("tbt")
 ```
 
 ```shell
-curl "https://api.affin.io/v1/uses_term?api_key=YOUR_API_KEY&term=javascript&metric=hashtag"
+curl "https://api.affin.io/affinity_search/uses_term?api_key=YOUR_API_KEY&term=javascript&metric=hashtag"
 ```
 
 > ###Expected Return
@@ -1141,7 +1108,7 @@ Finds all tribes using a specific term (hashtag, mention, etc.)
 
 ### HTTP Request
 
-`GET http://api.affin.io/v1/uses_term`
+`GET http://api.affin.io/affinity_search/uses_term`
 
 ### Query Parameters
 
@@ -1150,6 +1117,7 @@ Parameter | Default | Description
 api_key | n/a | Your API Key
 term | n/a | The term you're looking for
 metric | 'hashtag' | The type of metric you're looking up
+ids | NULL | Tribe ids separated by comma. Note: If no tribe ids are passed in, all user owned campaigns will be searched. 
 
 <aside class="notice">
 Possible metrics include "hashtag", "mention", "keyword", "bio_keyword", "location", "url", and "domain".
@@ -1184,7 +1152,7 @@ api.cross_platform.get("phil_renaud")
 ```
 
 ```shell
-curl "https://api.affin.io/v1/cross_platform/phil_renaud"
+curl "https://api.affin.io/cross_platform/cross_platform?api_key=YOUR_API_KEY&network=twitter&handle=phil_renaud"
   -H "Authorization: YOUR_API_KEY"
 ```
 
@@ -1195,13 +1163,11 @@ curl "https://api.affin.io/v1/cross_platform/phil_renaud"
   "twitter":"phil_renaud",
   "twitter_id":"123456789",
   "instagram":"phil_renaud",
-  "email":"phil@affin.io",
-  "flickr":"philrenaud1984",
   "youtube":null,
   "facebook":"philrenaud",
-  "dribbble":"phil_renaud",
   "pinterest":"phil_renaud",
-  "angellist": "philrenaud0"
+  "googleplus":"phil_renaud",
+  "tumblr":"philrenaud"
 }
 ```
 
@@ -1209,13 +1175,13 @@ Finds all social media account handles / IDs for a given user. Assumes twitter b
 
 ### HTTP Request
 
-`GET http://api.affin.io/v1/cross_platform/phil_renaud`
+`GET http://api.affin.io/cross_platform/cross_platform
 
 ### Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
-handle | n/a | The handle of the user you're looking for
+handle | n/a | The handles of users you're looking for, handles are separated by comma
 network | "twitter" | The network that the aforementioned handle belongs to
 
 
@@ -1245,7 +1211,7 @@ api.classify.get("phil_renaud")
 ```
 
 ```shell
-curl "https://api.affin.io/v1/classify/phil_renaud"
+curl "https://api.affin.io/classify/phil_renaud"
   -H "Authorization: YOUR_API_KEY"
 ```
 
@@ -1265,7 +1231,7 @@ Reads tweets and favorites by a given user and uses machine learning / classific
 
 ### HTTP Request
 
-`GET http://api.affin.io/v1/classify/phil_renaud`
+`GET http://api.affin.io/classify/phil_renaud`
 
 ### Query Parameters
 
@@ -1304,7 +1270,7 @@ api.citify.get("Canada")
 ```
 
 ```shell
-curl "https://api.affin.io/v1/citify/Canada"
+curl "https://api.affin.io/citify/Canada"
   -H "Authorization: YOUR_API_KEY"
 ```
 
@@ -1328,7 +1294,7 @@ Translates a country or region into smaller parts (regions, cities, neighbourhoo
 
 ### HTTP Request
 
-`GET http://api.affin.io/v1/citify/canada`
+`GET http://api.affin.io/citify/canada`
 
 ### Query Parameters
 
