@@ -1145,7 +1145,6 @@ api.cross_platform.get("phil_renaud")
 
 ```shell
 curl "https://api.affin.io/cross_platform/cross_platform?api_key=YOUR_API_KEY&network=twitter&handle=phil_renaud"
-  -H "Authorization: YOUR_API_KEY"
 ```
 
 > ###Expected Return
