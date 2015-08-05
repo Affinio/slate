@@ -781,7 +781,7 @@ curl "https://api.affin.io/content/top_influencers?api_key=YOUR_API_KEY&tribe_id
     "id": 11740902,
     "name": "Tim Ferriss",
     "screen_name": "tferriss",
-    "score: 64364.455959025
+    "score": 64364.455959025
   },
   {
     "id": 115485051,
@@ -850,7 +850,7 @@ curl "https://api.affin.io/content/top_competitivebreakdown?api_key=YOUR_API_KEY
         "followers_count": 6553243
       }
     ],
-    size: 142211
+    "size": 142211
   },
   {
     "users": [
@@ -860,7 +860,7 @@ curl "https://api.affin.io/content/top_competitivebreakdown?api_key=YOUR_API_KEY
         "followers_count": 177523
       }
     ],
-    size: 1070
+    "size": 1070
   },
   {
     "users": [
@@ -875,7 +875,7 @@ curl "https://api.affin.io/content/top_competitivebreakdown?api_key=YOUR_API_KEY
         "followers_count": 177523
       }
     ],
-    size: 669
+    "size": 669
   }
 ]
 ```
@@ -919,8 +919,8 @@ api.influenced_by.get("phil_renaud")
 ```
 
 ```shell
-curl "https://api.affin.io/affinity_search/influenced_by?api_key=YOUR_API_KEY&handle=phil_renaud
-curl "https://api.affin.io/affinity_search/influenced_by?api_key=YOUR_API_KEY&handle=phil_renaud&from=0&size=5
+curl "https://api.affin.io/affinity_search/influenced_by?api_key=YOUR_API_KEY&handle=phil_renaud"
+curl "https://api.affin.io/affinity_search/influenced_by?api_key=YOUR_API_KEY&handle=phil_renaud&from=0&size=5"
 curl "https://api.affin.io/affinity_search/influenced_by?api_key=YOUR_API_KEY&handle=phil_renaud&ids=12345_1,12345_5"
 ```
 
