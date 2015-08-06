@@ -3,8 +3,6 @@ title: API Reference
 
 language_tabs:
   - shell
-  - javascript
-  - python
 
 toc_footers:
   - <a href='https://api.affin.io' target="_blank">Dashboard</a>
