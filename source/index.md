@@ -192,8 +192,8 @@ id | n/a | The ID of the campaign you're trying to retrieve
 ## Create a report
 
 ```shell
-curl "https://api.affin.io/tribes/campaigns?api_key=YOUR_API_KEY&source=Twitter&report_type=network_graph&name=test_report&followers_of=pepsi&number_of_clusters=8"
-curl "https://api.affin.io/tribes/campaigns?api_key=YOUR_API_KEY&source=Twitter&report_type=tweet_content&name=test_report&explicit_words=javascript,facebook&number_of_clusters=8"
+curl "https://api.affin.io/campaigns/create_report?api_key=YOUR_API_KEY&source=Twitter&report_type=network_graph&name=test_report&followers_of=pepsi&number_of_clusters=8"
+curl "https://api.affin.io/campaigns/create_report?api_key=YOUR_API_KEY&source=Twitter&report_type=tweet_content&name=test_report&explicit_words=javascript,facebook&number_of_clusters=8"
 ```
 
 > ###Expected Return
