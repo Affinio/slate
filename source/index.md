@@ -216,7 +216,7 @@ This endpoint creates a report.
 
 ### HTTP Request
 
-`GET http://api.affin.io/tribes/campaigns`
+`GET http://api.affin.io/campaigns/create_report`
 
 ### Query Parameters
 
