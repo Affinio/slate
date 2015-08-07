@@ -26,16 +26,6 @@ If you have any questions, please don't hesitate to reach out to <a href="mailto
 
 # Authentication
 
-```javascript
-require 'affinio'
-api = Affinio.APIClient.authorize('YOUR_API_KEY')
-```
-
-```python
-import affinio
-api = affinio.authorize('YOUR_API_KEY')
-```
-
 ```shell
 # With shell, you can just pass the correct header with each request
 curl "API_ENDPOINT_HERE"
@@ -52,17 +42,6 @@ Affinio uses unique keys to allow access to our API. You can register a new Affi
 
 ## Get My Reports (and Public Reports)
 
-```javascript
-require 'affinio'
-api = Affinio.APIClient.authorize('YOUR_API_KEY')
-api.campaigns.get()
-```
-
-```python
-import affinio
-api = affinio.authorize('YOUR_API_KEY')
-api.campaigns.get()
-``` 
 
 ```shell
 curl "https://api.affin.io/tribes/my_campaigns?api_key=YOUR_API_KEY"
@@ -193,6 +172,56 @@ id | n/a | The ID of the campaign you're trying to retrieve
 
 
 
+
+
+
+
+
+
+## create a report
+
+```shell
+curl "https://api.affin.io/tribes/campaigns?api_key=YOUR_API_KEY&source=Twitter&report_type=network_graph&name=test_report&followers_of=pepsi&number_of_clusters=8"
+curl "https://api.affin.io/tribes/campaigns?api_key=YOUR_API_KEY&source=Twitter&report_type=tweet_content&name=test_report&explicit_words=javascript,facebook&number_of_clusters=8"
+```
+
+> ###Expected Return
+
+> ```json
+{
+  "id": 12345,
+  "name": "Affinio Followers Demo Report",
+  "number_of_clusters": "20",
+  "source": "Twitter",
+  "email": "phil@affin.io",
+  "belongs_to": ["phil@affin.io","stephen@affin.io"],
+  "filters": {"bio_location":"Canada","followers_of":"affinioinc,phil_renaud,t1mburke"},
+  "members_count": 999999,
+  "started": 1428682154
+}
+```
+
+This endpoint creates a report.
+
+### HTTP Request
+
+`GET http://api.affin.io/tribes/campaigns`
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+api_key | YOUR_API_KEY | Your API key
+source | Twitter | Available sources: Twitter, Instagram, Pinterest
+report_type | network_graph | Available report types: network_graph, tweet_content, upload_csv
+followers_of | NULL | Required when network_graph is selected as report_type
+bio_location | NULL | Optional for network_graph type, not required for other report types
+bio_keywords | NULL | Optional for network_graph type, not required for other report types
+explicit_words | NULL | Required when tweet_content is selected as report_type
+monitored_terms | NULL | Optional
+number_of_clusters | 8 | Optional
+minInfluencerFollowers | NULL | Optional
+maxInfluencerFollowers | NULL | Optional
 
 
 
