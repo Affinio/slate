@@ -178,7 +178,18 @@ id | n/a | The ID of the campaign you're trying to retrieve
 
 
 
-## create a report
+
+
+
+
+
+
+
+
+
+
+
+## Create a report
 
 ```shell
 curl "https://api.affin.io/tribes/campaigns?api_key=YOUR_API_KEY&source=Twitter&report_type=network_graph&name=test_report&followers_of=pepsi&number_of_clusters=8"
@@ -222,6 +233,19 @@ monitored_terms | NULL | Optional
 number_of_clusters | 8 | Optional
 minInfluencerFollowers | NULL | Optional
 maxInfluencerFollowers | NULL | Optional
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
