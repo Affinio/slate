@@ -228,7 +228,7 @@ report_type | network_graph | Available report types: network_graph, tweet_conte
 followers_of | NULL | Required when network_graph is selected as report_type
 bio_location | NULL | Optional for network_graph type, not required for other report types
 bio_keywords | NULL | Optional for network_graph type, not required for other report types
-explicit_words | NULL | Required when tweet_content is selected as report_type
+tweet_content | NULL | Required when tweet_content is selected as report_type
 monitored_terms | NULL | Optional
 number_of_clusters | 8 | Optional
 minInfluencerFollowers | NULL | Optional
