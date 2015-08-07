@@ -55,12 +55,6 @@
 <p>If you have any questions, please don&rsquo;t hesitate to reach out to <a href="mailto:phil@affin.io" target="_blank">Phil Renaud</a> (or <a href="https://twitter.com/phil_renaud" target="_blank">on twitter</a>).</p>
 
 <h1 id="authentication">Authentication</h1>
-<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
-<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
-</code></pre>
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
-<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
-</code></pre>
 <pre class="highlight shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
 curl <span class="s2">"API_ENDPOINT_HERE"</span>
   -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
@@ -75,14 +69,6 @@ We are limiting access to our API to specific partners at the present time. Plea
 <h1 id="tribes-and-reports">Tribes and Reports</h1>
 
 <h2 id="get-my-reports-and-public-reports">Get My Reports (and Public Reports)</h2>
-<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
-<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="nx">api</span><span class="p">.</span><span class="nx">campaigns</span><span class="p">.</span><span class="nx">get</span><span class="p">()</span>
-</code></pre>
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
-<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">campaigns</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/tribes/my_campaigns?api_key=YOUR_API_KEY"</span>
 curl <span class="s2">"https://api.affin.io/tribes/my_campaigns?api_key=YOUR_API_KEY&amp;from=0&amp;size=5"</span>
 </code></pre>
@@ -219,6 +205,99 @@ from defaults to 0, and size defaults to 10.</p>
 <td>id</td>
 <td>n/a</td>
 <td>The ID of the campaign you&rsquo;re trying to retrieve</td>
+</tr>
+</tbody></table>
+
+<h2 id="create-a-report">create a report</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/tribes/campaigns?api_key=YOUR_API_KEY&amp;source=Twitter&amp;report_type=network_graph&amp;name=test_report&amp;followers_of=pepsi&amp;number_of_clusters=8"</span>
+curl <span class="s2">"https://api.affin.io/tribes/campaigns?api_key=YOUR_API_KEY&amp;source=Twitter&amp;report_type=tweet_content&amp;name=test_report&amp;explicit_words=javascript,facebook&amp;number_of_clusters=8"</span>
+</code></pre>
+
+<blockquote>
+<h3 id="expected-return">Expected Return</h3>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12345</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Affinio Followers Demo Report"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"number_of_clusters"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Twitter"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"phil@affin.io"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"belongs_to"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"phil@affin.io"</span><span class="p">,</span><span class="s2">"stephen@affin.io"</span><span class="p">],</span><span class="w">
+  </span><span class="nt">"filters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"bio_location"</span><span class="p">:</span><span class="s2">"Canada"</span><span class="p">,</span><span class="nt">"followers_of"</span><span class="p">:</span><span class="s2">"affinioinc,phil_renaud,t1mburke"</span><span class="p">},</span><span class="w">
+  </span><span class="nt">"members_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">999999</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"started"</span><span class="p">:</span><span class="w"> </span><span class="mi">1428682154</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</blockquote>
+
+<p>This endpoint creates a report.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.affin.io/tribes/campaigns</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>YOUR_API_KEY</td>
+<td>Your API key</td>
+</tr>
+<tr>
+<td>source</td>
+<td>Twitter</td>
+<td>Available sources: Twitter, Instagram, Pinterest</td>
+</tr>
+<tr>
+<td>report_type</td>
+<td>network_graph</td>
+<td>Available report types: network_graph, tweet_content, upload_csv</td>
+</tr>
+<tr>
+<td>followers_of</td>
+<td>NULL</td>
+<td>Required when network_graph is selected as report_type</td>
+</tr>
+<tr>
+<td>bio_location</td>
+<td>NULL</td>
+<td>Optional for network_graph type, not required for other report types</td>
+</tr>
+<tr>
+<td>bio_keywords</td>
+<td>NULL</td>
+<td>Optional for network_graph type, not required for other report types</td>
+</tr>
+<tr>
+<td>explicit_words</td>
+<td>NULL</td>
+<td>Required when tweet_content is selected as report_type</td>
+</tr>
+<tr>
+<td>monitored_terms</td>
+<td>NULL</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>number_of_clusters</td>
+<td>8</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>minInfluencerFollowers</td>
+<td>NULL</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>maxInfluencerFollowers</td>
+<td>NULL</td>
+<td>Optional</td>
 </tr>
 </tbody></table>
 
