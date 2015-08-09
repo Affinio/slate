@@ -192,8 +192,9 @@ id | n/a | The ID of the campaign you're trying to retrieve
 ## Create a report
 
 ```shell
-curl "https://api.affin.io/campaigns/create_report?api_key=YOUR_API_KEY&source=Twitter&report_type=network_graph&name=test_report&followers_of=pepsi&number_of_clusters=8"
-curl "https://api.affin.io/campaigns/create_report?api_key=YOUR_API_KEY&source=Twitter&report_type=tweet_content&name=test_report&explicit_words=javascript,facebook&number_of_clusters=8"
+curl -H "Content-Type: application/json" -X POST -d '{"api_key":"YOUR_API_KEY", "followers_of":"pepsi", "source":"Twitter", "report_type":"network_graph", "name":"Test Report", "number_of_clusters":8}' "https://api.affin.io/campaigns/create_report"
+
+curl -H "Content-Type: application/json" -X POST -d '{"api_key":"YOUR_API_KEY", "followers_of":"pepsi", "source":"Twitter", "report_type":"tweet_content", "name":"Test Report", "tweet_content":"AffinioInc"}' "https://api.affin.io/campaigns/create_report"
 ```
 
 > ###Expected Return
@@ -216,7 +217,7 @@ This endpoint creates a report.
 
 ### HTTP Request
 
-`GET http://api.affin.io/campaigns/create_report`
+`POST http://api.affin.io/campaigns/create_report`
 
 ### Query Parameters
 
