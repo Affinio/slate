@@ -209,8 +209,9 @@ from defaults to 0, and size defaults to 10.</p>
 </tbody></table>
 
 <h2 id="create-a-report">Create a report</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/campaigns/create_report?api_key=YOUR_API_KEY&amp;source=Twitter&amp;report_type=network_graph&amp;name=test_report&amp;followers_of=pepsi&amp;number_of_clusters=8"</span>
-curl <span class="s2">"https://api.affin.io/campaigns/create_report?api_key=YOUR_API_KEY&amp;source=Twitter&amp;report_type=tweet_content&amp;name=test_report&amp;explicit_words=javascript,facebook&amp;number_of_clusters=8"</span>
+<pre class="highlight shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <span class="s1">'{"api_key":"YOUR_API_KEY", "followers_of":"pepsi", "source":"Twitter", "report_type":"network_graph", "name":"Test Report", "number_of_clusters":8}'</span> <span class="s2">"https://api.affin.io/campaigns/create_report"</span>
+
+curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <span class="s1">'{"api_key":"YOUR_API_KEY", "followers_of":"pepsi", "source":"Twitter", "report_type":"tweet_content", "name":"Test Report", "tweet_content":"AffinioInc"}'</span> <span class="s2">"https://api.affin.io/campaigns/create_report"</span>
 </code></pre>
 
 <blockquote>
@@ -233,7 +234,7 @@ curl <span class="s2">"https://api.affin.io/campaigns/create_report?api_key=YOUR
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.affin.io/tribes/campaigns</code></p>
+<p><code class="prettyprint">POST http://api.affin.io/campaigns/create_report</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
