@@ -189,7 +189,10 @@ curl -H "Content-Type: application/json" -X POST -d '{"api_key":"YOUR_API_KEY", 
   "source": "Twitter",
   "email": "phil@affin.io",
   "belongs_to": ["phil@affin.io"],
-  "filters": {"location":"global", followers_of":"affinioinc,phil_renaud,t1mburke"},
+  "filters": {
+        "location":"global", 
+        "followers_of":"affinioinc,phil_renaud,t1mburke"
+            },
   "members_count": 999999,
   "started": 1428682154
 }
