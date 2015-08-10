@@ -16,20 +16,16 @@ search: true
 
 # Introduction
 
-aHi this is a test
-
 Welcome to the Affinio API! You can use our API to access Affinio Reports, Tribes, Ads, and other endpoints.
 
-We have language bindings in Shell, Python, and Javascript; You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+We have language bindings in Shell; You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
 If you have any questions, please don't hesitate to reach out to <a href="mailto:phil@affin.io" target="_blank">Phil Renaud</a> (or <a href="https://twitter.com/phil_renaud" target="_blank">on twitter</a>).
 
 # Authentication
 
 ```shell
-# With shell, you can just pass the correct header with each request
-curl "API_ENDPOINT_HERE"
-  -H "Authorization: YOUR_API_KEY"
+# With shell, you can just pass the correct API_KEY with each request
 ```
 
 <aside class="notice">
@@ -42,14 +38,13 @@ Affinio uses unique keys to allow access to our API. You can register a new Affi
 
 ## Get My Reports (and Public Reports)
 
-
 ```shell
 curl "https://api.affin.io/tribes/my_campaigns?api_key=YOUR_API_KEY"
 curl "https://api.affin.io/tribes/my_campaigns?api_key=YOUR_API_KEY&from=0&size=5"
 ```
 
 > ###Expected Return
-```json
+>```json
 [
   {
     "id": 12345,
@@ -80,7 +75,7 @@ curl "https://api.affin.io/tribes/my_campaigns?api_key=YOUR_API_KEY&from=0&size=
 
 This endpoint retrieves basic details about all Reports to which you have access.
 
-Note: Pagination of results can be done by using the from and size parameters. The from parameter defines the offset from the first result you want to fetch. The size parameter allows you to configure the maximum amount of hits to be returned.
+Note: Pagination of results can be done by using the from and size parameters. The from parameter defines the offset from the first result you want to fetch. The size parameter allows you to configure the maximum amount of campaigns to be returned.
 from defaults to 0, and size defaults to 10.
 
 ### HTTP Request
@@ -179,9 +174,9 @@ id | n/a | The ID of the campaign you're trying to retrieve
 ## Create a report
 
 ```shell
-curl -H "Content-Type: application/json" -X POST -d '{"api_key":"YOUR_API_KEY", "followers_of":"pepsi", "source":"Twitter", "report_type":"network_graph", "name":"Test Report", "number_of_clusters":8}' "https://api.affin.io/campaigns/create_report"
+curl -H "Content-Type: application/json" -X POST -d '{"api_key":"YOUR_API_KEY", "followers_of":"phil_renaud", "source":"Twitter", "report_type":"network_graph", "name":"Test Report", "number_of_clusters":8}' "https://api.affin.io/campaigns/create_report"
 
-curl -H "Content-Type: application/json" -X POST -d '{"api_key":"YOUR_API_KEY", "followers_of":"pepsi", "source":"Twitter", "report_type":"tweet_content", "name":"Test Report", "tweet_content":"AffinioInc"}' "https://api.affin.io/campaigns/create_report"
+curl -H "Content-Type: application/json" -X POST -d '{"api_key":"YOUR_API_KEY", "followers_of":"phil_renaud", "source":"Twitter", "report_type":"tweet_content", "name":"Test Report", "tweet_content":"AffinioInc"}' "https://api.affin.io/campaigns/create_report"
 ```
 
 > ###Expected Return
@@ -190,11 +185,11 @@ curl -H "Content-Type: application/json" -X POST -d '{"api_key":"YOUR_API_KEY", 
 {
   "id": 12345,
   "name": "Affinio Followers Demo Report",
-  "number_of_clusters": "20",
+  "number_of_clusters": 8,
   "source": "Twitter",
   "email": "phil@affin.io",
-  "belongs_to": ["phil@affin.io","stephen@affin.io"],
-  "filters": {"bio_location":"Canada","followers_of":"affinioinc,phil_renaud,t1mburke"},
+  "belongs_to": ["phil@affin.io"],
+  "filters": {"location":"global", followers_of":"affinioinc,phil_renaud,t1mburke"},
   "members_count": 999999,
   "started": 1428682154
 }
@@ -261,7 +256,43 @@ curl "https://api.affin.io/updates/12345_10"
 > ```json
 {
   "timeline": [
-{"date":1424215563000,"count":2324},{"date":1424316109877,"count":2334},{"date":1424402595481,"count":2340},{"date":1424488938672,"count":2344},{"date":1424575309125,"count":2347},{"date":1424661720085,"count":2349},{"date":1424748181169,"count":2353},{"date":1425007423502,"count":2361},{"date":1425093891752,"count":2362},{"date":1425180132382,"count":2365},{"date":1425266575857,"count":2368},{"date":1425352921362,"count":2367},{"date":1425439393128,"count":2381},{"date":1425525746959,"count":2397},{"date":1425612128734,"count":2399},{"date":1425698633694,"count":2401},{"date":1425784975264,"count":2409},{"date":1425871390577,"count":2407},{"date":1425957799567,"count":2406},{"date":1426044230400,"count":2409},{"date":1426168105296,"count":2414},{"date":1426217028517,"count":2416},{"date":1426303308619,"count":2418},{"date":1426389754188,"count":2417},{"date":1426562543741,"count":2422},{"date":1426735529692,"count":2423},{"date":1426821734675,"count":2423},{"date":1426908013114,"count":2425},{"date":1427080839882,"count":2426},{"date":1427167327357,"count":2425},{"date":1427253706159,"count":2426},{"date":1427340075070,"count":2429},{"date":1427426472959,"count":2430},{"date":1427512857909,"count":2434},{"date":1427599239115,"count":2435},{"date":1427685698864,"count":2435},{"date":1427772160485,"count":2434},{"date":1427858469772,"count":2433},{"date":1427944879772,"count":2434},{"date":1428031231275,"count":2437},{"date":1428117629611,"count":2438},{"date":1428204143810,"count":2438},{"date":1428290428330,"count":2438},{"date":1428376870161,"count":2439},{"date":1428463308706,"count":2440},{"date":1428549736858,"count":2441},{"date":1428636107319,"count":2440},{"date":1428722489094,"count":2442},{"date":1428808840243,"count":2442},{"date":1428895287584,"count":2443},{"date":1428981693969,"count":2444}
+        {"date":1424215563000,"count":2324},
+        {"date":1424316109877,"count":2334},
+        {"date":1424402595481,"count":2340},
+        {"date":1424488938672,"count":2344},
+        {"date":1424575309125,"count":2347},
+        {"date":1424661720085,"count":2349},
+        {"date":1424748181169,"count":2353},
+        {"date":1425007423502,"count":2361},
+        {"date":1425093891752,"count":2362},
+        {"date":1425180132382,"count":2365},
+        {"date":1425266575857,"count":2368},
+        {"date":1425352921362,"count":2367},
+        {"date":1425439393128,"count":2381},
+        {"date":1425525746959,"count":2397},
+        {"date":1425612128734,"count":2399},
+        {"date":1425698633694,"count":2401},
+        {"date":1425784975264,"count":2409},
+        {"date":1425871390577,"count":2407},
+        {"date":1425957799567,"count":2406},
+        {"date":1426044230400,"count":2409},
+        {"date":1426168105296,"count":2414},
+        {"date":1426217028517,"count":2416},
+        {"date":1426303308619,"count":2418},
+        {"date":1426389754188,"count":2417},
+        {"date":1426562543741,"count":2422},
+        {"date":1426735529692,"count":2423},
+        {"date":1426821734675,"count":2423},
+        {"date":1426908013114,"count":2425},
+        {"date":1427080839882,"count":2426},
+        {"date":1427167327357,"count":2425},
+        {"date":1427253706159,"count":2426},
+        {"date":1427340075070,"count":2429},
+        {"date":1427426472959,"count":2430},
+        {"date":1427512857909,"count":2434},
+        {"date":1427599239115,"count":2435},
+        {"date":1427685698864,"count":2435},
+        {"date":1427772160485,"count":2434}
   ]
 }
 ```
@@ -295,7 +326,6 @@ id | n/a | The ID of the tribe or campaign you're trying to retrieve
 # Content and Bios
 
 ## Top Hashtags
-
 
 ```shell
 curl "https://api.affin.io/content/top_hashtags?api_key=YOUR_API_KEY&tribe_id=12345_10"
@@ -341,7 +371,6 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 
 
 ## Top Mentions
-
 
 ```shell
 curl "https://api.affin.io/content/top_mentions?api_key=YOUR_API_KEY&tribe_id=12345_10"
@@ -644,8 +673,6 @@ Parameter | Default | Description
 --------- | ------- | -----------
 api_key | n/a | Your API key
 tribe_id | n/a | The ID of the tribe you're trying to retrieve
-
-
 
 
 
