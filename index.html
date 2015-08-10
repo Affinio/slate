@@ -140,14 +140,6 @@ from defaults to 0, and size defaults to 10.</p>
 </tbody></table>
 
 <h2 id="get-a-specific-report">Get a specific report</h2>
-<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
-<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="nx">api</span><span class="p">.</span><span class="nx">campaigns</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span>
-</code></pre>
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
-<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">campaigns</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span>
-</code></pre>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/tribes/campaigns?api_key=YOUR_API_KEY&amp;tribe_id=12345"</span>
 </code></pre>
 
@@ -305,14 +297,6 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 <h1 id="tribe-monitoring">Tribe Monitoring</h1>
 
 <h2 id="get-gained-lost-numbers-about-a-given-tribe-or-report">Get Gained/Lost Numbers about a given Tribe or Report</h2>
-<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
-<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="nx">api</span><span class="p">.</span><span class="nx">updates</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">12345</span><span class="nx">_10</span><span class="p">)</span>
-</code></pre>
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
-<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">updates</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">12345</span><span class="n">_10</span><span class="p">)</span>
-</code></pre>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/updates/12345_10"</span>
   -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
 </code></pre>
@@ -730,14 +714,6 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 </tbody></table>
 
 <h2 id="top-locations">Top Locations</h2>
-<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
-<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="nx">api</span><span class="p">.</span><span class="nx">hashtags</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"12345_10"</span><span class="p">)</span>
-</code></pre>
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
-<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">hashtags</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"12345_10"</span><span class="p">)</span>
-</code></pre>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/content/top_locations?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
 </code></pre>
 
@@ -792,14 +768,6 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 </tbody></table>
 
 <h2 id="top-urls">Top URLs</h2>
-<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
-<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="nx">api</span><span class="p">.</span><span class="nx">hashtags</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"12345_10"</span><span class="p">)</span>
-</code></pre>
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
-<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">hashtags</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"12345_10"</span><span class="p">)</span>
-</code></pre>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/content/top_urls?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
 </code></pre>
 
@@ -858,14 +826,6 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 </tbody></table>
 
 <h2 id="top-domains">Top Domains</h2>
-<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
-<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="nx">api</span><span class="p">.</span><span class="nx">hashtags</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"12345_10"</span><span class="p">)</span>
-</code></pre>
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
-<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">hashtags</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"12345_10"</span><span class="p">)</span>
-</code></pre>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/content/top_domains?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
 </code></pre>
 
@@ -924,14 +884,6 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 </tbody></table>
 
 <h2 id="top-influencers">Top Influencers</h2>
-<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
-<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="nx">api</span><span class="p">.</span><span class="nx">hashtags</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"12345_10"</span><span class="p">)</span>
-</code></pre>
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
-<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">hashtags</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"12345_10"</span><span class="p">)</span>
-</code></pre>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/content/top_influencers?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
 </code></pre>
 
@@ -994,14 +946,6 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 </tbody></table>
 
 <h2 id="competitive-breakdown">Competitive Breakdown</h2>
-<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
-<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="nx">api</span><span class="p">.</span><span class="nx">hashtags</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"12345_10"</span><span class="p">)</span>
-</code></pre>
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
-<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">hashtags</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"12345_10"</span><span class="p">)</span>
-</code></pre>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/content/top_competitivebreakdown?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
 </code></pre>
 
@@ -1077,14 +1021,6 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 <h1 id="affinity-search-api">Affinity Search API</h1>
 
 <h2 id="tribes-influenced-by-a-user">Tribes influenced by a User</h2>
-<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
-<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="nx">api</span><span class="p">.</span><span class="nx">influenced_by</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"phil_renaud"</span><span class="p">)</span>
-</code></pre>
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
-<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">influenced_by</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"phil_renaud"</span><span class="p">)</span>
-</code></pre>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/affinity_search/influenced_by?api_key=YOUR_API_KEY&amp;handle=phil_renaud"</span>
 curl <span class="s2">"https://api.affin.io/affinity_search/influenced_by?api_key=YOUR_API_KEY&amp;handle=phil_renaud&amp;from=0&amp;size=5"</span>
 curl <span class="s2">"https://api.affin.io/affinity_search/influenced_by?api_key=YOUR_API_KEY&amp;handle=phil_renaud&amp;ids=12345_1,12345_5"</span>
@@ -1167,14 +1103,6 @@ from defaults to 0, and size defaults to 10.</p>
 </tbody></table>
 
 <h2 id="tribes-containing-a-member">Tribes containing a Member</h2>
-<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
-<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="nx">api</span><span class="p">.</span><span class="nx">contains_member</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"phil_renaud"</span><span class="p">)</span>
-</code></pre>
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
-<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">contains_member</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"phil_renaud"</span><span class="p">)</span>
-</code></pre>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/affinity_search/contains_member?api_key=YOUR_API_KEY&amp;handle=phil_renaud"</span>
 </code></pre>
 
@@ -1249,14 +1177,6 @@ from defaults to 0, and size defaults to 10.</p>
 </tbody></table>
 
 <h2 id="tribes-that-use-a-term">Tribes that use a term</h2>
-<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
-<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="nx">api</span><span class="p">.</span><span class="nx">uses_term</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"tbt"</span><span class="p">)</span>
-</code></pre>
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
-<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">uses_term</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"tbt"</span><span class="p">)</span>
-</code></pre>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/affinity_search/uses_term?api_key=YOUR_API_KEY&amp;term=javascript&amp;metric=hashtag"</span>
 </code></pre>
 
@@ -1335,14 +1255,6 @@ Possible metrics include &ldquo;hashtag&rdquo;, &ldquo;mention&rdquo;, &ldquo;ke
 <h1 id="cross-platform-api">Cross-Platform API</h1>
 
 <h2 id="all-known-social-media-accounts-of-a-given-user">All known Social Media accounts of a given user</h2>
-<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
-<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="nx">api</span><span class="p">.</span><span class="nx">cross_platform</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"phil_renaud"</span><span class="p">)</span>
-</code></pre>
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
-<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">cross_platform</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"phil_renaud"</span><span class="p">)</span>
-</code></pre>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/cross_platform/cross_platform?api_key=YOUR_API_KEY&amp;network=twitter&amp;handle=phil_renaud"</span>
 </code></pre>
 
@@ -1391,14 +1303,6 @@ Possible metrics include &ldquo;hashtag&rdquo;, &ldquo;mention&rdquo;, &ldquo;ke
 <h1 id="classification-api">Classification API</h1>
 
 <h2 id="profile-a-user-by-analyzing-content-and-favorites">Profile a user by analyzing content and favorites</h2>
-<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
-<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="nx">api</span><span class="p">.</span><span class="nx">classify</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"phil_renaud"</span><span class="p">)</span>
-</code></pre>
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
-<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">classify</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"phil_renaud"</span><span class="p">)</span>
-</code></pre>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/classify/phil_renaud"</span>
   -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
 </code></pre>
@@ -1444,14 +1348,6 @@ Possible classifications include &ldquo;Technophiles&rdquo;, &ldquo;Auto Enthusi
 <h1 id="misc">Misc</h1>
 
 <h2 id="translate-a-country-into-cities-regions">Translate a Country into Cities/Regions</h2>
-<pre class="highlight javascript"><code><span class="nx">require</span> <span class="s1">'affinio'</span>
-<span class="nx">api</span> <span class="o">=</span> <span class="nx">Affinio</span><span class="p">.</span><span class="nx">APIClient</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="nx">api</span><span class="p">.</span><span class="nx">citify</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"Canada"</span><span class="p">)</span>
-</code></pre>
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">affinio</span>
-<span class="n">api</span> <span class="o">=</span> <span class="n">affinio</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">citify</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"Canada"</span><span class="p">)</span>
-</code></pre>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/citify/Canada"</span>
   -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
 </code></pre>
