@@ -49,8 +49,7 @@ curl "https://api.affin.io/tribes/my_campaigns?api_key=YOUR_API_KEY&from=0&size=
 ```
 
 > ###Expected Return
-
-> ```json
+```json
 [
   {
     "id": 12345,
