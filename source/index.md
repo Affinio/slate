@@ -110,18 +110,6 @@ size | 10 | The maximum amount of campaigns to be returned.
 
 ## Get a specific report
 
-```javascript
-require 'affinio'
-api = Affinio.APIClient.authorize('YOUR_API_KEY')
-api.campaigns.get(12345)
-```
-
-```python
-import affinio
-api = affinio.authorize('YOUR_API_KEY')
-api.campaigns.get(12345)
-```
-
 ```shell
 curl "https://api.affin.io/tribes/campaigns?api_key=YOUR_API_KEY&tribe_id=12345"
 ```
@@ -263,18 +251,6 @@ maxInfluencerFollowers | NULL | Optional
 # Tribe Monitoring
 
 ## Get Gained/Lost Numbers about a given Tribe or Report
-
-```javascript
-require 'affinio'
-api = Affinio.APIClient.authorize('YOUR_API_KEY')
-api.updates.get(12345_10)
-```
-
-```python
-import affinio
-api = affinio.authorize('YOUR_API_KEY')
-api.updates.get(12345_10)
-```
 
 ```shell
 curl "https://api.affin.io/updates/12345_10"
@@ -630,18 +606,6 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 
 ## Top Locations
 
-```javascript
-require 'affinio'
-api = Affinio.APIClient.authorize('YOUR_API_KEY')
-api.hashtags.get("12345_10")
-```
-
-```python
-import affinio
-api = affinio.authorize('YOUR_API_KEY')
-api.hashtags.get("12345_10")
-```
-
 ```shell
 curl "https://api.affin.io/content/top_locations?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
@@ -687,18 +651,6 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 
 
 ## Top URLs
-
-```javascript
-require 'affinio'
-api = Affinio.APIClient.authorize('YOUR_API_KEY')
-api.hashtags.get("12345_10")
-```
-
-```python
-import affinio
-api = affinio.authorize('YOUR_API_KEY')
-api.hashtags.get("12345_10")
-```
 
 ```shell
 curl "https://api.affin.io/content/top_urls?api_key=YOUR_API_KEY&tribe_id=12345_10"
@@ -748,18 +700,6 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 
 ## Top Domains
 
-```javascript
-require 'affinio'
-api = Affinio.APIClient.authorize('YOUR_API_KEY')
-api.hashtags.get("12345_10")
-```
-
-```python
-import affinio
-api = affinio.authorize('YOUR_API_KEY')
-api.hashtags.get("12345_10")
-```
-
 ```shell
 curl "https://api.affin.io/content/top_domains?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
@@ -808,18 +748,6 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 
 
 ## Top Influencers
-
-```javascript
-require 'affinio'
-api = Affinio.APIClient.authorize('YOUR_API_KEY')
-api.hashtags.get("12345_10")
-```
-
-```python
-import affinio
-api = affinio.authorize('YOUR_API_KEY')
-api.hashtags.get("12345_10")
-```
 
 ```shell
 curl "https://api.affin.io/content/top_influencers?api_key=YOUR_API_KEY&tribe_id=12345_10"
@@ -873,18 +801,6 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 
 
 ## Competitive Breakdown
-
-```javascript
-require 'affinio'
-api = Affinio.APIClient.authorize('YOUR_API_KEY')
-api.hashtags.get("12345_10")
-```
-
-```python
-import affinio
-api = affinio.authorize('YOUR_API_KEY')
-api.hashtags.get("12345_10")
-```
 
 ```shell
 curl "https://api.affin.io/content/top_competitivebreakdown?api_key=YOUR_API_KEY&tribe_id=12345_10"
@@ -958,18 +874,6 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 
 ## Tribes influenced by a User
 
-```javascript
-require 'affinio'
-api = Affinio.APIClient.authorize('YOUR_API_KEY')
-api.influenced_by.get("phil_renaud")
-```
-
-```python
-import affinio
-api = affinio.authorize('YOUR_API_KEY')
-api.influenced_by.get("phil_renaud")
-```
-
 ```shell
 curl "https://api.affin.io/affinity_search/influenced_by?api_key=YOUR_API_KEY&handle=phil_renaud"
 curl "https://api.affin.io/affinity_search/influenced_by?api_key=YOUR_API_KEY&handle=phil_renaud&from=0&size=5"
@@ -1032,18 +936,6 @@ size | 10 | The maximum amount of campaigns to be returned.
 
 ## Tribes containing a Member
 
-```javascript
-require 'affinio'
-api = Affinio.APIClient.authorize('YOUR_API_KEY')
-api.contains_member.get("phil_renaud")
-```
-
-```python
-import affinio
-api = affinio.authorize('YOUR_API_KEY')
-api.contains_member.get("phil_renaud")
-```
-
 ```shell
 curl "https://api.affin.io/affinity_search/contains_member?api_key=YOUR_API_KEY&handle=phil_renaud"
 ```
@@ -1100,18 +992,6 @@ size | 10 | The maximum amount of campaigns to be returned.
 
 
 ## Tribes that use a term
-
-```javascript
-require 'affinio'
-api = Affinio.APIClient.authorize('YOUR_API_KEY')
-api.uses_term.get("tbt")
-```
-
-```python
-import affinio
-api = affinio.authorize('YOUR_API_KEY')
-api.uses_term.get("tbt")
-```
 
 ```shell
 curl "https://api.affin.io/affinity_search/uses_term?api_key=YOUR_API_KEY&term=javascript&metric=hashtag"
@@ -1183,18 +1063,6 @@ Possible metrics include "hashtag", "mention", "keyword", "bio_keyword", "locati
 
 ## All known Social Media accounts of a given user
 
-```javascript
-require 'affinio'
-api = Affinio.APIClient.authorize('YOUR_API_KEY')
-api.cross_platform.get("phil_renaud")
-```
-
-```python
-import affinio
-api = affinio.authorize('YOUR_API_KEY')
-api.cross_platform.get("phil_renaud")
-```
-
 ```shell
 curl "https://api.affin.io/cross_platform/cross_platform?api_key=YOUR_API_KEY&network=twitter&handle=phil_renaud"
 ```
@@ -1240,18 +1108,6 @@ network | "twitter" | The network that the aforementioned handle belongs to
 # Classification API
 
 ## Profile a user by analyzing content and favorites
-
-```javascript
-require 'affinio'
-api = Affinio.APIClient.authorize('YOUR_API_KEY')
-api.classify.get("phil_renaud")
-```
-
-```python
-import affinio
-api = affinio.authorize('YOUR_API_KEY')
-api.classify.get("phil_renaud")
-```
 
 ```shell
 curl "https://api.affin.io/classify/phil_renaud"
@@ -1299,18 +1155,6 @@ Possible classifications include "Technophiles", "Auto Enthusiasts", "Avid Inves
 # Misc
 
 ## Translate a Country into Cities/Regions
-
-```javascript
-require 'affinio'
-api = Affinio.APIClient.authorize('YOUR_API_KEY')
-api.citify.get("Canada")
-```
-
-```python
-import affinio
-api = affinio.authorize('YOUR_API_KEY')
-api.citify.get("Canada")
-```
 
 ```shell
 curl "https://api.affin.io/citify/Canada"
