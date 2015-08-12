@@ -107,7 +107,7 @@ from defaults to 0, and size defaults to 10.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.affin.io/tribes/campaigns</code></p>
+<p><code class="prettyprint">GET http://api.affin.io/tribes/my_campaigns</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -132,6 +132,16 @@ from defaults to 0, and size defaults to 10.</p>
 <td>size</td>
 <td>10</td>
 <td>The maximum amount of campaigns to be returned.</td>
+</tr>
+<tr>
+<td>created_before</td>
+<td>null</td>
+<td>Returns all campaigns created before a certain date (in milliseconds)</td>
+</tr>
+<tr>
+<td>created_after</td>
+<td>null</td>
+<td>Returns all campaigns created after a certain date (in milliseconds)</td>
 </tr>
 </tbody></table>
 
