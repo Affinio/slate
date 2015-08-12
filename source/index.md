@@ -80,7 +80,7 @@ from defaults to 0, and size defaults to 10.
 
 ### HTTP Request
 
-`GET http://api.affin.io/tribes/campaigns`
+`GET http://api.affin.io/tribes/my_campaigns`
 
 ### Query Parameters
 
@@ -89,6 +89,8 @@ Parameter | Default | Description
 api_key | YOUR_API_KEY | Your API key
 from | 0 | The offset from the first result you want to fetch. 
 size | 10 | The maximum amount of campaigns to be returned.
+created_before | null | Returns all campaigns created before a certain date (in milliseconds)
+created_after | null | Returns all campaigns created after a certain date (in milliseconds)
 
 
 
