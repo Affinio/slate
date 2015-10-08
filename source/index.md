@@ -39,8 +39,8 @@ Affinio uses unique keys to allow access to our API. You can register a new Affi
 ## Get My Reports (and Public Reports)
 
 ```shell
-curl "https://api.affin.io/tribes/my_campaigns?api_key=YOUR_API_KEY"
-curl "https://api.affin.io/tribes/my_campaigns?api_key=YOUR_API_KEY&from=0&size=5"
+curl "https://api.affin.io/v1/tribes/my_campaigns?api_key=YOUR_API_KEY"
+curl "https://api.affin.io/v1/tribes/my_campaigns?api_key=YOUR_API_KEY&from=0&size=5"
 ```
 
 > ###Expected Return
@@ -80,7 +80,7 @@ from defaults to 0, and size defaults to 10.
 
 ### HTTP Request
 
-`GET http://api.affin.io/tribes/my_campaigns`
+`GET http://api.affin.io/v1/tribes/my_campaigns`
 
 ### Query Parameters
 
@@ -107,7 +107,7 @@ created_after | null | Returns all campaigns created after a certain date (in mi
 ## Get a specific report
 
 ```shell
-curl "https://api.affin.io/tribes/campaigns?api_key=YOUR_API_KEY&tribe_id=12345"
+curl "https://api.affin.io/v1/tribes/campaigns?api_key=YOUR_API_KEY&tribe_id=12345"
 ```
 
 > ###Expected Return
@@ -144,7 +144,7 @@ This endpoint retrieves basic details about a given report to which you have acc
 
 ### HTTP Request
 
-`GET http://api.affin.io/tribes/campaigns`
+`GET http://api.affin.io/v1/tribes/campaigns`
 
 ### Query Parameters
 
@@ -176,9 +176,9 @@ id | n/a | The ID of the campaign you're trying to retrieve
 ## Create a report
 
 ```shell
-curl -H "Content-Type: application/json" -X POST -d '{"api_key":"YOUR_API_KEY", "followers_of":"phil_renaud", "source":"Twitter", "report_type":"network_graph", "name":"Test Report", "number_of_clusters":8}' "https://api.affin.io/campaigns/create_report"
+curl -H "Content-Type: application/json" -X POST -d '{"api_key":"YOUR_API_KEY", "followers_of":"phil_renaud", "source":"Twitter", "report_type":"network_graph", "name":"Test Report", "number_of_clusters":8}' "https://api.affin.io/v1/campaigns/create_report"
 
-curl -H "Content-Type: application/json" -X POST -d '{"api_key":"YOUR_API_KEY", "followers_of":"phil_renaud", "source":"Twitter", "report_type":"tweet_content", "name":"Test Report", "tweet_content":"AffinioInc"}' "https://api.affin.io/campaigns/create_report"
+curl -H "Content-Type: application/json" -X POST -d '{"api_key":"YOUR_API_KEY", "followers_of":"phil_renaud", "source":"Twitter", "report_type":"tweet_content", "name":"Test Report", "tweet_content":"AffinioInc"}' "https://api.affin.io/v1/campaigns/create_report"
 ```
 
 > ###Expected Return
@@ -204,7 +204,7 @@ This endpoint creates a report.
 
 ### HTTP Request
 
-`POST http://api.affin.io/campaigns/create_report`
+`POST http://api.affin.io/v1/campaigns/create_report`
 
 ### Query Parameters
 
@@ -252,7 +252,7 @@ maxInfluencerFollowers | NULL | Optional
 ## Get Gained/Lost Numbers about a given Tribe or Report
 
 ```shell
-curl "https://api.affin.io/updates/12345_10"
+curl "https://api.affin.io/v1/updates/12345_10"
   -H "Authorization: YOUR_API_KEY"
 ```
 
@@ -306,7 +306,7 @@ Retrieves the members count (often followers count) of a given tribe or report o
 
 ### HTTP Request
 
-`GET http://api.affin.io/updates/12345_10`
+`GET http://api.affin.io/v1/updates/12345_10`
 
 ### Query Parameters
 
@@ -333,7 +333,7 @@ id | n/a | The ID of the tribe or campaign you're trying to retrieve
 ## Top Hashtags
 
 ```shell
-curl "https://api.affin.io/content/top_hashtags?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/v1/content/top_hashtags?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
 
 > ###Expected Return
@@ -363,7 +363,7 @@ Retrieves the top 100 hashtags for a given tribe.
 
 ### HTTP Request
 
-`GET https://api.affin.io/content/top_hashtags`
+`GET https://api.affin.io/v1/content/top_hashtags`
 
 ### Query Parameters
 
@@ -378,7 +378,7 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 ## Top Mentions
 
 ```shell
-curl "https://api.affin.io/content/top_mentions?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/v1/content/top_mentions?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
 
 > ###Expected Return
@@ -408,7 +408,7 @@ Retrieves the top mentions for a given tribe.
 
 ### HTTP Request
 
-`GET http://api.affin.io/content/top_mentions`
+`GET http://api.affin.io/v1/content/top_mentions`
 
 ### Query Parameters
 
@@ -422,7 +422,7 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 ## Top Tweet Keywords
 
 ```shell
-curl "https://api.affin.io/content/top_tweetkeywords?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/v1/content/top_tweetkeywords?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
 
 > ###Expected Return
@@ -452,7 +452,7 @@ Retrieves the top tweet keywords for a given tribe.
 
 ### HTTP Request
 
-`GET http://api.affin.io/content/top_tweetkeywords`
+`GET http://api.affin.io/v1/content/top_tweetkeywords`
 
 ### Query Parameters
 
@@ -465,7 +465,7 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 ## Top Bio Keywords
 
 ```shell
-curl "https://api.affin.io/content/top_biokeywords?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/v1/content/top_biokeywords?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
 
 > ###Expected Return
@@ -495,7 +495,7 @@ Retrieves the top bio keywords for a given tribe.
 
 ### HTTP Request
 
-`GET http://api.affin.io/content/top_biokeywords`
+`GET http://api.affin.io/v1/content/top_biokeywords`
 
 ### Query Parameters
 
@@ -509,7 +509,7 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 ## Top Categories
 
 ```shell
-curl "https://api.affin.io/content/top_categories?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/v1/content/top_categories?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
 
 > ###Expected Return
@@ -539,7 +539,7 @@ Retrieves the top categories for a given tribe.
 
 ### HTTP Request
 
-`GET http://api.affin.io/content/top_categories`
+`GET http://api.affin.io/v1/content/top_categories`
 
 ### Query Parameters
 
@@ -552,7 +552,7 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 ## Top Apps
 
 ```shell
-curl "https://api.affin.io/content/top_apps?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/v1/content/top_apps?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
 
 > ###Expected Return
@@ -582,7 +582,7 @@ Retrieves the top apps for a given tribe.
 
 ### HTTP Request
 
-`GET http://api.affin.io/content/top_apps`
+`GET http://api.affin.io/v1/content/top_apps`
 
 ### Query Parameters
 
@@ -597,7 +597,7 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 ## Top Favorites
 
 ```shell
-curl "https://api.affin.io/content/top_favorites?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/v1/content/top_favorites?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
 
 > ###Expected Return
@@ -627,7 +627,7 @@ Retrieves the top favorites for a given tribe.
 
 ### HTTP Request
 
-`GET http://api.affin.io/content/top_favorites`
+`GET http://api.affin.io/v1/content/top_favorites`
 
 ### Query Parameters
 
@@ -640,7 +640,7 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 ## Top Locations
 
 ```shell
-curl "https://api.affin.io/content/top_locations?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/v1/content/top_locations?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
 
 > ###Expected Return
@@ -670,7 +670,7 @@ Retrieves the top locations for a given tribe.
 
 ### HTTP Request
 
-`GET http://api.affin.io/content/top_locations`
+`GET http://api.affin.io/v1/content/top_locations`
 
 ### Query Parameters
 
@@ -684,7 +684,7 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 ## Top URLs
 
 ```shell
-curl "https://api.affin.io/content/top_urls?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/v1/content/top_urls?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
 
 > ###Expected Return
@@ -718,7 +718,7 @@ Retrieves the top URLs for a given tribe.
 
 ### HTTP Request
 
-`GET http://api.affin.io/content/top_urls`
+`GET http://api.affin.io/v1/content/top_urls`
 
 ### Query Parameters
 
@@ -732,7 +732,7 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 ## Top Domains
 
 ```shell
-curl "https://api.affin.io/content/top_domains?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/v1/content/top_domains?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
 
 > ###Expected Return
@@ -766,7 +766,7 @@ Retrieves the top domains for a given tribe.
 
 ### HTTP Request
 
-`GET http://api.affin.io/content/top_domains?api_key=YOUR_API_KEY&tribe_id=12345_10`
+`GET http://api.affin.io/v1/content/top_domains?api_key=YOUR_API_KEY&tribe_id=12345_10`
 
 ### Query Parameters
 
@@ -781,7 +781,7 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 ## Top Influencers
 
 ```shell
-curl "https://api.affin.io/content/top_influencers?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
 
 > ###Expected Return
@@ -819,7 +819,7 @@ Retrieves the top 1000 influencers for a given tribe.
 
 ### HTTP Request
 
-`GET http://api.affin.io/content/top_influencers`
+`GET http://api.affin.io/v1/content/top_influencers`
 
 ### Query Parameters
 
@@ -834,7 +834,7 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 ## Competitive Breakdown
 
 ```shell
-curl "https://api.affin.io/content/top_competitivebreakdown?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/v1/content/top_competitivebreakdown?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
 
 > ###Expected Return
@@ -883,7 +883,7 @@ Retrieves the competitive breakdown for a given tribe.
 
 ### HTTP Request
 
-`GET http://api.affin.io/content/top_competitivebreakdown`
+`GET http://api.affin.io/v1/content/top_competitivebreakdown`
 
 ### Query Parameters
 
@@ -906,9 +906,9 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 ## Tribes influenced by a User
 
 ```shell
-curl "https://api.affin.io/affinity_search/influenced_by?api_key=YOUR_API_KEY&handle=phil_renaud"
-curl "https://api.affin.io/affinity_search/influenced_by?api_key=YOUR_API_KEY&handle=phil_renaud&from=0&size=5"
-curl "https://api.affin.io/affinity_search/influenced_by?api_key=YOUR_API_KEY&handle=phil_renaud&ids=12345_1,12345_5"
+curl "https://api.affin.io/v1/affinity_search/influenced_by?api_key=YOUR_API_KEY&handle=phil_renaud"
+curl "https://api.affin.io/v1/affinity_search/influenced_by?api_key=YOUR_API_KEY&handle=phil_renaud&from=0&size=5"
+curl "https://api.affin.io/v1/affinity_search/influenced_by?api_key=YOUR_API_KEY&handle=phil_renaud&ids=12345_1,12345_5"
 ```
 
 > ###Expected Return
@@ -951,7 +951,7 @@ from defaults to 0, and size defaults to 10.
 
 ### HTTP Request
 
-`GET http://api.affin.io/affinity_search/influenced_by`
+`GET http://api.affin.io/v1/affinity_search/influenced_by`
 
 ### Query Parameters
 
@@ -968,7 +968,7 @@ size | 10 | The maximum amount of campaigns to be returned.
 ## Tribes containing a Member
 
 ```shell
-curl "https://api.affin.io/affinity_search/contains_member?api_key=YOUR_API_KEY&handle=phil_renaud"
+curl "https://api.affin.io/v1/affinity_search/contains_member?api_key=YOUR_API_KEY&handle=phil_renaud"
 ```
 
 > ###Expected Return
@@ -1005,7 +1005,7 @@ from defaults to 0, and size defaults to 10.
 
 ### HTTP Request
 
-`GET http://api.affin.io/affinity_search/contains_member`
+`GET http://api.affin.io/v1/affinity_search/contains_member`
 
 ### Query Parameters
 
@@ -1025,7 +1025,7 @@ size | 10 | The maximum amount of campaigns to be returned.
 ## Tribes that use a term
 
 ```shell
-curl "https://api.affin.io/affinity_search/uses_term?api_key=YOUR_API_KEY&term=javascript&metric=hashtag"
+curl "https://api.affin.io/v1/affinity_search/uses_term?api_key=YOUR_API_KEY&term=javascript&metric=hashtag"
 ```
 
 > ###Expected Return
@@ -1063,7 +1063,7 @@ Finds all tribes using a specific term (hashtag, mention, etc.)
 
 ### HTTP Request
 
-`GET http://api.affin.io/affinity_search/uses_term`
+`GET http://api.affin.io/v1/affinity_search/uses_term`
 
 ### Query Parameters
 
@@ -1095,7 +1095,7 @@ Possible metrics include "hashtag", "mention", "keyword", "bio_keyword", "locati
 ## All known Social Media accounts of a given user
 
 ```shell
-curl "https://api.affin.io/cross_platform/cross_platform?api_key=YOUR_API_KEY&network=twitter&handle=phil_renaud"
+curl "https://api.affin.io/v1/cross_platform/cross_platform?api_key=YOUR_API_KEY&network=twitter&handle=phil_renaud"
 ```
 
 > ###Expected Return
@@ -1117,7 +1117,7 @@ Finds all social media account handles / IDs for a given user. Assumes twitter b
 
 ### HTTP Request
 
-`GET http://api.affin.io/cross_platform/cross_platform
+`GET http://api.affin.io/v1/cross_platform/cross_platform
 
 ### Query Parameters
 
@@ -1141,7 +1141,7 @@ network | "twitter" | The network that the aforementioned handle belongs to
 ## Profile a user by analyzing content and favorites
 
 ```shell
-curl "https://api.affin.io/classify/phil_renaud"
+curl "https://api.affin.io/v1/classify/phil_renaud"
   -H "Authorization: YOUR_API_KEY"
 ```
 
@@ -1161,7 +1161,7 @@ Reads tweets and favorites by a given user and uses machine learning / classific
 
 ### HTTP Request
 
-`GET http://api.affin.io/classify/phil_renaud`
+`GET http://api.affin.io/v1/classify/phil_renaud`
 
 ### Query Parameters
 
@@ -1188,7 +1188,7 @@ Possible classifications include "Technophiles", "Auto Enthusiasts", "Avid Inves
 ## Translate a Country into Cities/Regions
 
 ```shell
-curl "https://api.affin.io/citify/Canada"
+curl "https://api.affin.io/v1/citify/Canada"
   -H "Authorization: YOUR_API_KEY"
 ```
 
@@ -1212,7 +1212,7 @@ Translates a country or region into smaller parts (regions, cities, neighbourhoo
 
 ### HTTP Request
 
-`GET http://api.affin.io/citify/canada`
+`GET http://api.affin.io/v1/citify/canada`
 
 ### Query Parameters
 
