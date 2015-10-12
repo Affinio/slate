@@ -65,8 +65,8 @@ We are limiting access to our API to specific partners at the present time. Plea
 <h1 id="tribes-and-reports">Tribes and Reports</h1>
 
 <h2 id="get-my-reports-and-public-reports">Get My Reports (and Public Reports)</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/tribes/my_campaigns?api_key=YOUR_API_KEY"</span>
-curl <span class="s2">"https://api.affin.io/tribes/my_campaigns?api_key=YOUR_API_KEY&amp;from=0&amp;size=5"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/tribes/my_campaigns?api_key=YOUR_API_KEY"</span>
+curl <span class="s2">"https://api.affin.io/v1/tribes/my_campaigns?api_key=YOUR_API_KEY&amp;from=0&amp;size=5"</span>
 </code></pre>
 
 <blockquote>
@@ -107,7 +107,7 @@ from defaults to 0, and size defaults to 10.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.affin.io/tribes/my_campaigns</code></p>
+<p><code class="prettyprint">GET http://api.affin.io/v1/tribes/my_campaigns</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -146,7 +146,7 @@ from defaults to 0, and size defaults to 10.</p>
 </tbody></table>
 
 <h2 id="get-a-specific-report">Get a specific report</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/tribes/campaigns?api_key=YOUR_API_KEY&amp;tribe_id=12345"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/tribes/campaigns?api_key=YOUR_API_KEY&amp;tribe_id=12345"</span>
 </code></pre>
 
 <blockquote>
@@ -183,7 +183,7 @@ from defaults to 0, and size defaults to 10.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.affin.io/tribes/campaigns</code></p>
+<p><code class="prettyprint">GET http://api.affin.io/v1/tribes/campaigns</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -207,9 +207,9 @@ from defaults to 0, and size defaults to 10.</p>
 </tbody></table>
 
 <h2 id="create-a-report">Create a report</h2>
-<pre class="highlight shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <span class="s1">'{"api_key":"YOUR_API_KEY", "followers_of":"phil_renaud", "source":"Twitter", "report_type":"network_graph", "name":"Test Report", "number_of_clusters":8}'</span> <span class="s2">"https://api.affin.io/campaigns/create_report"</span>
+<pre class="highlight shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <span class="s1">'{"api_key":"YOUR_API_KEY", "followers_of":"phil_renaud", "source":"Twitter", "report_type":"network_graph", "name":"Test Report", "number_of_clusters":8}'</span> <span class="s2">"https://api.affin.io/v1/campaigns/create_report"</span>
 
-curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <span class="s1">'{"api_key":"YOUR_API_KEY", "followers_of":"phil_renaud", "source":"Twitter", "report_type":"tweet_content", "name":"Test Report", "tweet_content":"AffinioInc"}'</span> <span class="s2">"https://api.affin.io/campaigns/create_report"</span>
+curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <span class="s1">'{"api_key":"YOUR_API_KEY", "followers_of":"phil_renaud", "source":"Twitter", "report_type":"tweet_content", "name":"Test Report", "tweet_content":"AffinioInc"}'</span> <span class="s2">"https://api.affin.io/v1/campaigns/create_report"</span>
 </code></pre>
 
 <blockquote>
@@ -235,7 +235,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://api.affin.io/campaigns/create_report</code></p>
+<p><code class="prettyprint">POST http://api.affin.io/v1/campaigns/create_report</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -303,10 +303,63 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 </tr>
 </tbody></table>
 
+<h2 id="get-cluster_svg">Get cluster_svg</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/campaigns?api_key=YOUR_API_KEY&amp;id=12345,23456,56789"</span>
+</code></pre>
+
+<blockquote>
+<h3 id="expected-return">Expected Return</h3>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12345</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Affinio Followers Demo Report"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"cluster_svg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-us-west-2.amazonaws.com/com.affinio.reports/12345/SVGs/cluster.svg"</span><span class="p">,</span><span class="w">
+  </span><span class="err">}</span><span class="p">,</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">23456</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Affinio Followers Demo Report"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"cluster_svg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-us-west-2.amazonaws.com/com.affinio.reports/23456/SVGs/cluster.svg"</span><span class="p">,</span><span class="w">
+  </span><span class="err">}</span><span class="p">,</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">34567</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Affinio Followers Demo Report"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"cluster_svg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-us-west-2.amazonaws.com/com.affinio.reports/34567/SVGs/cluster.svg"</span><span class="p">,</span><span class="w">
+  </span><span class="err">}</span><span class="p">,</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+</blockquote>
+
+<p>This endpoint retrieves the cluster_svg of a campaign or multiple campaigns.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.affin.io/v1/campaigns/get_svg</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api_key</td>
+<td>YOUR_API_KEY</td>
+<td>Your API key</td>
+</tr>
+<tr>
+<td>id</td>
+<td>n/a</td>
+<td>A campaign id or campaign ids separated by comma.</td>
+</tr>
+</tbody></table>
+
 <h1 id="tribe-monitoring">Tribe Monitoring</h1>
 
 <h2 id="get-gained-lost-numbers-about-a-given-tribe-or-report">Get Gained/Lost Numbers about a given Tribe or Report</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/updates/12345_10"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/updates/12345_10"</span>
   -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
 </code></pre>
 
@@ -360,7 +413,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.affin.io/updates/12345_10</code></p>
+<p><code class="prettyprint">GET http://api.affin.io/v1/updates/12345_10</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -381,7 +434,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 <h1 id="content-and-bios">Content and Bios</h1>
 
 <h2 id="top-hashtags">Top Hashtags</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/content/top_hashtags?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_hashtags?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
 </code></pre>
 
 <blockquote>
@@ -411,7 +464,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://api.affin.io/content/top_hashtags</code></p>
+<p><code class="prettyprint">GET https://api.affin.io/v1/content/top_hashtags</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -435,7 +488,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 </tbody></table>
 
 <h2 id="top-mentions">Top Mentions</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/content/top_mentions?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_mentions?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
 </code></pre>
 
 <blockquote>
@@ -465,7 +518,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.affin.io/content/top_mentions</code></p>
+<p><code class="prettyprint">GET http://api.affin.io/v1/content/top_mentions</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -489,7 +542,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 </tbody></table>
 
 <h2 id="top-tweet-keywords">Top Tweet Keywords</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/content/top_tweetkeywords?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_tweetkeywords?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
 </code></pre>
 
 <blockquote>
@@ -519,7 +572,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.affin.io/content/top_tweetkeywords</code></p>
+<p><code class="prettyprint">GET http://api.affin.io/v1/content/top_tweetkeywords</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -543,7 +596,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 </tbody></table>
 
 <h2 id="top-bio-keywords">Top Bio Keywords</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/content/top_biokeywords?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_biokeywords?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
 </code></pre>
 
 <blockquote>
@@ -573,7 +626,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.affin.io/content/top_biokeywords</code></p>
+<p><code class="prettyprint">GET http://api.affin.io/v1/content/top_biokeywords</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -597,7 +650,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 </tbody></table>
 
 <h2 id="top-categories">Top Categories</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/content/top_categories?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_categories?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
 </code></pre>
 
 <blockquote>
@@ -627,7 +680,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.affin.io/content/top_categories</code></p>
+<p><code class="prettyprint">GET http://api.affin.io/v1/content/top_categories</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -651,7 +704,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 </tbody></table>
 
 <h2 id="top-apps">Top Apps</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/content/top_apps?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_apps?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
 </code></pre>
 
 <blockquote>
@@ -681,7 +734,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.affin.io/content/top_apps</code></p>
+<p><code class="prettyprint">GET http://api.affin.io/v1/content/top_apps</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -705,7 +758,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 </tbody></table>
 
 <h2 id="top-favorites">Top Favorites</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/content/top_favorites?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_favorites?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
 </code></pre>
 
 <blockquote>
@@ -735,7 +788,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.affin.io/content/top_favorites</code></p>
+<p><code class="prettyprint">GET http://api.affin.io/v1/content/top_favorites</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -759,7 +812,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 </tbody></table>
 
 <h2 id="top-locations">Top Locations</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/content/top_locations?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_locations?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
 </code></pre>
 
 <blockquote>
@@ -789,7 +842,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.affin.io/content/top_locations</code></p>
+<p><code class="prettyprint">GET http://api.affin.io/v1/content/top_locations</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -813,7 +866,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 </tbody></table>
 
 <h2 id="top-urls">Top URLs</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/content/top_urls?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_urls?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
 </code></pre>
 
 <blockquote>
@@ -847,7 +900,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.affin.io/content/top_urls</code></p>
+<p><code class="prettyprint">GET http://api.affin.io/v1/content/top_urls</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -871,7 +924,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 </tbody></table>
 
 <h2 id="top-domains">Top Domains</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/content/top_domains?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_domains?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
 </code></pre>
 
 <blockquote>
@@ -905,7 +958,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.affin.io/content/top_domains?api_key=YOUR_API_KEY&amp;tribe_id=12345_10</code></p>
+<p><code class="prettyprint">GET http://api.affin.io/v1/content/top_domains?api_key=YOUR_API_KEY&amp;tribe_id=12345_10</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -929,7 +982,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 </tbody></table>
 
 <h2 id="top-influencers">Top Influencers</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/content/top_influencers?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
 </code></pre>
 
 <blockquote>
@@ -967,7 +1020,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.affin.io/content/top_influencers</code></p>
+<p><code class="prettyprint">GET http://api.affin.io/v1/content/top_influencers</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -991,7 +1044,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 </tbody></table>
 
 <h2 id="competitive-breakdown">Competitive Breakdown</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/content/top_competitivebreakdown?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_competitivebreakdown?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
 </code></pre>
 
 <blockquote>
@@ -1040,7 +1093,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.affin.io/content/top_competitivebreakdown</code></p>
+<p><code class="prettyprint">GET http://api.affin.io/v1/content/top_competitivebreakdown</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1066,9 +1119,9 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 <h1 id="affinity-search-api">Affinity Search API</h1>
 
 <h2 id="tribes-influenced-by-a-user">Tribes influenced by a User</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/affinity_search/influenced_by?api_key=YOUR_API_KEY&amp;handle=phil_renaud"</span>
-curl <span class="s2">"https://api.affin.io/affinity_search/influenced_by?api_key=YOUR_API_KEY&amp;handle=phil_renaud&amp;from=0&amp;size=5"</span>
-curl <span class="s2">"https://api.affin.io/affinity_search/influenced_by?api_key=YOUR_API_KEY&amp;handle=phil_renaud&amp;ids=12345_1,12345_5"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/affinity_search/influenced_by?api_key=YOUR_API_KEY&amp;handle=phil_renaud"</span>
+curl <span class="s2">"https://api.affin.io/v1/affinity_search/influenced_by?api_key=YOUR_API_KEY&amp;handle=phil_renaud&amp;from=0&amp;size=5"</span>
+curl <span class="s2">"https://api.affin.io/v1/affinity_search/influenced_by?api_key=YOUR_API_KEY&amp;handle=phil_renaud&amp;ids=12345_1,12345_5"</span>
 </code></pre>
 
 <blockquote>
@@ -1109,7 +1162,7 @@ from defaults to 0, and size defaults to 10.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.affin.io/affinity_search/influenced_by</code></p>
+<p><code class="prettyprint">GET http://api.affin.io/v1/affinity_search/influenced_by</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1148,7 +1201,7 @@ from defaults to 0, and size defaults to 10.</p>
 </tbody></table>
 
 <h2 id="tribes-containing-a-member">Tribes containing a Member</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/affinity_search/contains_member?api_key=YOUR_API_KEY&amp;handle=phil_renaud"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/affinity_search/contains_member?api_key=YOUR_API_KEY&amp;handle=phil_renaud"</span>
 </code></pre>
 
 <blockquote>
@@ -1183,7 +1236,7 @@ from defaults to 0, and size defaults to 10.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.affin.io/affinity_search/contains_member</code></p>
+<p><code class="prettyprint">GET http://api.affin.io/v1/affinity_search/contains_member</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1222,7 +1275,7 @@ from defaults to 0, and size defaults to 10.</p>
 </tbody></table>
 
 <h2 id="tribes-that-use-a-term">Tribes that use a term</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/affinity_search/uses_term?api_key=YOUR_API_KEY&amp;term=javascript&amp;metric=hashtag"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/affinity_search/uses_term?api_key=YOUR_API_KEY&amp;term=javascript&amp;metric=hashtag"</span>
 </code></pre>
 
 <blockquote>
@@ -1260,7 +1313,7 @@ from defaults to 0, and size defaults to 10.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.affin.io/affinity_search/uses_term</code></p>
+<p><code class="prettyprint">GET http://api.affin.io/v1/affinity_search/uses_term</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1300,7 +1353,7 @@ Possible metrics include &ldquo;hashtag&rdquo;, &ldquo;mention&rdquo;, &ldquo;ke
 <h1 id="cross-platform-api">Cross-Platform API</h1>
 
 <h2 id="all-known-social-media-accounts-of-a-given-user">All known Social Media accounts of a given user</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/cross_platform/cross_platform?api_key=YOUR_API_KEY&amp;network=twitter&amp;handle=phil_renaud"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/cross_platform/cross_platform?api_key=YOUR_API_KEY&amp;network=twitter&amp;handle=phil_renaud"</span>
 </code></pre>
 
 <blockquote>
@@ -1322,7 +1375,7 @@ Possible metrics include &ldquo;hashtag&rdquo;, &ldquo;mention&rdquo;, &ldquo;ke
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p>`GET http://api.affin.io/cross_platform/cross_platform</p>
+<p>`GET http://api.affin.io/v1/cross_platform/cross_platform</p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1348,7 +1401,7 @@ Possible metrics include &ldquo;hashtag&rdquo;, &ldquo;mention&rdquo;, &ldquo;ke
 <h1 id="classification-api">Classification API</h1>
 
 <h2 id="profile-a-user-by-analyzing-content-and-favorites">Profile a user by analyzing content and favorites</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/classify/phil_renaud"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/classify/phil_renaud"</span>
   -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
 </code></pre>
 
@@ -1368,7 +1421,7 @@ Possible metrics include &ldquo;hashtag&rdquo;, &ldquo;mention&rdquo;, &ldquo;ke
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.affin.io/classify/phil_renaud</code></p>
+<p><code class="prettyprint">GET http://api.affin.io/v1/classify/phil_renaud</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1393,7 +1446,7 @@ Possible classifications include &ldquo;Technophiles&rdquo;, &ldquo;Auto Enthusi
 <h1 id="misc">Misc</h1>
 
 <h2 id="translate-a-country-into-cities-regions">Translate a Country into Cities/Regions</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/citify/Canada"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/citify/Canada"</span>
   -H <span class="s2">"Authorization: YOUR_API_KEY"</span>
 </code></pre>
 
@@ -1417,7 +1470,7 @@ Possible classifications include &ldquo;Technophiles&rdquo;, &ldquo;Auto Enthusi
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.affin.io/citify/canada</code></p>
+<p><code class="prettyprint">GET http://api.affin.io/v1/citify/canada</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
