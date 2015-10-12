@@ -309,25 +309,27 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 
 <blockquote>
 <h3 id="expected-return">Expected Return</h3>
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12345</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Affinio Followers Demo Report"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"cluster_svg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-us-west-2.amazonaws.com/com.affinio.reports/12345/SVGs/cluster.svg"</span><span class="p">,</span><span class="w">
-  </span><span class="err">}</span><span class="p">,</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">23456</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Affinio Followers Demo Report"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"cluster_svg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-us-west-2.amazonaws.com/com.affinio.reports/23456/SVGs/cluster.svg"</span><span class="p">,</span><span class="w">
-  </span><span class="err">}</span><span class="p">,</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">34567</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Affinio Followers Demo Report"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"cluster_svg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-us-west-2.amazonaws.com/com.affinio.reports/34567/SVGs/cluster.svg"</span><span class="p">,</span><span class="w">
-  </span><span class="err">}</span><span class="p">,</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
+<pre class="highlight json"><code></code></pre>
 </blockquote>
+
+<p>[
+  {
+    &ldquo;id&rdquo;: 12345,
+    &ldquo;name&rdquo;: &ldquo;Affinio Followers Demo Report&rdquo;,
+    &ldquo;cluster_svg&rdquo;: &ldquo;https://s3-us-west-2.amazonaws.com/com.affinio.reports/12345/SVGs/cluster.svg&rdquo;
+  },
+  {
+    &ldquo;id&rdquo;: 23456,
+    &ldquo;name&rdquo;: &ldquo;Affinio Followers Demo Report 2&rdquo;,
+    &ldquo;cluster_svg&rdquo;: &ldquo;https://s3-us-west-2.amazonaws.com/com.affinio.reports/23456/SVGs/cluster.svg&rdquo;
+  },
+  {
+    &ldquo;id&rdquo;: 34567,
+    &ldquo;name&rdquo;: &ldquo;Affinio Followers Demo Report 2&rdquo;,
+    &ldquo;cluster_svg&rdquo;: &ldquo;https://s3-us-west-2.amazonaws.com/com.affinio.reports/34567/SVGs/cluster.svg&rdquo;
+  }
+]
+&ldquo;`</p>
 
 <p>This endpoint retrieves the cluster_svg of a campaign or multiple campaigns.</p>
 
@@ -1347,7 +1349,7 @@ from defaults to 0, and size defaults to 10.</p>
 </tbody></table>
 
 <aside class="notice">
-Possible metrics include &ldquo;hashtag&rdquo;, &ldquo;mention&rdquo;, &ldquo;keyword&rdquo;, &ldquo;bio_keyword&rdquo;, &ldquo;location&rdquo;, &ldquo;url&rdquo;, and &ldquo;domain&rdquo;.
+Possible metrics include &quot;hashtag&rdquo;, &ldquo;mention&rdquo;, &ldquo;keyword&rdquo;, &ldquo;bio_keyword&rdquo;, &ldquo;location&rdquo;, &ldquo;url&rdquo;, and &ldquo;domain&rdquo;.
 </aside>
 
 <h1 id="cross-platform-api">Cross-Platform API</h1>
