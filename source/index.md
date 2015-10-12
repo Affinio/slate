@@ -238,22 +238,23 @@ curl "https://api.affin.io/v1/campaigns?api_key=YOUR_API_KEY&id=12345,23456,5678
 > ###Expected Return
 
 > ```json
+
 [
   {
     "id": 12345,
     "name": "Affinio Followers Demo Report",
-    "cluster_svg": "https://s3-us-west-2.amazonaws.com/com.affinio.reports/12345/SVGs/cluster.svg",
+    "cluster_svg": "https://s3-us-west-2.amazonaws.com/com.affinio.reports/12345/SVGs/cluster.svg"
   },
   {
     "id": 23456,
-    "name": "Affinio Followers Demo Report",
-    "cluster_svg": "https://s3-us-west-2.amazonaws.com/com.affinio.reports/23456/SVGs/cluster.svg",
+    "name": "Affinio Followers Demo Report 2",
+    "cluster_svg": "https://s3-us-west-2.amazonaws.com/com.affinio.reports/23456/SVGs/cluster.svg"
   },
   {
     "id": 34567,
-    "name": "Affinio Followers Demo Report",
-    "cluster_svg": "https://s3-us-west-2.amazonaws.com/com.affinio.reports/34567/SVGs/cluster.svg",
-  },
+    "name": "Affinio Followers Demo Report 2",
+    "cluster_svg": "https://s3-us-west-2.amazonaws.com/com.affinio.reports/34567/SVGs/cluster.svg"
+  }
 ]
 ```
 
