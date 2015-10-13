@@ -303,60 +303,6 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 </tr>
 </tbody></table>
 
-<h2 id="get-cluster_svg">Get cluster_svg</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/campaigns?api_key=YOUR_API_KEY&amp;id=12345,23456,56789"</span>
-</code></pre>
-
-<!-- 
-> ###Expected Return
-
-> &ldquo;`json
-[
-  {
-    &quot;id&rdquo;: 12345,
-    &ldquo;name&rdquo;: &ldquo;Affinio Followers Demo Report&rdquo;,
-    &ldquo;cluster_svg&rdquo;: &ldquo;https://s3-us-west-2.amazonaws.com/com.affinio.reports/12345/SVGs/cluster.svg&rdquo;
-  },
-  {
-    &ldquo;id&rdquo;: 23456,
-    &ldquo;name&rdquo;: &ldquo;Affinio Followers Demo Report 2&rdquo;,
-    &ldquo;cluster_svg&rdquo;: &ldquo;https://s3-us-west-2.amazonaws.com/com.affinio.reports/23456/SVGs/cluster.svg&rdquo;
-  },
-  {
-    &ldquo;id&rdquo;: 34567,
-    &ldquo;name&rdquo;: &ldquo;Affinio Followers Demo Report 2&rdquo;,
-    &ldquo;cluster_svg&rdquo;: &ldquo;https://s3-us-west-2.amazonaws.com/com.affinio.reports/34567/SVGs/cluster.svg&rdquo;
-  }
-]
-&ldquo;` &ndash;>
-
-<p>This endpoint retrieves the cluster_svg of a campaign or multiple campaigns.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET http://api.affin.io/v1/campaigns/get_svg</code></p>
-
-<h3 id="query-parameters">Query Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>api_key</td>
-<td>YOUR_API_KEY</td>
-<td>Your API key</td>
-</tr>
-<tr>
-<td>id</td>
-<td>n/a</td>
-<td>A campaign id or campaign ids separated by comma.</td>
-</tr>
-</tbody></table>
-
 <h1 id="tribe-monitoring">Tribe Monitoring</h1>
 
 <h2 id="get-gained-lost-numbers-about-a-given-tribe-or-report">Get Gained/Lost Numbers about a given Tribe or Report</h2>
@@ -1348,7 +1294,7 @@ from defaults to 0, and size defaults to 10.</p>
 </tbody></table>
 
 <aside class="notice">
-Possible metrics include &quot;hashtag&rdquo;, &ldquo;mention&rdquo;, &ldquo;keyword&rdquo;, &ldquo;bio_keyword&rdquo;, &ldquo;location&rdquo;, &ldquo;url&rdquo;, and &ldquo;domain&rdquo;.
+Possible metrics include &ldquo;hashtag&rdquo;, &ldquo;mention&rdquo;, &ldquo;keyword&rdquo;, &ldquo;bio_keyword&rdquo;, &ldquo;location&rdquo;, &ldquo;url&rdquo;, and &ldquo;domain&rdquo;.
 </aside>
 
 <h1 id="cross-platform-api">Cross-Platform API</h1>
