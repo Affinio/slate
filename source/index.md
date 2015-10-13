@@ -236,16 +236,7 @@ curl "https://api.affin.io/v1/campaigns?api_key=YOUR_API_KEY&id=12345,23456,5678
 {
   "id": 12345,
   "name": "Affinio Followers Demo Report",
-  "number_of_clusters": 8,
-  "source": "Twitter",
-  "email": "phil@affin.io",
-  "belongs_to": ["phil@affin.io"],
-  "filters": {
-        "location":"global", 
-        "followers_of":"affinioinc,phil_renaud,t1mburke"
-            },
-  "members_count": 999999,
-  "started": 1428682154
+  "cluster_svg": "https://s3-us-west-2.amazonaws.com/com.affinio.reports/485913199/SVGs/cluster.svg"
 }
 ```
 
