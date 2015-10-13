@@ -307,14 +307,13 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/campaigns?api_key=YOUR_API_KEY&amp;id=12345,23456,56789"</span>
 </code></pre>
 
-<blockquote>
-<h3 id="expected-return">Expected Return</h3>
-<pre class="highlight json"><code></code></pre>
-</blockquote>
+<!-- 
+> ###Expected Return
 
-<p>[
+> &ldquo;`json
+[
   {
-    &ldquo;id&rdquo;: 12345,
+    &quot;id&rdquo;: 12345,
     &ldquo;name&rdquo;: &ldquo;Affinio Followers Demo Report&rdquo;,
     &ldquo;cluster_svg&rdquo;: &ldquo;https://s3-us-west-2.amazonaws.com/com.affinio.reports/12345/SVGs/cluster.svg&rdquo;
   },
@@ -329,7 +328,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
     &ldquo;cluster_svg&rdquo;: &ldquo;https://s3-us-west-2.amazonaws.com/com.affinio.reports/34567/SVGs/cluster.svg&rdquo;
   }
 ]
-&ldquo;`</p>
+&ldquo;` &ndash;>
 
 <p>This endpoint retrieves the cluster_svg of a campaign or multiple campaigns.</p>
 
