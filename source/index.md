@@ -223,6 +223,45 @@ minInfluencerFollowers | NULL | Optional
 maxInfluencerFollowers | NULL | Optional
 
 
+## Get cluster_svg
+
+```shell
+curl "https://api.affin.io/v1/campaigns?api_key=YOUR_API_KEY&id=12345,23456,56789"
+```
+
+
+> ###Expected Return
+
+> ```json
+{
+  "id": 12345,
+  "name": "Affinio Followers Demo Report",
+  "number_of_clusters": 8,
+  "source": "Twitter",
+  "email": "phil@affin.io",
+  "belongs_to": ["phil@affin.io"],
+  "filters": {
+        "location":"global", 
+        "followers_of":"affinioinc,phil_renaud,t1mburke"
+            },
+  "members_count": 999999,
+  "started": 1428682154
+}
+```
+
+
+This endpoint retrieves the cluster_svg of a campaign or multiple campaigns.
+
+### HTTP Request
+
+`GET http://api.affin.io/v1/campaigns/get_svg`
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+api_key | YOUR_API_KEY | Your API key
+id | n/a | A campaign id or campaign ids separated by comma.
 
 
 
