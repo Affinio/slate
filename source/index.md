@@ -112,7 +112,7 @@ curl "https://api.affin.io/v1/tribes/campaigns?api_key=YOUR_API_KEY&tribe_id=123
 
 > ###Expected Return
 
-> ```json
+>```json
 {
   "id": 12345,
   "name": "Affinio Followers Demo Report",
@@ -234,11 +234,10 @@ maxInfluencerFollowers | NULL | Optional
 ```shell
 curl "https://api.affin.io/v1/campaigns?api_key=YOUR_API_KEY&id=12345,23456,56789"
 ```
-
+<!-- 
 > ###Expected Return
 
 > ```json
-
 [
   {
     "id": 12345,
@@ -256,7 +255,7 @@ curl "https://api.affin.io/v1/campaigns?api_key=YOUR_API_KEY&id=12345,23456,5678
     "cluster_svg": "https://s3-us-west-2.amazonaws.com/com.affinio.reports/34567/SVGs/cluster.svg"
   }
 ]
-```
+``` -->
 
 This endpoint retrieves the cluster_svg of a campaign or multiple campaigns.
 
