@@ -65,8 +65,8 @@ We are limiting access to our API to specific partners at the present time. Plea
 <h1 id="tribes-and-reports">Tribes and Reports</h1>
 
 <h2 id="get-my-reports-and-public-reports">Get My Reports (and Public Reports)</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/tribes/my_campaigns?api_key=YOUR_API_KEY"</span>
-curl <span class="s2">"https://api.affin.io/v1/tribes/my_campaigns?api_key=YOUR_API_KEY&amp;from=0&amp;size=5"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/campaigns/my_campaigns?api_key=YOUR_API_KEY"</span>
+curl <span class="s2">"https://api.affin.io/v1/campaigns/my_campaigns?api_key=YOUR_API_KEY&amp;from=0&amp;size=5"</span>
 </code></pre>
 
 <blockquote>
@@ -107,7 +107,7 @@ from defaults to 0, and size defaults to 10.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.affin.io/v1/tribes/my_campaigns</code></p>
+<p><code class="prettyprint">GET http://api.affin.io/v1/campaigns/my_campaigns</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -146,7 +146,7 @@ from defaults to 0, and size defaults to 10.</p>
 </tbody></table>
 
 <h2 id="get-a-specific-report">Get a specific report</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/tribes/campaigns?api_key=YOUR_API_KEY&amp;tribe_id=12345"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/campaigns/campaigns?api_key=YOUR_API_KEY&amp;tribe_id=12345"</span>
 </code></pre>
 
 <blockquote>
@@ -183,7 +183,7 @@ from defaults to 0, and size defaults to 10.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.affin.io/v1/tribes/campaigns</code></p>
+<p><code class="prettyprint">GET http://api.affin.io/v1/campaigns/campaigns</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
