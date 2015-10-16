@@ -39,8 +39,8 @@ Affinio uses unique keys to allow access to our API. You can register a new Affi
 ## Get My Reports (and Public Reports)
 
 ```shell
-curl "https://api.affin.io/v1/tribes/my_campaigns?api_key=YOUR_API_KEY"
-curl "https://api.affin.io/v1/tribes/my_campaigns?api_key=YOUR_API_KEY&from=0&size=5"
+curl "https://api.affin.io/v1/campaigns/my_campaigns?api_key=YOUR_API_KEY"
+curl "https://api.affin.io/v1/campaigns/my_campaigns?api_key=YOUR_API_KEY&from=0&size=5"
 ```
 
 > ###Expected Return
@@ -80,7 +80,7 @@ from defaults to 0, and size defaults to 10.
 
 ### HTTP Request
 
-`GET http://api.affin.io/v1/tribes/my_campaigns`
+`GET http://api.affin.io/v1/campaigns/my_campaigns`
 
 ### Query Parameters
 
@@ -107,7 +107,7 @@ created_after | null | Returns all campaigns created after a certain date (in mi
 ## Get a specific report
 
 ```shell
-curl "https://api.affin.io/v1/tribes/campaigns?api_key=YOUR_API_KEY&tribe_id=12345"
+curl "https://api.affin.io/v1/campaigns/campaigns?api_key=YOUR_API_KEY&tribe_id=12345"
 ```
 
 > ###Expected Return
@@ -144,7 +144,7 @@ This endpoint retrieves basic details about a given report to which you have acc
 
 ### HTTP Request
 
-`GET http://api.affin.io/v1/tribes/campaigns`
+`GET http://api.affin.io/v1/campaigns/campaigns`
 
 ### Query Parameters
 
