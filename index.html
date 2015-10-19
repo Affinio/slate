@@ -71,6 +71,26 @@ curl <span class="s2">"https://api.affin.io/v1/campaigns/my_campaigns?api_key=YO
 
 <blockquote>
 <h3 id="expected-return">Expected Return</h3>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Isis"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+
+<blockquote>
 <pre class="highlight json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12345</span><span class="p">,</span><span class="w">
@@ -799,6 +819,8 @@ from defaults to 0, and size defaults to 10.</p>
 
 <h2 id="top-influencers">Top Influencers</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
+
+curl <span class="s2">"https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&amp;tribe_id=12345_10&amp;tag=brands"</span>
 </code></pre>
 
 <blockquote>
@@ -857,7 +879,16 @@ from defaults to 0, and size defaults to 10.</p>
 <td>n/a</td>
 <td>The ID of the tribe you&rsquo;re trying to retrieve</td>
 </tr>
+<tr>
+<td>tag</td>
+<td>n/a</td>
+<td>Optional parameter. The type of tag you&rsquo;re looking up.</td>
+</tr>
 </tbody></table>
+
+<aside class="notice">
+Sample tags: &ldquo;brands&rdquo;, &ldquo;retail&rdquo;, &ldquo;Agency&rdquo; and &ldquo;Computer Game&rdquo;.
+</aside>
 
 <h2 id="competitive-breakdown">Competitive Breakdown</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_competitivebreakdown?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
