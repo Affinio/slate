@@ -330,6 +330,64 @@ api_key | n/a | Your API key
 tribe_id | n/a | The ID of the tribe you're trying to retrieve
 
 
+## Top Influencers
+
+```shell
+curl "https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&tribe_id=12345_10"
+
+curl "https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&tribe_id=12345_10&tag=brands"
+```
+
+> ###Expected Return
+
+> ```json
+[
+  {
+    "id": 11740902,
+    "name": "Tim Ferriss",
+    "screen_name": "tferriss",
+    "score": 64364.455959025
+  },
+  {
+    "id": 115485051,
+    "name": "Conan O'Brien",
+    "screen_name": "ConanOBrien",
+    "score": 19607.535340593
+  },
+  {
+    "id": 16303106,
+    "name": "Stephen Colbert",
+    "screen_name": "StephenAtHome",
+    "score": 17965.386784869
+  },
+  {
+    "id": 15485441,
+    "name": "jimmy fallon",
+    "screen_name": "jimmyfallon",
+    "score": 17958.614459845
+  }
+]
+```
+
+Retrieves the top 1000 influencers for a given tribe.
+
+### HTTP Request
+
+`GET http://api.affin.io/v1/content/top_influencers`
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+api_key | n/a | Your API key
+tribe_id | n/a | The ID of the tribe you're trying to retrieve
+tag | n/a | Optional parameter. The type of tag you're looking up. 
+
+<aside class="notice">
+Sample tags: "brands", "retail", "Agency" and "Computer Game".
+</aside>
+
+
 
 ## Top Tweet Keywords
 
@@ -690,62 +748,7 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 
 
 
-## Top Influencers
 
-```shell
-curl "https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&tribe_id=12345_10"
-
-curl "https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&tribe_id=12345_10&tag=brands"
-```
-
-> ###Expected Return
-
-> ```json
-[
-  {
-    "id": 11740902,
-    "name": "Tim Ferriss",
-    "screen_name": "tferriss",
-    "score": 64364.455959025
-  },
-  {
-    "id": 115485051,
-    "name": "Conan O'Brien",
-    "screen_name": "ConanOBrien",
-    "score": 19607.535340593
-  },
-  {
-    "id": 16303106,
-    "name": "Stephen Colbert",
-    "screen_name": "StephenAtHome",
-    "score": 17965.386784869
-  },
-  {
-    "id": 15485441,
-    "name": "jimmy fallon",
-    "screen_name": "jimmyfallon",
-    "score": 17958.614459845
-  }
-]
-```
-
-Retrieves the top 1000 influencers for a given tribe.
-
-### HTTP Request
-
-`GET http://api.affin.io/v1/content/top_influencers`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-api_key | n/a | Your API key
-tribe_id | n/a | The ID of the tribe you're trying to retrieve
-tag | n/a | Optional parameter. The type of tag you're looking up. 
-
-<aside class="notice">
-Sample tags: "brands", "retail", "Agency" and "Computer Game".
-</aside>
 
 
 
