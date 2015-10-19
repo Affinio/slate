@@ -44,6 +44,27 @@ curl "https://api.affin.io/v1/campaigns/my_campaigns?api_key=YOUR_API_KEY&from=0
 ```
 
 > ###Expected Return
+
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Fluffums",
+    "breed": "calico",
+    "fluffiness": 6,
+    "cuteness": 7
+  },
+  {
+    "id": 2,
+    "name": "Isis",
+    "breed": "unknown",
+    "fluffiness": 5,
+    "cuteness": 10
+  }
+]
+```
+
 >```json
 [
   {
@@ -673,6 +694,8 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 
 ```shell
 curl "https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&tribe_id=12345_10"
+
+curl "https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&tribe_id=12345_10&tag=brands"
 ```
 
 > ###Expected Return
@@ -718,6 +741,11 @@ Parameter | Default | Description
 --------- | ------- | -----------
 api_key | n/a | Your API key
 tribe_id | n/a | The ID of the tribe you're trying to retrieve
+tag | n/a | Optional parameter. The type of tag you're looking up. 
+
+<aside class="notice">
+Sample tags: "brands", "retail", "Agency" and "Computer Game".
+</aside>
 
 
 
