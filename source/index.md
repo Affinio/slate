@@ -45,14 +45,24 @@ curl "https://api.affin.io/v1/campaigns/my_campaigns?api_key=YOUR_API_KEY&from=0
 
 > ###Expected Return
 ```json
-{
-  "id": 12345,
-  "name": "Affinio Followers Demo Report",
-  "number_of_clusters": "5",
-  "source": "Twitter",
-  "members_count": 999999,
-  "started": 1428682154
-}
+[
+  {
+    "term": "MH17",
+    "count": 89
+  },
+  {
+    "term": "Gaza",
+    "count": 76
+  },
+  {
+    "term": "WorldCupFinal",
+    "count": 76
+  },
+  {
+    "term": "India",
+    "count": 74
+  }
+]
 ```
 
 This endpoint retrieves basic details about all Reports to which you have access.
@@ -94,14 +104,24 @@ curl "https://api.affin.io/v1/campaigns/campaigns?api_key=YOUR_API_KEY&tribe_id=
 
 > ###Expected Return
 ```json
-{
-  "id": 12345,
-  "name": "Affinio Followers Demo Report",
-  "number_of_clusters": "20",
-  "source": "Twitter",
-  "members_count": 999999,
-  "started": 1428682154
-}
+[
+  {
+    "term": "MH17",
+    "count": 89
+  },
+  {
+    "term": "Gaza",
+    "count": 76
+  },
+  {
+    "term": "WorldCupFinal",
+    "count": 76
+  },
+  {
+    "term": "India",
+    "count": 74
+  }
+]
 ```
 
 This endpoint retrieves basic details about a given report to which you have access.
