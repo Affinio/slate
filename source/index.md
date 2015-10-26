@@ -44,14 +44,32 @@ curl "https://api.affin.io/v1/campaigns/my_campaigns?api_key=YOUR_API_KEY&from=0
 
 > ###Expected Return
 ```json
-{
-  "id": 12345,
-  "name": "Affinio Followers Demo Report",
-  "number_of_clusters": "5",
-  "source": "Twitter",
-  "members_count": 999999,
-  "started": 1428682154
-}
+[
+  {
+    "id": 12345,
+    "name": "Affinio Followers Demo Report",
+    "number_of_clusters": "5",
+    "source": "Twitter",
+    "filters": {
+      "followers_of": "affinio",
+      "location": "global"
+    },
+    "members_count": 999999,
+    "started": 1428682154
+  },
+  {
+    "id": 12346,
+    "name": "Affinio's Test Report",
+    "number_of_clusters": "5",
+    "source": "Twitter",
+    "filters": {
+      "followers_of": "affinio",
+      "location": "global"
+    },
+    "members_count": 999999,
+    "started": 14286821341
+  }
+]
 ```
 
 
@@ -90,6 +108,10 @@ curl "https://api.affin.io/v1/campaigns/campaigns?api_key=YOUR_API_KEY&tribe_id=
   "name": "Affinio Followers Demo Report",
   "number_of_clusters": "20",
   "source": "Twitter",
+  "filters": {
+    "followers_of": "awssupport",
+    "location": "global"
+  },
   "members_count": 999999,
   "started": 1428682154
 }
@@ -263,25 +285,15 @@ curl "https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&tribe
     "id": 11740902,
     "name": "Tim Ferriss",
     "screen_name": "tferriss",
-    "score": 64364.455959025
+    "score": 64364.455959025,
+    "affinity": 1203.928383
   },
   {
     "id": 115485051,
     "name": "Conan O'Brien",
     "screen_name": "ConanOBrien",
-    "score": 19607.535340593
-  },
-  {
-    "id": 16303106,
-    "name": "Stephen Colbert",
-    "screen_name": "StephenAtHome",
-    "score": 17965.386784869
-  },
-  {
-    "id": 15485441,
-    "name": "jimmy fallon",
-    "screen_name": "jimmyfallon",
-    "score": 17958.614459845
+    "score": 19607.535340593,
+    "affinity": 1123.912992
   }
 ]
 ```
@@ -758,25 +770,19 @@ curl "https://api.affin.io/v1/affinity_search/influenced_by?api_key=YOUR_API_KEY
     "tribe":"Halifax Locals",
     "report":"@Collide_Halifax followers",
     "tribeid":"12345_10",
-    "campaignid":"12345",
-    "affinity_score": 150305.35,
-    "affinity_rank": 8
+    "campaignid":"12345"
   },
   {
     "tribe":"Designers/Devs",
     "report":"@Collide_Halifax followers",
     "tribe_id":"12345_3",
-    "report_id":"12345",
-    "affinity_score": 155305.35,
-    "affinity_rank": 1
+    "report_id":"12345"
   },
   {
     "tribe":"Ad Agency Alumni",
     "report":"Formerly Phoenician",
     "tribe_id":"12346_10",
-    "report_id":"12346",
-    "affinity_score": 150305.35,
-    "affinity_rank": 185
+    "report_id":"12346"
   }
 ]
 ```
