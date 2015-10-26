@@ -50,16 +50,6 @@ curl "https://api.affin.io/v1/campaigns/my_campaigns?api_key=YOUR_API_KEY&from=0
   "name": "Affinio Followers Demo Report",
   "number_of_clusters": "5",
   "source": "Twitter",
-  "resource_ids": [
-      "12345_0",
-      "12345_1",
-      "12345_2",
-      "12345_3",
-      "12345_4"
-    ],
-  "filters": {
-      "followers_of":"affinioinc"
-    },
   "members_count": 999999,
   "started": 1428682154
 }
@@ -109,26 +99,6 @@ curl "https://api.affin.io/v1/campaigns/campaigns?api_key=YOUR_API_KEY&tribe_id=
   "name": "Affinio Followers Demo Report",
   "number_of_clusters": "20",
   "source": "Twitter",
-  "email": "phil@affin.io",
-  "belongs_to": ["phil@affin.io","stephen@affin.io"],
-  "tribes": [
-      {
-        "id": "12345_0",
-        "name": "tribe 1"
-      },
-      {
-        "id": "12345_1",
-        "name": "tribe 2"
-      },
-      {
-        "id": "12345_2",
-        "name": "tribe 3"
-      }
-    ],
-  "filters": {
-      "bio_location":"Canada",
-      "followers_of":"affinioinc"
-    },
   "members_count": 999999,
   "started": 1428682154
 }
@@ -267,6 +237,7 @@ curl "https://api.affin.io/v1/content/top_mentions?api_key=YOUR_API_KEY&tribe_id
 ```
 
 > ###Expected Return
+
 ```json
 [
   {
