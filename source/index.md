@@ -48,10 +48,18 @@ curl "https://api.affin.io/v1/campaigns/my_campaigns?api_key=YOUR_API_KEY&from=0
 {
   "id": 12345,
   "name": "Affinio Followers Demo Report",
-  "number_of_clusters": "20",
+  "number_of_clusters": "5",
   "source": "Twitter",
-  "resource_ids": ["12345_0","12345_1","12345_2","12345_3","...","12345_18","12345_19"],
-  "filters": {"bio_location":"Canada","followers_of":"affinioinc,phil_renaud,t1mburke"},
+  "resource_ids": [
+      "12345_0",
+      "12345_1",
+      "12345_2",
+      "12345_3",
+      "12345_4"
+    ],
+  "filters": {
+      "followers_of":"affinioinc"
+    },
   "members_count": 999999,
   "started": 1428682154
 }
@@ -117,7 +125,10 @@ curl "https://api.affin.io/v1/campaigns/campaigns?api_key=YOUR_API_KEY&tribe_id=
         "name": "tribe 3"
       }
     ],
-  "filters": {"bio_location":"Canada","followers_of":"affinioinc,phil_renaud,t1mburke"},
+  "filters": {
+      "bio_location":"Canada",
+      "followers_of":"affinioinc"
+    },
   "members_count": 999999,
   "started": 1428682154
 }
@@ -856,7 +867,7 @@ curl "https://api.affin.io/v1/affinity_search/contains_member?api_key=YOUR_API_K
 
 > ###Expected Return
 
-> ```json
+```json
 [
   {
     "tribe":"Halifax Locals",
@@ -913,7 +924,7 @@ curl "https://api.affin.io/v1/affinity_search/uses_term?api_key=YOUR_API_KEY&ter
 
 > ###Expected Return
 
-> ```json
+```json
 [
   {
     "tribe":"Halifax Locals",
@@ -983,7 +994,7 @@ curl "https://api.affin.io/v1/cross_platform/cross_platform?api_key=YOUR_API_KEY
 
 > ###Expected Return
 
-> ```json
+```json
 {
   "twitter":"phil_renaud",
   "twitter_id":"123456789",
