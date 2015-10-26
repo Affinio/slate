@@ -45,32 +45,16 @@ curl "https://api.affin.io/v1/campaigns/my_campaigns?api_key=YOUR_API_KEY&from=0
 
 > ###Expected Return
 ```json
-[
-  {
-    "id": 12345,
-    "name": "Affinio Followers Demo Report",
-    "number_of_clusters": "20",
-    "source": "Twitter",
-    "email": "phil@affin.io",
-    "belongs_to": ["phil@affin.io","stephen@affin.io"],
-    "resource_ids": ["12345_0","12345_1","12345_2","12345_3","...","12345_18","12345_19"],
-    "filters": {"bio_location":"Canada","followers_of":"affinioinc,phil_renaud,t1mburke"},
-    "members_count": 999999,
-    "started": 1428682154
-  },
-  {
-    "id": 12346,
-    "name": "Affinio Followers Demo Report 2",
-    "number_of_clusters": "8",
-    "source": "Instagram",
-    "email": "stephen@affin.io",
-    "belongs_to": ["phil@affin.io","stephen@affin.io","brian@affin.io"],
-    "resource_ids": ["12345_0","12345_1","12345_2","12345_3","...","12345_18","12345_19"],
-    "filters": {"followers_of":"mlb"},
-    "members_count": 9999999,
-    "started": 1428682154
-  }
-]
+{
+  "id": 12345,
+  "name": "Affinio Followers Demo Report",
+  "number_of_clusters": "20",
+  "source": "Twitter",
+  "resource_ids": ["12345_0","12345_1","12345_2","12345_3","...","12345_18","12345_19"],
+  "filters": {"bio_location":"Canada","followers_of":"affinioinc,phil_renaud,t1mburke"},
+  "members_count": 999999,
+  "started": 1428682154
+}
 ```
 
 This endpoint retrieves basic details about all Reports to which you have access.
@@ -111,7 +95,6 @@ curl "https://api.affin.io/v1/campaigns/campaigns?api_key=YOUR_API_KEY&tribe_id=
 ```
 
 > ###Expected Return
-
 ```json
 {
   "id": 12345,
@@ -229,7 +212,7 @@ curl "https://api.affin.io/v1/content/top_hashtags?api_key=YOUR_API_KEY&tribe_id
 
 > ###Expected Return
 
-> ```json
+```json
 [
   {
     "term": "MH17",
@@ -273,8 +256,7 @@ curl "https://api.affin.io/v1/content/top_mentions?api_key=YOUR_API_KEY&tribe_id
 ```
 
 > ###Expected Return
-
-> ```json
+```json
 [
   {
     "term": "narendramodi",
@@ -319,7 +301,7 @@ curl "https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&tribe
 
 > ###Expected Return
 
-> ```json
+```json
 [
   {
     "id": 11740902,
@@ -376,7 +358,7 @@ curl "https://api.affin.io/v1/content/top_tweetkeywords?api_key=YOUR_API_KEY&tri
 
 > ###Expected Return
 
-> ```json
+```json
 [
   {
     "term": "people",
@@ -419,7 +401,7 @@ curl "https://api.affin.io/v1/content/top_biokeywords?api_key=YOUR_API_KEY&tribe
 
 > ###Expected Return
 
-> ```json
+```json
 [
   {
     "term": "writer",
@@ -463,7 +445,7 @@ curl "https://api.affin.io/v1/content/top_categories?api_key=YOUR_API_KEY&tribe_
 
 > ###Expected Return
 
-> ```json
+```json
 [
   {
     "term": "Gaming",
@@ -506,7 +488,7 @@ curl "https://api.affin.io/v1/content/top_apps?api_key=YOUR_API_KEY&tribe_id=123
 
 > ###Expected Return
 
-> ```json
+```json
 [
   {
     "term":"Twitter for iPhone",
@@ -551,7 +533,7 @@ curl "https://api.affin.io/v1/content/top_favorites?api_key=YOUR_API_KEY&tribe_i
 
 > ###Expected Return
 
-> ```json
+```json
 [
   {
     "term":"tbt",
@@ -594,7 +576,7 @@ curl "https://api.affin.io/v1/content/top_locations?api_key=YOUR_API_KEY&tribe_i
 
 > ###Expected Return
 
-> ```json
+```json
 [
   {
     "term": "London",
@@ -638,7 +620,7 @@ curl "https://api.affin.io/v1/content/top_urls?api_key=YOUR_API_KEY&tribe_id=123
 
 > ###Expected Return
 
-> ```json
+```json
 [
   {
     "term": "http://www.si.com/nba/2014/07/11/lebron-james-cleveland-cavaliers",
@@ -686,7 +668,7 @@ curl "https://api.affin.io/v1/content/top_domains?api_key=YOUR_API_KEY&tribe_id=
 
 > ###Expected Return
 
-> ```json
+```json
 [
   {
     "term": "twitter.com",
@@ -740,7 +722,7 @@ curl "https://api.affin.io/v1/content/top_competitivebreakdown?api_key=YOUR_API_
 
 > ###Expected Return
 
-> ```json
+```json
 [
   {
     "users": [
@@ -814,7 +796,7 @@ curl "https://api.affin.io/v1/affinity_search/influenced_by?api_key=YOUR_API_KEY
 
 > ###Expected Return
 
-> ```json
+```json
 [
   {
     "tribe":"Halifax Locals",
