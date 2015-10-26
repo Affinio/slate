@@ -39,17 +39,18 @@ Affinio uses unique keys to allow access to our API. You can register a new Affi
 ## Get My Reports (and Public Reports)
 
 ```shell
-curl "https://api.affin.io/v1/campaigns/my_campaigns?api_key=YOUR_API_KEY"
 curl "https://api.affin.io/v1/campaigns/my_campaigns?api_key=YOUR_API_KEY&from=0&size=5"
 ```
 
 > ###Expected Return
-
 ```json
 {
   "id": 12345,
   "name": "Affinio Followers Demo Report",
-  "cluster_svg": "https://s3-us-west-2.amazonaws.com/com.affinio.reports/485913199/SVGs/cluster.svg"
+  "number_of_clusters": "5",
+  "source": "Twitter",
+  "members_count": 999999,
+  "started": 1428682154
 }
 ```
 
@@ -68,10 +69,44 @@ from defaults to 0, and size defaults to 10.
 Parameter | Default | Description
 --------- | ------- | -----------
 api_key | YOUR_API_KEY | Your API key
-from | 0 | The offset from the first result you want to fetch. 
-size | 10 | The maximum amount of campaigns to be returned.
-created_before | null | Returns all campaigns created before a certain date (in milliseconds)
-created_after | null | Returns all campaigns created after a certain date (in milliseconds)
+from | 0 | Optional. The offset from the first result you want to fetch. 
+size | 10 | Optional. The maximum amount of campaigns to be returned.
+created_before | null | Optional. Returns all campaigns created before a certain date (in milliseconds)
+created_after | null | Optional. Returns all campaigns created after a certain date (in milliseconds)
+
+
+
+
+## Get a specific report
+
+```shell
+curl "https://api.affin.io/v1/campaigns/campaigns?api_key=YOUR_API_KEY&tribe_id=12345"
+```
+
+> ###Expected Return
+```json
+{
+  "id": 12345,
+  "name": "Affinio Followers Demo Report",
+  "number_of_clusters": "20",
+  "source": "Twitter",
+  "members_count": 999999,
+  "started": 1428682154
+}
+```
+
+This endpoint retrieves basic details about a given report to which you have access.
+
+### HTTP Request
+
+`GET http://api.affin.io/v1/campaigns/campaigns`
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+api_key | YOUR_API_KEY | Your API key
+id | n/a | The ID of the campaign you're trying to retrieve
 
 
 
