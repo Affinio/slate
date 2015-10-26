@@ -76,16 +76,6 @@ curl <span class="s2">"https://api.affin.io/v1/campaigns/my_campaigns?api_key=YO
   </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Affinio Followers Demo Report"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"number_of_clusters"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Twitter"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"resource_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"12345_0"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"12345_1"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"12345_2"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"12345_3"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"12345_4"</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-  </span><span class="nt">"filters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"followers_of"</span><span class="p">:</span><span class="s2">"affinioinc"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
   </span><span class="nt">"members_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">999999</span><span class="p">,</span><span class="w">
   </span><span class="nt">"started"</span><span class="p">:</span><span class="w"> </span><span class="mi">1428682154</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -148,26 +138,6 @@ from defaults to 0, and size defaults to 10.</p>
   </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Affinio Followers Demo Report"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"number_of_clusters"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Twitter"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"phil@affin.io"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"belongs_to"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"phil@affin.io"</span><span class="p">,</span><span class="s2">"stephen@affin.io"</span><span class="p">],</span><span class="w">
-  </span><span class="nt">"tribes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345_0"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tribe 1"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345_1"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tribe 2"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345_2"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tribe 3"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-  </span><span class="nt">"filters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"bio_location"</span><span class="p">:</span><span class="s2">"Canada"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"followers_of"</span><span class="p">:</span><span class="s2">"affinioinc"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
   </span><span class="nt">"members_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">999999</span><span class="p">,</span><span class="w">
   </span><span class="nt">"started"</span><span class="p">:</span><span class="w"> </span><span class="mi">1428682154</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -304,6 +274,7 @@ from defaults to 0, and size defaults to 10.</p>
 
 <blockquote>
 <h3 id="expected-return">Expected Return</h3>
+</blockquote>
 <pre class="highlight json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"narendramodi"</span><span class="p">,</span><span class="w">
@@ -323,7 +294,6 @@ from defaults to 0, and size defaults to 10.</p>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-</blockquote>
 
 <p>Retrieves the top mentions for a given tribe.</p>
 
