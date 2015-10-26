@@ -44,7 +44,7 @@ curl "https://api.affin.io/v1/campaigns/my_campaigns?api_key=YOUR_API_KEY&from=0
 ```
 
 > ###Expected Return
->```json
+```json
 [
   {
     "id": 12345,
@@ -112,7 +112,7 @@ curl "https://api.affin.io/v1/campaigns/campaigns?api_key=YOUR_API_KEY&tribe_id=
 
 > ###Expected Return
 
->```json
+```json
 {
   "id": 12345,
   "name": "Affinio Followers Demo Report",
@@ -182,7 +182,7 @@ curl "https://api.affin.io/v1/campaigns?api_key=YOUR_API_KEY&id=12345,23456,5678
 
 > ###Expected Return
 
-> ```json
+```json
 {
   "id": 12345,
   "name": "Affinio Followers Demo Report",
