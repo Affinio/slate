@@ -35,13 +35,53 @@ We are limiting access to our API to specific partners at the present time. Plea
 Affinio uses unique keys to allow access to our API. You can register a new Affinio API key at our <a href='https://affin.io/api-signup/' target="_blank">Developer Portal</a>.
 
 # Tribes and Reports
+## Get My Reports (and Public Reports)
+
+```shell
+curl "https://api.affin.io/v1/campaigns/my_campaigns?api_key=YOUR_API_KEY"
+curl "https://api.affin.io/v1/campaigns/my_campaigns?api_key=YOUR_API_KEY&from=0&size=5"
+```
+
+> ###Expected Return
+```json
+{
+  "id": 12345,
+  "name": "Affinio Followers Demo Report",
+  "number_of_clusters": "5",
+  "source": "Twitter",
+  "members_count": 999999,
+  "started": 1428682154
+}
+```
+
+This endpoint retrieves basic details about all Reports to which you have access.
+
+Note: Pagination of results can be done by using the from and size parameters. The from parameter defines the offset from the first result you want to fetch. The size parameter allows you to configure the maximum amount of campaigns to be returned.
+from defaults to 0, and size defaults to 10.
+
+### HTTP Request
+
+`GET http://api.affin.io/v1/campaigns/my_campaigns`
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+api_key | YOUR_API_KEY | Your API key
+from | 0 | The offset from the first result you want to fetch. 
+size | 10 | The maximum amount of campaigns to be returned.
+created_before | null | Returns all campaigns created before a certain date (in milliseconds)
+created_after | null | Returns all campaigns created after a certain date (in milliseconds)
+
+
+
+
 
 ## Get cluster_svg
 
 ```shell
 curl "https://api.affin.io/v1/campaigns?api_key=YOUR_API_KEY&id=12345,23456,56789"
 ```
-
 
 > ###Expected Return
 
