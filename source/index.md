@@ -73,7 +73,7 @@ curl "https://api.affin.io/v1/campaigns/my_campaigns?api_key=YOUR_API_KEY&from=0
 ```
 
 
-This endpoint retrieves basic details about all Reports to which you have access.
+This endpoint retrieves basic details about all reports to which you have access.
 
 Note: Pagination of results can be done by using the from and size parameters. The from parameter defines the offset from the first result you want to fetch. The size parameter allows you to configure the maximum amount of campaigns to be returned.
 from defaults to 0, and size defaults to 10.
@@ -95,7 +95,7 @@ created_after | null | Optional. Returns all campaigns created after a certain d
 
 
 
-## Get a specific report
+## Get a Specific Report
 
 ```shell
 curl "https://api.affin.io/v1/campaigns/campaigns?api_key=YOUR_API_KEY&tribe_id=12345"
@@ -133,7 +133,7 @@ id | n/a | The ID of the campaign you're trying to retrieve
 
 
 
-## Update tribe name
+## Update Tribe Name
 
 ```shell
 curl "https://api.affin.io/v1/campaigns/update_tribe_name?api_key=YOUR_API_KEY&tribe_id=12345_1&tribe_name=YOUR_TRIBE_NAME"
@@ -149,7 +149,8 @@ curl "https://api.affin.io/v1/campaigns/update_tribe_name?api_key=YOUR_API_KEY&t
 }
 ```
 
-This endpoint update the name a given tribe to which you have access.
+
+This endpoint update the name of a given tribe to which you have access.
 
 ### HTTP Request
 
@@ -161,12 +162,12 @@ Parameter | Default | Description
 --------- | ------- | -----------
 api_key | YOUR_API_KEY | Your API key
 tribe_id | n/a | The tribe ID you're trying to update
-tribe_name | n/a | The new tribe name you're trying to update
+tribe_name | n/a | The new tribe name
 
 
 
 
-## Get cluster_svg
+## Get Cluster Svg
 
 ```shell
 curl "https://api.affin.io/v1/campaigns?api_key=YOUR_API_KEY&id=12345,23456,56789"
@@ -179,6 +180,16 @@ curl "https://api.affin.io/v1/campaigns?api_key=YOUR_API_KEY&id=12345,23456,5678
   "id": 12345,
   "name": "Affinio Followers Demo Report",
   "cluster_svg": "https://s3-us-west-2.amazonaws.com/com.affinio.reports/485913199/SVGs/cluster.svg"
+}
+{
+  "id": 23456,
+  "name": "Affinio Followers Demo Report",
+  "cluster_svg": "https://s3-us-west-2.amazonaws.com/com.affinio.reports/23456/SVGs/cluster.svg"
+}
+{
+  "id": 56789,
+  "name": "Affinio Followers Demo Report",
+  "cluster_svg": "https://s3-us-west-2.amazonaws.com/com.affinio.reports/56789/SVGs/cluster.svg"
 }
 ```
 
@@ -194,7 +205,7 @@ This endpoint retrieves the cluster_svg of a campaign or multiple campaigns.
 Parameter | Default | Description
 --------- | ------- | -----------
 api_key | YOUR_API_KEY | Your API key
-id | n/a | A campaign id or campaign ids separated by comma.
+id | n/a | A campaign id or multiple campaign ids separated by comma.
 
 
 
