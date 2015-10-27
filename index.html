@@ -99,7 +99,7 @@ We are limiting access to our API to specific partners at the present time. Plea
 </span></code></pre>
 </blockquote>
 
-<p>This endpoint retrieves basic details about all Reports to which you have access.</p>
+<p>This endpoint retrieves basic details about all reports to which you have access.</p>
 
 <p>Note: Pagination of results can be done by using the from and size parameters. The from parameter defines the offset from the first result you want to fetch. The size parameter allows you to configure the maximum amount of campaigns to be returned.
 from defaults to 0, and size defaults to 10.</p>
@@ -144,7 +144,7 @@ from defaults to 0, and size defaults to 10.</p>
 </tr>
 </tbody></table>
 
-<h2 id="get-a-specific-report">Get a specific report</h2>
+<h2 id="get-a-specific-report">Get a Specific Report</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/campaigns/campaigns?api_key=YOUR_API_KEY&amp;tribe_id=12345"</span>
 </code></pre>
 
@@ -192,7 +192,7 @@ from defaults to 0, and size defaults to 10.</p>
 </tr>
 </tbody></table>
 
-<h2 id="update-tribe-name">Update tribe name</h2>
+<h2 id="update-tribe-name">Update Tribe Name</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/campaigns/update_tribe_name?api_key=YOUR_API_KEY&amp;tribe_id=12345_1&amp;tribe_name=YOUR_TRIBE_NAME"</span>
 </code></pre>
 
@@ -207,7 +207,7 @@ from defaults to 0, and size defaults to 10.</p>
 </span></code></pre>
 </blockquote>
 
-<p>This endpoint update the name a given tribe to which you have access.</p>
+<p>This endpoint update the name of a given tribe to which you have access.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -235,11 +235,11 @@ from defaults to 0, and size defaults to 10.</p>
 <tr>
 <td>tribe_name</td>
 <td>n/a</td>
-<td>The new tribe name you&rsquo;re trying to update</td>
+<td>The new tribe name</td>
 </tr>
 </tbody></table>
 
-<h2 id="get-cluster_svg">Get cluster_svg</h2>
+<h2 id="get-cluster-svg">Get Cluster Svg</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/campaigns?api_key=YOUR_API_KEY&amp;id=12345,23456,56789"</span>
 </code></pre>
 
@@ -250,6 +250,16 @@ from defaults to 0, and size defaults to 10.</p>
   </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12345</span><span class="p">,</span><span class="w">
   </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Affinio Followers Demo Report"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"cluster_svg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-us-west-2.amazonaws.com/com.affinio.reports/485913199/SVGs/cluster.svg"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">23456</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Affinio Followers Demo Report"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"cluster_svg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-us-west-2.amazonaws.com/com.affinio.reports/23456/SVGs/cluster.svg"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">56789</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Affinio Followers Demo Report"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"cluster_svg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-us-west-2.amazonaws.com/com.affinio.reports/56789/SVGs/cluster.svg"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
@@ -276,7 +286,7 @@ from defaults to 0, and size defaults to 10.</p>
 <tr>
 <td>id</td>
 <td>n/a</td>
-<td>A campaign id or campaign ids separated by comma.</td>
+<td>A campaign id or multiple campaign ids separated by comma.</td>
 </tr>
 </tbody></table>
 
