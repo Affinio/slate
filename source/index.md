@@ -133,6 +133,38 @@ id | n/a | The ID of the campaign you're trying to retrieve
 
 
 
+## Update tribe name
+
+```shell
+curl "https://api.affin.io/v1/campaigns/update_tribe_name?api_key=YOUR_API_KEY&tribe_id=12345_1&tribe_name=YOUR_TRIBE_NAME"
+```
+
+> ###Expected Return
+```json
+{
+  "code": 200,
+  "status": "updated",
+  "tribe_name": "New tribe name",
+  "tribe_id": "12345_1"
+}
+```
+
+This endpoint update the name a given tribe to which you have access.
+
+### HTTP Request
+
+`GET http://api.affin.io/v1/campaigns/update_tribe_name`
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+api_key | YOUR_API_KEY | Your API key
+tribe_id | n/a | The tribe ID you're trying to update
+tribe_name | n/a | The new tribe name you're trying to update
+
+
+
 
 ## Get cluster_svg
 
