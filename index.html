@@ -128,7 +128,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 <tr>
 <td>track_terms</td>
 <td>NULL</td>
-<td>Required when tweet_content is selected as report_type</td>
+<td>Required when tweet_content is selected as report_type.</td>
 </tr>
 <tr>
 <td>gnip_query</td>
@@ -154,6 +154,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 
 <aside class="notice">
 Possible report_type include &ldquo;network_graph&rdquo;, &ldquo;tweet_content&rdquo; and &ldquo;url_share&rdquo;. url_share is still under development. 
+The track_terms field should be an array of terms. Each term is contains a term name and a type. Possible term types include: keyword, hashtag and mention. 
 </aside>
 
 <h2 id="get-my-reports-and-public-reports">Get My Reports (and Public Reports)</h2>
