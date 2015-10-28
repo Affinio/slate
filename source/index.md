@@ -36,6 +36,53 @@ Affinio uses unique keys to allow access to our API. You can register a new Affi
 
 # Tribes and Reports
 
+
+
+## Create a report
+
+```shell
+curl -H "Content-Type: application/json" -X POST -d '{"api_key":"YOUR_API_KEY", "followers_of":"affinio", "source":"Twitter", "report_type":"network_graph", "name":"Test Report", "number_of_clusters":"8"}' "https://api.affin.io/v1/campaigns/create_report"
+
+curl -H "Content-Type: application/json" -X POST -d '{"api_key":"YOUR_API_KEY", "gnip_query": "affinio", "track_terms":[{"term":"affinio", "type":"keyword"}], "source":"Twitter", "report_type":"tweet_content", "name":"Test Report"}' "https://api.affin.io/v1/campaigns/create_report"
+```
+
+> ###Expected Return
+
+```json
+{
+  "status": 200,
+  "message": "Request to create a new report is submitted successfully!",
+}
+```
+
+This endpoint creates a report.
+
+### HTTP Request
+
+`POST http://api.affin.io/v1/campaigns/create_report`
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+api_key | YOUR_API_KEY | Your API key
+source | Twitter | Available sources: Twitter, Instagram, Pinterest
+report_type | network_graph | Available report types: network_graph, tweet_content and url_share. 
+followers_of | NULL | Required when network_graph is selected as report_type
+bio_location | NULL | Optional for network_graph type, not required for other report types
+bio_keywords | NULL | Optional for network_graph type, not required for other report types
+track_terms | NULL | Required when tweet_content is selected as report_type
+gnip_query | NULL | Optional
+number_of_clusters | 8 | Optional
+minInfluencerFollowers | NULL | Optional
+maxInfluencerFollowers | NULL | Optional
+
+<aside class="notice">
+Possible report_type include "network_graph", "tweet_content" and "url_share". url_share is still under development. 
+</aside>
+
+
+
 ## Get My Reports (and Public Reports)
 
 ```shell
