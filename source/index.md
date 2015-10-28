@@ -44,6 +44,8 @@ Affinio uses unique keys to allow access to our API. You can register a new Affi
 curl -H "Content-Type: application/json" -X POST -d '{"api_key":"YOUR_API_KEY", "followers_of":"affinio", "source":"Twitter", "report_type":"network_graph", "name":"Test Report", "number_of_clusters":"8"}' "https://api.affin.io/v1/campaigns/create_report"
 
 curl -H "Content-Type: application/json" -X POST -d '{"api_key":"YOUR_API_KEY", "gnip_query": "affinio", "track_terms":[{"term":"affinio", "type":"keyword"}], "source":"Twitter", "report_type":"tweet_content", "name":"Test Report"}' "https://api.affin.io/v1/campaigns/create_report"
+
+curl -H "Content-Type: application/json" -X POST -d '{"api_key":"YOUR_API_KEY", "urls": ["affinio.com", "github.com"], "source":"Twitter", "report_type":"url_share", "name":"Test Report"}' "https://api.affin.io/v1/campaigns/create_report"
 ```
 
 > ###Expected Return
@@ -52,7 +54,8 @@ curl -H "Content-Type: application/json" -X POST -d '{"api_key":"YOUR_API_KEY", 
 {
   "status": 200,
   "message": "Request to create a new report is submitted successfully!",
-  "campaign_id": 123456
+  "campaign_id": 123456, 
+  "campaign_name": "Test Report"
 }
 ```
 
@@ -68,19 +71,25 @@ Parameter | Default | Description
 --------- | ------- | -----------
 api_key | YOUR_API_KEY | Your API key
 source | Twitter | Available sources: Twitter, Instagram, Pinterest
-report_type | network_graph | Available report types: network_graph, tweet_content and url_share. 
+report_type | network_graph | Available report types: network_graph, tweet_content and url_share
 followers_of | NULL | Required when network_graph is selected as report_type
 bio_location | NULL | Optional for network_graph type, not required for other report types
 bio_keywords | NULL | Optional for network_graph type, not required for other report types
-track_terms | NULL | Required when tweet_content is selected as report_type. 
+track_terms | NULL | Required when tweet_content is selected as report_type
+urls | NULL | Required when url_share is selected as report_type
 gnip_query | NULL | Optional
 number_of_clusters | 8 | Optional
 minInfluencerFollowers | NULL | Optional
 maxInfluencerFollowers | NULL | Optional
 
 <aside class="notice">
-Possible report_type include "network_graph", "tweet_content" and "url_share". url_share is still under development. 
+Possible report_type include "network_graph", "tweet_content" and "url_share".
+</aside>
+<aside class="notice">
 The track_terms field should be an array of terms. Each term is contains a term name and a type. Possible term types include: keyword, hashtag and mention. 
+</aside>
+<aside class="notice">
+The urls field should be an array of url. 
 </aside>
 
 
