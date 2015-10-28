@@ -68,6 +68,8 @@ We are limiting access to our API to specific partners at the present time. Plea
 <pre class="highlight shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <span class="s1">'{"api_key":"YOUR_API_KEY", "followers_of":"affinio", "source":"Twitter", "report_type":"network_graph", "name":"Test Report", "number_of_clusters":"8"}'</span> <span class="s2">"https://api.affin.io/v1/campaigns/create_report"</span>
 
 curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <span class="s1">'{"api_key":"YOUR_API_KEY", "gnip_query": "affinio", "track_terms":[{"term":"affinio", "type":"keyword"}], "source":"Twitter", "report_type":"tweet_content", "name":"Test Report"}'</span> <span class="s2">"https://api.affin.io/v1/campaigns/create_report"</span>
+
+curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <span class="s1">'{"api_key":"YOUR_API_KEY", "urls": ["affinio.com", "github.com"], "source":"Twitter", "report_type":"url_share", "name":"Test Report"}'</span> <span class="s2">"https://api.affin.io/v1/campaigns/create_report"</span>
 </code></pre>
 
 <blockquote>
@@ -76,7 +78,8 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Request to create a new report is submitted successfully!"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123456</span><span class="w">
+  </span><span class="nt">"campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123456</span><span class="p">,</span><span class="w"> 
+  </span><span class="nt">"campaign_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Report"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
@@ -108,7 +111,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 <tr>
 <td>report_type</td>
 <td>network_graph</td>
-<td>Available report types: network_graph, tweet_content and url_share.</td>
+<td>Available report types: network_graph, tweet_content and url_share</td>
 </tr>
 <tr>
 <td>followers_of</td>
@@ -128,7 +131,12 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 <tr>
 <td>track_terms</td>
 <td>NULL</td>
-<td>Required when tweet_content is selected as report_type.</td>
+<td>Required when tweet_content is selected as report_type</td>
+</tr>
+<tr>
+<td>urls</td>
+<td>NULL</td>
+<td>Required when url_share is selected as report_type</td>
 </tr>
 <tr>
 <td>gnip_query</td>
@@ -153,8 +161,15 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 </tbody></table>
 
 <aside class="notice">
-Possible report_type include &ldquo;network_graph&rdquo;, &ldquo;tweet_content&rdquo; and &ldquo;url_share&rdquo;. url_share is still under development. 
+Possible report_type include &ldquo;network_graph&rdquo;, &ldquo;tweet_content&rdquo; and &ldquo;url_share&rdquo;.
+</aside>
+
+<aside class="notice">
 The track_terms field should be an array of terms. Each term is contains a term name and a type. Possible term types include: keyword, hashtag and mention. 
+</aside>
+
+<aside class="notice">
+The urls field should be an array of url. 
 </aside>
 
 <h2 id="get-my-reports-and-public-reports">Get My Reports (and Public Reports)</h2>
