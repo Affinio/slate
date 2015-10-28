@@ -72,7 +72,7 @@ report_type | network_graph | Available report types: network_graph, tweet_conte
 followers_of | NULL | Required when network_graph is selected as report_type
 bio_location | NULL | Optional for network_graph type, not required for other report types
 bio_keywords | NULL | Optional for network_graph type, not required for other report types
-track_terms | NULL | Required when tweet_content is selected as report_type
+track_terms | NULL | Required when tweet_content is selected as report_type. 
 gnip_query | NULL | Optional
 number_of_clusters | 8 | Optional
 minInfluencerFollowers | NULL | Optional
@@ -80,6 +80,7 @@ maxInfluencerFollowers | NULL | Optional
 
 <aside class="notice">
 Possible report_type include "network_graph", "tweet_content" and "url_share". url_share is still under development. 
+The track_terms field should be an array of terms. Each term is contains a term name and a type. Possible term types include: keyword, hashtag and mention. 
 </aside>
 
 
