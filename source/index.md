@@ -225,10 +225,41 @@ tribe_name | n/a | The new tribe name
 
 
 
+## Get Report Status
+
+```shell
+curl "https://api.affin.io/v1/campaigns/get_status?api_key=YOUR_API_KEY&id=12345"
+```
+
+> ###Expected Return
+
+```json
+{
+  "code": 200,
+  "status": "ready"
+}
+```
+
+
+This endpoint retrieves the status (pending, ready or error) of a campaign.
+
+### HTTP Request
+
+`GET http://api.affin.io/v1/campaigns/get_svg`
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+api_key | YOUR_API_KEY | Your API key
+id | n/a | Campaign id.
+
+
+
 ## Get Cluster Svg
 
 ```shell
-curl "https://api.affin.io/v1/campaigns?api_key=YOUR_API_KEY&id=12345,23456,56789"
+curl "https://api.affin.io/v1/campaigns/get_svg?api_key=YOUR_API_KEY&id=12345,23456,56789"
 ```
 
 > ###Expected Return
