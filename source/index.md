@@ -245,7 +245,7 @@ This endpoint retrieves the status (pending, ready or error) of a campaign.
 
 ### HTTP Request
 
-`GET http://api.affin.io/v1/campaigns/get_svg`
+`GET http://api.affin.io/v1/campaigns/get_status`
 
 ### Query Parameters
 
