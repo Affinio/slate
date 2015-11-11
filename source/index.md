@@ -817,7 +817,7 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 ## Competitive Breakdown
 
 ```shell
-curl "https://api.affin.io/v1/content/top_competitivebreakdown?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/v1/content/competitivebreakdown?api_key=YOUR_API_KEY&tribe_id=12345_10"
 ```
 
 > ###Expected Return
@@ -866,7 +866,7 @@ Retrieves the competitive breakdown for a given tribe.
 
 ### HTTP Request
 
-`GET http://api.affin.io/v1/content/top_competitivebreakdown`
+`GET http://api.affin.io/v1/content/competitivebreakdown`
 
 ### Query Parameters
 
