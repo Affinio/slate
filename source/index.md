@@ -922,26 +922,29 @@ curl "https://api.affin.io/v1/affinity_search/influenced_by?api_key=YOUR_API_KEY
 > ###Expected Return
 
 ```json
-[
-  {
-    "tribe":"Halifax Locals",
-    "report":"@Collide_Halifax followers",
-    "tribeid":"12345_10",
-    "campaignid":"12345"
-  },
-  {
-    "tribe":"Designers/Devs",
-    "report":"@Collide_Halifax followers",
-    "tribe_id":"12345_3",
-    "report_id":"12345"
-  },
-  {
-    "tribe":"Ad Agency Alumni",
-    "report":"Formerly Phoenician",
-    "tribe_id":"12346_10",
-    "report_id":"12346"
-  }
-]
+{
+  "total": 3,
+  "hits":[
+    {
+      "tribe":"Halifax Locals",
+      "report":"@Collide_Halifax followers",
+      "tribeid":"12345_10",
+      "campaignid":"12345"
+    },
+    {
+      "tribe":"Designers/Devs",
+      "report":"@Collide_Halifax followers",
+      "tribe_id":"12345_3",
+      "report_id":"12345"
+    },
+    {
+      "tribe":"Ad Agency Alumni",
+      "report":"Formerly Phoenician",
+      "tribe_id":"12346_10",
+      "report_id":"12346"
+    }
+  ]
+}
 ```
 
 Finds all tribes over which a given user has significant influence.
@@ -976,26 +979,29 @@ curl "https://api.affin.io/v1/affinity_search/contains_member?api_key=YOUR_API_K
 > ###Expected Return
 
 ```json
-[
-  {
-    "tribe":"Halifax Locals",
-    "report":"@Collide_Halifax followers",
-    "tribe_id":"12345_10",
-    "report_id":"12345"
-  },
-  {
-    "tribe":"Designers/Devs",
-    "report":"@Collide_Halifax followers",
-    "tribe_id":"12345_3",
-    "report_id":"12345"
-  },
-  {
-    "tribe":"Ad Agency Alumni",
-    "report":"Formerly Phoenician",
-    "tribe_id":"12346_10",
-    "report_id":"12346"
-  }
-]
+{
+  "total": 3,
+  "hits":[
+    {
+      "tribe":"Halifax Locals",
+      "report":"@Collide_Halifax followers",
+      "tribe_id":"12345_10",
+      "report_id":"12345"
+    },
+    {
+      "tribe":"Designers/Devs",
+      "report":"@Collide_Halifax followers",
+      "tribe_id":"12345_3",
+      "report_id":"12345"
+    },
+    {
+      "tribe":"Ad Agency Alumni",
+      "report":"Formerly Phoenician",
+      "tribe_id":"12346_10",
+      "report_id":"12346"
+    }
+  ]
+}
 ```
 
 Finds all tribes to which a given user belongs.
@@ -1033,32 +1039,35 @@ curl "https://api.affin.io/v1/affinity_search/uses_term?api_key=YOUR_API_KEY&ter
 > ###Expected Return
 
 ```json
-[
-  {
-    "tribe":"Halifax Locals",
-    "report":"@Collide_Halifax followers",
-    "tribeid":"12345_10",
-    "campaignid":"12345",
-    "rank": 3,
-    "number_using": 435
-  },
-  {
-    "tribe":"Designers/Devs",
-    "report":"@Collide_Halifax followers",
-    "tribe_id":"12345_3",
-    "report_id":"12345",
-    "rank": 3,
-    "number_using": 435
-  },
-  {
-    "tribe":"Ad Agency Alumni",
-    "report":"Formerly Phoenician",
-    "tribe_id":"12346_10",
-    "report_id":"12346",
-    "rank": 3,
-    "number_using": 435
-  }
-]
+{
+  "total": 3,
+  "hits":[
+    {
+      "tribe":"Halifax Locals",
+      "report":"@Collide_Halifax followers",
+      "tribeid":"12345_10",
+      "campaignid":"12345",
+      "rank": 3,
+      "number_using": 435
+    },
+    {
+      "tribe":"Designers/Devs",
+      "report":"@Collide_Halifax followers",
+      "tribe_id":"12345_3",
+      "report_id":"12345",
+      "rank": 3,
+      "number_using": 435
+    },
+    {
+      "tribe":"Ad Agency Alumni",
+      "report":"Formerly Phoenician",
+      "tribe_id":"12346_10",
+      "report_id":"12346",
+      "rank": 3,
+      "number_using": 435
+    }
+  ]
+}
 ```
 
 Finds all tribes using a specific term (hashtag, mention, etc.)
