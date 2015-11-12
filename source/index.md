@@ -981,6 +981,7 @@ curl "https://api.affin.io/v1/affinity_search/contains_member?api_key=YOUR_API_K
 ```json
 {
   "total": 3,
+  "returned": 3,
   "hits":[
     {
       "tribe":"Halifax Locals",
