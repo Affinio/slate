@@ -322,24 +322,27 @@ curl "https://api.affin.io/v1/content/top_hashtags?api_key=YOUR_API_KEY&tribe_id
 > ###Expected Return
 
 ```json
-[
-  {
-    "term": "MH17",
-    "count": 89
-  },
-  {
-    "term": "Gaza",
-    "count": 76
-  },
-  {
-    "term": "WorldCupFinal",
-    "count": 76
-  },
-  {
-    "term": "India",
-    "count": 74
-  }
-]
+{
+  "total": 100,
+  "hashtags":[
+    {
+      "term": "MH17",
+      "count": 89
+    },
+    {
+      "term": "Gaza",
+      "count": 76
+    },
+    {
+      "term": "WorldCupFinal",
+      "count": 76
+    },
+    {
+      "term": "India",
+      "count": 74
+    }
+  ]
+}
 ```
 
 Retrieves the top 100 hashtags for a given tribe.
