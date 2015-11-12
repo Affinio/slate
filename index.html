@@ -448,7 +448,7 @@ from defaults to 0, and size defaults to 10.</p>
 <h3 id="expected-return">Expected Return</h3>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
   </span><span class="nt">"hashtags"</span><span class="p">:[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MH17"</span><span class="p">,</span><span class="w">
@@ -504,24 +504,27 @@ from defaults to 0, and size defaults to 10.</p>
 <blockquote>
 <h3 id="expected-return">Expected Return</h3>
 </blockquote>
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"narendramodi"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">132</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timesofindia"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">122</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YouTube"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PMOIndia"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"mentions"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"narendramodi"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">132</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timesofindia"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">122</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YouTube"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PMOIndia"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 
 <p>Retrieves the top mentions for a given tribe.</p>
@@ -560,22 +563,25 @@ curl <span class="s2">"https://api.affin.io/v1/content/top_influencers?api_key=Y
 <blockquote>
 <h3 id="expected-return">Expected Return</h3>
 </blockquote>
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11740902</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tim Ferriss"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"screen_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tferriss"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">64364.455959025</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"affinity"</span><span class="p">:</span><span class="w"> </span><span class="mf">1203.928383</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">115485051</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Conan O'Brien"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"screen_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ConanOBrien"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">19607.535340593</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"affinity"</span><span class="p">:</span><span class="w"> </span><span class="mf">1123.912992</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"influencers"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11740902</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tim Ferriss"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"screen_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tferriss"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">64364.455959025</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"affinity"</span><span class="p">:</span><span class="w"> </span><span class="mf">1203.928383</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">115485051</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Conan O'Brien"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"screen_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ConanOBrien"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">19607.535340593</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"affinity"</span><span class="p">:</span><span class="w"> </span><span class="mf">1123.912992</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 
 <p>Retrieves the top 1000 influencers for a given tribe.</p>
@@ -621,24 +627,27 @@ Sample tags: &ldquo;brands&rdquo;, &ldquo;retail&rdquo;, &ldquo;Agency&rdquo; an
 <blockquote>
 <h3 id="expected-return">Expected Return</h3>
 </blockquote>
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"people"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">152</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"roof"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">144</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"time"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">140</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"today"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">132</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"tweet_keywords"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"people"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">152</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"roof"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">144</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"time"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">140</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"today"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">132</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 
 <p>Retrieves the top tweet keywords for a given tribe.</p>
@@ -675,24 +684,27 @@ Sample tags: &ldquo;brands&rdquo;, &ldquo;retail&rdquo;, &ldquo;Agency&rdquo; an
 <blockquote>
 <h3 id="expected-return">Expected Return</h3>
 </blockquote>
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"writer"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nyc"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nerd"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"student"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"bio_keywords"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"writer"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nyc"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nerd"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"student"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 
 <p>Retrieves the top bio keywords for a given tribe.</p>
@@ -729,24 +741,27 @@ Sample tags: &ldquo;brands&rdquo;, &ldquo;retail&rdquo;, &ldquo;Agency&rdquo; an
 <blockquote>
 <h3 id="expected-return">Expected Return</h3>
 </blockquote>
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gaming"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">78</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Services"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Food/Travel"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">59</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Health"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"categories"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gaming"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">78</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Services"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Food/Travel"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">59</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Health"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 
 <p>Retrieves the top categories for a given tribe.</p>
@@ -783,24 +798,27 @@ Sample tags: &ldquo;brands&rdquo;, &ldquo;retail&rdquo;, &ldquo;Agency&rdquo; an
 <blockquote>
 <h3 id="expected-return">Expected Return</h3>
 </blockquote>
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"Twitter for iPhone"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">910</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"Twitter for Websites"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">845</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"Twitter for Android"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">331</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"Twitter for iPad"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">313</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"apps"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"Twitter for iPhone"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">910</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"Twitter for Websites"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">845</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"Twitter for Android"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">331</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"Twitter for iPad"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">313</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 
 <p>Retrieves the top apps for a given tribe.</p>
@@ -837,24 +855,27 @@ Sample tags: &ldquo;brands&rdquo;, &ldquo;retail&rdquo;, &ldquo;Agency&rdquo; an
 <blockquote>
 <h3 id="expected-return">Expected Return</h3>
 </blockquote>
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"tbt"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">910</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"oscars"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">845</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"socialmedia"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">331</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"socialmediaweek"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">313</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"favorites"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"tbt"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">910</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"oscars"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">845</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"socialmedia"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">331</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"socialmediaweek"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">313</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 
 <p>Retrieves the top favorites for a given tribe.</p>
@@ -891,24 +912,27 @@ Sample tags: &ldquo;brands&rdquo;, &ldquo;retail&rdquo;, &ldquo;Agency&rdquo; an
 <blockquote>
 <h3 id="expected-return">Expected Return</h3>
 </blockquote>
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"London"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">85</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Los Angeles"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">77</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">64</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Toronto"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">49</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"locations"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"London"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">85</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Los Angeles"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">77</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">64</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Toronto"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">49</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 
 <p>Retrieves the top locations for a given tribe.</p>
@@ -945,28 +969,27 @@ Sample tags: &ldquo;brands&rdquo;, &ldquo;retail&rdquo;, &ldquo;Agency&rdquo; an
 <blockquote>
 <h3 id="expected-return">Expected Return</h3>
 </blockquote>
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.si.com/nba/2014/07/11/lebron-james-cleveland-cavaliers"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://twitter.com/i/t/worldcup"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://bit.ly/1zu0IHz"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://vine.co/v/MtZ2xhIjDPe"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://uapp.ly"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"urls"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.si.com/nba/2014/07/11/lebron-james-cleveland-cavaliers"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://twitter.com/i/t/worldcup"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://bit.ly/1zu0IHz"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://vine.co/v/MtZ2xhIjDPe"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 
 <p>Retrieves the top URLs for a given tribe.</p>
@@ -1003,28 +1026,27 @@ Sample tags: &ldquo;brands&rdquo;, &ldquo;retail&rdquo;, &ldquo;Agency&rdquo; an
 <blockquote>
 <h3 id="expected-return">Expected Return</h3>
 </blockquote>
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"twitter.com"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">78</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"washingtonpost.com"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"theguardian.com"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"theatlantic.com"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cnn.com"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"domains"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"twitter.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">78</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"washingtonpost.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"theguardian.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"theatlantic.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 
 <p>Retrieves the top domains for a given tribe.</p>
