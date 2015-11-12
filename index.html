@@ -1160,26 +1160,29 @@ curl <span class="s2">"https://api.affin.io/v1/affinity_search/influenced_by?api
 <blockquote>
 <h3 id="expected-return">Expected Return</h3>
 </blockquote>
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Halifax Locals"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"@Collide_Halifax followers"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"tribeid"</span><span class="p">:</span><span class="s2">"12345_10"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"campaignid"</span><span class="p">:</span><span class="s2">"12345"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Designers/Devs"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"@Collide_Halifax followers"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"tribe_id"</span><span class="p">:</span><span class="s2">"12345_3"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"report_id"</span><span class="p">:</span><span class="s2">"12345"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Ad Agency Alumni"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"Formerly Phoenician"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"tribe_id"</span><span class="p">:</span><span class="s2">"12346_10"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"report_id"</span><span class="p">:</span><span class="s2">"12346"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"hits"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Halifax Locals"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"@Collide_Halifax followers"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"tribeid"</span><span class="p">:</span><span class="s2">"12345_10"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"campaignid"</span><span class="p">:</span><span class="s2">"12345"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Designers/Devs"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"@Collide_Halifax followers"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"tribe_id"</span><span class="p">:</span><span class="s2">"12345_3"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"report_id"</span><span class="p">:</span><span class="s2">"12345"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Ad Agency Alumni"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"Formerly Phoenician"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"tribe_id"</span><span class="p">:</span><span class="s2">"12346_10"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"report_id"</span><span class="p">:</span><span class="s2">"12346"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 
 <p>Finds all tribes over which a given user has significant influence.</p>
@@ -1234,26 +1237,29 @@ from defaults to 0, and size defaults to 10.</p>
 <blockquote>
 <h3 id="expected-return">Expected Return</h3>
 </blockquote>
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Halifax Locals"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"@Collide_Halifax followers"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"tribe_id"</span><span class="p">:</span><span class="s2">"12345_10"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"report_id"</span><span class="p">:</span><span class="s2">"12345"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Designers/Devs"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"@Collide_Halifax followers"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"tribe_id"</span><span class="p">:</span><span class="s2">"12345_3"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"report_id"</span><span class="p">:</span><span class="s2">"12345"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Ad Agency Alumni"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"Formerly Phoenician"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"tribe_id"</span><span class="p">:</span><span class="s2">"12346_10"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"report_id"</span><span class="p">:</span><span class="s2">"12346"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"hits"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Halifax Locals"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"@Collide_Halifax followers"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"tribe_id"</span><span class="p">:</span><span class="s2">"12345_10"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"report_id"</span><span class="p">:</span><span class="s2">"12345"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Designers/Devs"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"@Collide_Halifax followers"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"tribe_id"</span><span class="p">:</span><span class="s2">"12345_3"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"report_id"</span><span class="p">:</span><span class="s2">"12345"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Ad Agency Alumni"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"Formerly Phoenician"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"tribe_id"</span><span class="p">:</span><span class="s2">"12346_10"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"report_id"</span><span class="p">:</span><span class="s2">"12346"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 
 <p>Finds all tribes to which a given user belongs.</p>
@@ -1308,32 +1314,35 @@ from defaults to 0, and size defaults to 10.</p>
 <blockquote>
 <h3 id="expected-return">Expected Return</h3>
 </blockquote>
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Halifax Locals"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"@Collide_Halifax followers"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"tribeid"</span><span class="p">:</span><span class="s2">"12345_10"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"campaignid"</span><span class="p">:</span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"number_using"</span><span class="p">:</span><span class="w"> </span><span class="mi">435</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Designers/Devs"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"@Collide_Halifax followers"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"tribe_id"</span><span class="p">:</span><span class="s2">"12345_3"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"report_id"</span><span class="p">:</span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"number_using"</span><span class="p">:</span><span class="w"> </span><span class="mi">435</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Ad Agency Alumni"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"Formerly Phoenician"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"tribe_id"</span><span class="p">:</span><span class="s2">"12346_10"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"report_id"</span><span class="p">:</span><span class="s2">"12346"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"number_using"</span><span class="p">:</span><span class="w"> </span><span class="mi">435</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"hits"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Halifax Locals"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"@Collide_Halifax followers"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"tribeid"</span><span class="p">:</span><span class="s2">"12345_10"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"campaignid"</span><span class="p">:</span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"number_using"</span><span class="p">:</span><span class="w"> </span><span class="mi">435</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Designers/Devs"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"@Collide_Halifax followers"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"tribe_id"</span><span class="p">:</span><span class="s2">"12345_3"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"report_id"</span><span class="p">:</span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"number_using"</span><span class="p">:</span><span class="w"> </span><span class="mi">435</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Ad Agency Alumni"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"Formerly Phoenician"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"tribe_id"</span><span class="p">:</span><span class="s2">"12346_10"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"report_id"</span><span class="p">:</span><span class="s2">"12346"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"number_using"</span><span class="p">:</span><span class="w"> </span><span class="mi">435</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 
 <p>Finds all tribes using a specific term (hashtag, mention, etc.)</p>
