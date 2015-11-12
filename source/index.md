@@ -323,7 +323,7 @@ curl "https://api.affin.io/v1/content/top_hashtags?api_key=YOUR_API_KEY&tribe_id
 
 ```json
 {
-  "total": 100,
+  "total": 4,
   "hashtags":[
     {
       "term": "MH17",
@@ -370,24 +370,27 @@ curl "https://api.affin.io/v1/content/top_mentions?api_key=YOUR_API_KEY&tribe_id
 > ###Expected Return
 
 ```json
-[
-  {
-    "term": "narendramodi",
-    "count": 132
-  },
-  {
-    "term": "timesofindia",
-    "count": 122
-  },
-  {
-    "term": "YouTube",
-    "count": 99
-  },
-  {
-    "term": "PMOIndia",
-    "count": 80
-  }
-]
+{
+  "total": 4,
+  "mentions":[
+    {
+      "term": "narendramodi",
+      "count": 132
+    },
+    {
+      "term": "timesofindia",
+      "count": 122
+    },
+    {
+      "term": "YouTube",
+      "count": 99
+    },
+    {
+      "term": "PMOIndia",
+      "count": 80
+    }
+  ]
+}
 ```
 
 Retrieves the top mentions for a given tribe.
@@ -415,22 +418,25 @@ curl "https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&tribe
 > ###Expected Return
 
 ```json
-[
-  {
-    "id": 11740902,
-    "name": "Tim Ferriss",
-    "screen_name": "tferriss",
-    "score": 64364.455959025,
-    "affinity": 1203.928383
-  },
-  {
-    "id": 115485051,
-    "name": "Conan O'Brien",
-    "screen_name": "ConanOBrien",
-    "score": 19607.535340593,
-    "affinity": 1123.912992
-  }
-]
+{
+  "total": 2,
+  "influencers":[
+    {
+      "id": 11740902,
+      "name": "Tim Ferriss",
+      "screen_name": "tferriss",
+      "score": 64364.455959025,
+      "affinity": 1203.928383
+    },
+    {
+      "id": 115485051,
+      "name": "Conan O'Brien",
+      "screen_name": "ConanOBrien",
+      "score": 19607.535340593,
+      "affinity": 1123.912992
+    }
+  ]
+}
 ```
 
 Retrieves the top 1000 influencers for a given tribe.
@@ -462,24 +468,27 @@ curl "https://api.affin.io/v1/content/top_tweetkeywords?api_key=YOUR_API_KEY&tri
 > ###Expected Return
 
 ```json
-[
-  {
-    "term": "people",
-    "count": 152
-  },
-  {
-    "term": "roof",
-    "count": 144
-  },
-  {
-    "term": "time",
-    "count": 140
-  },
-  {
-    "term": "today",
-    "count": 132
-  }
-]
+{
+  "total": 4,
+  "tweet_keywords":[
+    {
+      "term": "people",
+      "count": 152
+    },
+    {
+      "term": "roof",
+      "count": 144
+    },
+    {
+      "term": "time",
+      "count": 140
+    },
+    {
+      "term": "today",
+      "count": 132
+    }
+  ]
+}
 ```
 
 Retrieves the top tweet keywords for a given tribe.
@@ -505,24 +514,27 @@ curl "https://api.affin.io/v1/content/top_biokeywords?api_key=YOUR_API_KEY&tribe
 > ###Expected Return
 
 ```json
-[
-  {
-    "term": "writer",
-    "count": 15
-  },
-  {
-    "term": "nyc",
-    "count": 8
-  },
-  {
-    "term": "nerd",
-    "count": 8
-  },
-  {
-    "term": "student",
-    "count": 8
-  },
-]
+{
+  "total": 4,
+  "bio_keywords":[
+    {
+      "term": "writer",
+      "count": 15
+    },
+    {
+      "term": "nyc",
+      "count": 8
+    },
+    {
+      "term": "nerd",
+      "count": 8
+    },
+    {
+      "term": "student",
+      "count": 8
+    },
+  ]
+}
 ```
 
 Retrieves the top bio keywords for a given tribe.
@@ -549,24 +561,27 @@ curl "https://api.affin.io/v1/content/top_categories?api_key=YOUR_API_KEY&tribe_
 > ###Expected Return
 
 ```json
-[
-  {
-    "term": "Gaming",
-    "count": 78
-  },
-  {
-    "term": "Services",
-    "count": 75
-  },
-  {
-    "term": "Food/Travel",
-    "count": 59
-  },
-  {
-    "term": "Health",
-    "count": 13
-  }
-]
+{
+  "total": 4,
+  "categories":[
+    {
+      "term": "Gaming",
+      "count": 78
+    },
+    {
+      "term": "Services",
+      "count": 75
+    },
+    {
+      "term": "Food/Travel",
+      "count": 59
+    },
+    {
+      "term": "Health",
+      "count": 13
+    }
+  ]
+}
 ```
 
 Retrieves the top categories for a given tribe.
@@ -592,24 +607,27 @@ curl "https://api.affin.io/v1/content/top_apps?api_key=YOUR_API_KEY&tribe_id=123
 > ###Expected Return
 
 ```json
-[
-  {
-    "term":"Twitter for iPhone",
-    "count":910
-  },
-  {
-    "term":"Twitter for Websites",
-    "count":845
-  },
-  {
-    "term":"Twitter for Android",
-    "count":331
-  },
-  {
-    "term":"Twitter for iPad",
-    "count":313
-  }
-]
+{
+  "total": 4,
+  "apps":[
+    {
+      "term":"Twitter for iPhone",
+      "count":910
+    },
+    {
+      "term":"Twitter for Websites",
+      "count":845
+    },
+    {
+      "term":"Twitter for Android",
+      "count":331
+    },
+    {
+      "term":"Twitter for iPad",
+      "count":313
+    }
+  ]
+}
 ```
 
 Retrieves the top apps for a given tribe.
@@ -637,24 +655,27 @@ curl "https://api.affin.io/v1/content/top_favorites?api_key=YOUR_API_KEY&tribe_i
 > ###Expected Return
 
 ```json
-[
-  {
-    "term":"tbt",
-    "count":910
-  },
-  {
-    "term":"oscars",
-    "count":845
-  },
-  {
-    "term":"socialmedia",
-    "count":331
-  },
-  {
-    "term":"socialmediaweek",
-    "count":313
-  }
-]
+{
+  "total": 4,
+  "favorites":[
+    {
+      "term":"tbt",
+      "count":910
+    },
+    {
+      "term":"oscars",
+      "count":845
+    },
+    {
+      "term":"socialmedia",
+      "count":331
+    },
+    {
+      "term":"socialmediaweek",
+      "count":313
+    }
+  ]
+}
 ```
 
 Retrieves the top favorites for a given tribe.
@@ -680,24 +701,27 @@ curl "https://api.affin.io/v1/content/top_locations?api_key=YOUR_API_KEY&tribe_i
 > ###Expected Return
 
 ```json
-[
-  {
-    "term": "London",
-    "count": 85
-  },
-  {
-    "term": "Los Angeles",
-    "count": 77
-  },
-  {
-    "term": "New York",
-    "count": 64
-  },
-  {
-    "term": "Toronto",
-    "count": 49
-  }
-]
+{
+  "total": 4,
+  "locations":[
+    {
+      "term": "London",
+      "count": 85
+    },
+    {
+      "term": "Los Angeles",
+      "count": 77
+    },
+    {
+      "term": "New York",
+      "count": 64
+    },
+    {
+      "term": "Toronto",
+      "count": 49
+    }
+  ]
+}
 ```
 
 Retrieves the top locations for a given tribe.
@@ -724,28 +748,27 @@ curl "https://api.affin.io/v1/content/top_urls?api_key=YOUR_API_KEY&tribe_id=123
 > ###Expected Return
 
 ```json
-[
-  {
-    "term": "http://www.si.com/nba/2014/07/11/lebron-james-cleveland-cavaliers",
-    "count": 24
-  },
-  {
-    "term": "https://twitter.com/i/t/worldcup",
-    "count": 22
-  },
-  {
-    "term": "http://bit.ly/1zu0IHz",
-    "count": 22
-  },
-  {
-    "term": "https://vine.co/v/MtZ2xhIjDPe",
-    "count": 16
-  },
-  {
-    "term": "http://uapp.ly",
-    "count": 12
-  }
-]
+{
+  "total": 4,
+  "urls":[
+    {
+      "term": "http://www.si.com/nba/2014/07/11/lebron-james-cleveland-cavaliers",
+      "count": 24
+    },
+    {
+      "term": "https://twitter.com/i/t/worldcup",
+      "count": 22
+    },
+    {
+      "term": "http://bit.ly/1zu0IHz",
+      "count": 22
+    },
+    {
+      "term": "https://vine.co/v/MtZ2xhIjDPe",
+      "count": 16
+    }
+  ]
+}
 ```
 
 Retrieves the top URLs for a given tribe.
@@ -772,28 +795,27 @@ curl "https://api.affin.io/v1/content/top_domains?api_key=YOUR_API_KEY&tribe_id=
 > ###Expected Return
 
 ```json
-[
-  {
-    "term": "twitter.com",
-    "count": 78
-  },
-  {
-    "term": "washingtonpost.com",
-    "count": 31
-  },
-  {
-    "term": "theguardian.com",
-    "count": 29
-  },
-  {
-    "term": "theatlantic.com",
-    "count": 28
-  },
-  {
-    "term": "cnn.com",
-    "count": 26
-  }
-]
+{
+  "total": 4,
+  "domains":[
+    {
+      "term": "twitter.com",
+      "count": 78
+    },
+    {
+      "term": "washingtonpost.com",
+      "count": 31
+    },
+    {
+      "term": "theguardian.com",
+      "count": 29
+    },
+    {
+      "term": "theatlantic.com",
+      "count": 28
+    }
+  ]
+}
 ```
 
 Retrieves the top domains for a given tribe.
