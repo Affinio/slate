@@ -77,7 +77,7 @@ bio_location | NULL | Optional for network_graph type, not required for other re
 bio_keywords | NULL | Optional for network_graph type, not required for other report types
 track_terms | NULL | Required when tweet_content is selected as report_type
 urls | NULL | Required when url_share is selected as report_type
-gnip_query | NULL | Optional
+gnip_query | NULL | Optional parameter only available for Twitter
 number_of_clusters | 8 | Optional
 minInfluencerFollowers | NULL | Optional
 maxInfluencerFollowers | NULL | Optional
