@@ -659,20 +659,20 @@ curl "https://api.affin.io/v1/content/top_favorites?api_key=YOUR_API_KEY&tribe_i
   "total": 4,
   "favorites":[
     {
-      "term":"tbt",
-      "count":910
+      "term":"644193755814342656",
+      "count":157648
     },
     {
-      "term":"oscars",
-      "count":845
+      "term":"650409725813780482",
+      "count":119080
     },
     {
-      "term":"socialmedia",
-      "count":331
+      "term":"649653419620352000",
+      "count":115956
     },
     {
-      "term":"socialmediaweek",
-      "count":313
+      "term":"650999329700868096",
+      "count":103008
     }
   ]
 }
