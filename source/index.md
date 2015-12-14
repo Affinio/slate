@@ -425,15 +425,15 @@ curl "https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&tribe
       "id": 11740902,
       "name": "Tim Ferriss",
       "screen_name": "tferriss",
-      "relevance_score": 64364.455959025,
-      "affinity_socre": 1203.928383
+      "relevance_score": 100,
+      "affinity_socre": 62
     },
     {
       "id": 115485051,
       "name": "Conan O'Brien",
       "screen_name": "ConanOBrien",
-      "relevance_score": 19607.535340593,
-      "affinity_socre": 1123.912992
+      "relevance_score": 78,
+      "affinity_socre": 15
     }
   ]
 }
