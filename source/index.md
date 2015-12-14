@@ -425,15 +425,15 @@ curl "https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&tribe
       "id": 11740902,
       "name": "Tim Ferriss",
       "screen_name": "tferriss",
-      "score": 64364.455959025,
-      "affinity": 1203.928383
+      "relevance_score": 64364.455959025,
+      "affinity_socre": 1203.928383
     },
     {
       "id": 115485051,
       "name": "Conan O'Brien",
       "screen_name": "ConanOBrien",
-      "score": 19607.535340593,
-      "affinity": 1123.912992
+      "relevance_score": 19607.535340593,
+      "affinity_socre": 1123.912992
     }
   ]
 }
@@ -452,10 +452,15 @@ Parameter | Default | Description
 api_key | n/a | Your API key
 tribe_id | n/a | The ID of the tribe you're trying to retrieve
 tag | n/a | Optional parameter. The type of tag you're looking up. 
+sort_by | relevance_score | Optional parameter for sorting influencers. 
 
 <aside class="notice">
 Sample tags: "brands", "retail", "Agency" and "Computer Game".
 </aside>
+<aside class="notice">
+Available sort_by values: "relevance_score" and "affinity_score".
+</aside>
+
 
 
 
