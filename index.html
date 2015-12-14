@@ -570,15 +570,15 @@ curl <span class="s2">"https://api.affin.io/v1/content/top_influencers?api_key=Y
       </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11740902</span><span class="p">,</span><span class="w">
       </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tim Ferriss"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"screen_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tferriss"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">64364.455959025</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"affinity"</span><span class="p">:</span><span class="w"> </span><span class="mf">1203.928383</span><span class="w">
+      </span><span class="nt">"relevance_score"</span><span class="p">:</span><span class="w"> </span><span class="mf">64364.455959025</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"affinity_socre"</span><span class="p">:</span><span class="w"> </span><span class="mf">1203.928383</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">115485051</span><span class="p">,</span><span class="w">
       </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Conan O'Brien"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"screen_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ConanOBrien"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">19607.535340593</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"affinity"</span><span class="p">:</span><span class="w"> </span><span class="mf">1123.912992</span><span class="w">
+      </span><span class="nt">"relevance_score"</span><span class="p">:</span><span class="w"> </span><span class="mf">19607.535340593</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"affinity_socre"</span><span class="p">:</span><span class="w"> </span><span class="mf">1123.912992</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -614,10 +614,19 @@ curl <span class="s2">"https://api.affin.io/v1/content/top_influencers?api_key=Y
 <td>n/a</td>
 <td>Optional parameter. The type of tag you&rsquo;re looking up.</td>
 </tr>
+<tr>
+<td>sort_by</td>
+<td>relevance_score</td>
+<td>Optional parameter for sorting influencers.</td>
+</tr>
 </tbody></table>
 
 <aside class="notice">
 Sample tags: &ldquo;brands&rdquo;, &ldquo;retail&rdquo;, &ldquo;Agency&rdquo; and &ldquo;Computer Game&rdquo;.
+</aside>
+
+<aside class="notice">
+Available sort_by values: &ldquo;relevance_score&rdquo; and &ldquo;affinity_score&rdquo;.
 </aside>
 
 <h2 id="top-tweet-keywords">Top Tweet Keywords</h2>
