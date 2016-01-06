@@ -156,7 +156,7 @@ created_after | null | Optional. Returns all campaigns created after a certain d
 ## Get a Specific Report
 
 ```shell
-curl "https://api.affin.io/v1/campaigns/campaigns?api_key=YOUR_API_KEY&tribe_id=12345"
+curl "https://api.affin.io/v1/campaigns/campaigns?api_key=YOUR_API_KEY&id=12345"
 ```
 
 > ###Expected Return
@@ -164,14 +164,24 @@ curl "https://api.affin.io/v1/campaigns/campaigns?api_key=YOUR_API_KEY&tribe_id=
 {
   "id": 12345,
   "name": "Affinio Followers Demo Report",
-  "number_of_clusters": "20",
+  "number_of_clusters": "2",
   "source": "Twitter",
   "filters": {
     "followers_of": "awssupport",
     "location": "global"
   },
   "members_count": 999999,
-  "started": 1428682154
+  "started": 1428682154,
+  "tribes":[
+    {
+      "id": "12345_0",
+      "name": "TribeName1"
+    },
+    {
+      "id": "12345_1",
+      "name": "TribeName2"
+    }
+  ]
 }
 ```
 
