@@ -253,7 +253,7 @@ from defaults to 0, and size defaults to 10.</p>
 </tbody></table>
 
 <h2 id="get-a-specific-report">Get a Specific Report</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/campaigns/campaigns?api_key=YOUR_API_KEY&amp;tribe_id=12345"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/campaigns/campaigns?api_key=YOUR_API_KEY&amp;id=12345"</span>
 </code></pre>
 
 <blockquote>
@@ -261,14 +261,24 @@ from defaults to 0, and size defaults to 10.</p>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12345</span><span class="p">,</span><span class="w">
   </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Affinio Followers Demo Report"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"number_of_clusters"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"number_of_clusters"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Twitter"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"filters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"followers_of"</span><span class="p">:</span><span class="w"> </span><span class="s2">"awssupport"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"global"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nt">"members_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">999999</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"started"</span><span class="p">:</span><span class="w"> </span><span class="mi">1428682154</span><span class="w">
+  </span><span class="nt">"started"</span><span class="p">:</span><span class="w"> </span><span class="mi">1428682154</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"tribes"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345_0"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TribeName1"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345_1"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TribeName2"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 </blockquote>
