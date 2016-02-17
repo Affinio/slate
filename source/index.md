@@ -182,7 +182,7 @@ curl "https://api.affin.io/v1/campaigns/campaigns?api_key=YOUR_API_KEY&id=12345"
       "name": "TribeName2"
     }
   ]
-}
+}t
 ```
 
 This endpoint retrieves basic details about a given report to which you have access.
@@ -422,7 +422,7 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 ```shell
 curl "https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&tribe_id=12345_10"
 
-curl "https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&tribe_id=12345_10&tag=brands"
+curl "https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&tribe_id=12345_10&include_tag=true&network=twitter"
 ```
 
 > ###Expected Return
@@ -436,14 +436,16 @@ curl "https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&tribe
       "name": "Tim Ferriss",
       "screen_name": "tferriss",
       "relevance_score": 100,
-      "affinity_socre": 62
+      "affinity_socre": 62,
+      "tags":["news"]
     },
     {
       "id": 115485051,
       "name": "Conan O'Brien",
       "screen_name": "ConanOBrien",
       "relevance_score": 78,
-      "affinity_socre": 15
+      "affinity_socre": 15,
+      "tags":["brands", "global"]
     }
   ]
 }
@@ -461,12 +463,10 @@ Parameter | Default | Description
 --------- | ------- | -----------
 api_key | n/a | Your API key
 tribe_id | n/a | The ID of the tribe you're trying to retrieve
-tag | n/a | Optional parameter. The type of tag you're looking up. 
+include_tag | true | Set it to be true if influencer tags should be returned. False otherwise.
+network | twitter | The social network type. Available networks are twitter and instagram. 
 sort_by | relevance_score | Optional parameter for sorting influencers. 
 
-<aside class="notice">
-Sample tags: "brands", "retail", "Agency" and "Computer Game".
-</aside>
 <aside class="notice">
 Available sort_by values: "relevance_score" and "affinity_score".
 </aside>
