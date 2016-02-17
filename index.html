@@ -279,7 +279,7 @@ from defaults to 0, and size defaults to 10.</p>
       </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TribeName2"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="err">t</span><span class="w">
 </span></code></pre>
 </blockquote>
 
@@ -567,7 +567,7 @@ from defaults to 0, and size defaults to 10.</p>
 <h2 id="top-influencers">Top Influencers</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
 
-curl <span class="s2">"https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&amp;tribe_id=12345_10&amp;tag=brands"</span>
+curl <span class="s2">"https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&amp;tribe_id=12345_10&amp;include_tag=true&amp;network=twitter"</span>
 </code></pre>
 
 <blockquote>
@@ -581,14 +581,16 @@ curl <span class="s2">"https://api.affin.io/v1/content/top_influencers?api_key=Y
       </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tim Ferriss"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"screen_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tferriss"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"relevance_score"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"affinity_socre"</span><span class="p">:</span><span class="w"> </span><span class="mi">62</span><span class="w">
+      </span><span class="nt">"affinity_socre"</span><span class="p">:</span><span class="w"> </span><span class="mi">62</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"tags"</span><span class="p">:[</span><span class="s2">"news"</span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">115485051</span><span class="p">,</span><span class="w">
       </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Conan O'Brien"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"screen_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ConanOBrien"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"relevance_score"</span><span class="p">:</span><span class="w"> </span><span class="mi">78</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"affinity_socre"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="w">
+      </span><span class="nt">"affinity_socre"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"tags"</span><span class="p">:[</span><span class="s2">"brands"</span><span class="p">,</span><span class="w"> </span><span class="s2">"global"</span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -620,9 +622,14 @@ curl <span class="s2">"https://api.affin.io/v1/content/top_influencers?api_key=Y
 <td>The ID of the tribe you&rsquo;re trying to retrieve</td>
 </tr>
 <tr>
-<td>tag</td>
-<td>n/a</td>
-<td>Optional parameter. The type of tag you&rsquo;re looking up.</td>
+<td>include_tag</td>
+<td>true</td>
+<td>Set it to be true if influencer tags should be returned. False otherwise.</td>
+</tr>
+<tr>
+<td>network</td>
+<td>twitter</td>
+<td>The social network type. Available networks are twitter and instagram.</td>
 </tr>
 <tr>
 <td>sort_by</td>
@@ -630,10 +637,6 @@ curl <span class="s2">"https://api.affin.io/v1/content/top_influencers?api_key=Y
 <td>Optional parameter for sorting influencers.</td>
 </tr>
 </tbody></table>
-
-<aside class="notice">
-Sample tags: &ldquo;brands&rdquo;, &ldquo;retail&rdquo;, &ldquo;Agency&rdquo; and &ldquo;Computer Game&rdquo;.
-</aside>
 
 <aside class="notice">
 Available sort_by values: &ldquo;relevance_score&rdquo; and &ldquo;affinity_score&rdquo;.
