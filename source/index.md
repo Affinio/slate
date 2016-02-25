@@ -85,7 +85,7 @@ gnip_query | NULL | Optional parameter only available for Twitter
 number_of_clusters | 8 | Optional
 min_influencer_followers | NULL | Optional
 max_influencer_followers | NULL | Optional
-followers_intersection | false | Optional. Set to true for multiple handles follower intersection. 
+followers_intersection | false | Optional for network_graph type. Set to true for multiple handles follower intersection. 
 
 
 <aside class="notice">
