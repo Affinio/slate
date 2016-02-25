@@ -43,6 +43,10 @@ Affinio uses unique keys to allow access to our API. You can register a new Affi
 ```shell
 curl -H "Content-Type: application/json" -X POST -d '{"api_key":"YOUR_API_KEY", "followers_of":"affinio", "source":"Twitter", "report_type":"network_graph", "name":"Test Report", "number_of_clusters":"8"}' "https://api.affin.io/v1/campaigns/create_report"
 
+curl -H "Content-Type: application/json" -X POST -d '{"api_key":"YOUR_API_KEY", "followers_of":"walmart,amazon", "source":"Twitter", "report_type":"network_graph", "name":"Followers of Walmart or Amazon", "number_of_clusters":"8"}' "https://api.affin.io/v1/campaigns/create_report"
+
+curl -H "Content-Type: application/json" -X POST -d '{"api_key":"YOUR_API_KEY", "followers_of":"walmart,amazon", "source":"Twitter", "report_type":"network_graph", "name":"Followers of Walmart and Amazon", "number_of_clusters":"8", "followers_intersection":"true"}' "https://api.affin.io/v1/campaigns/create_report"
+
 curl -H "Content-Type: application/json" -X POST -d '{"api_key":"YOUR_API_KEY", "gnip_query": "affinio", "track_terms":[{"term":"affinio", "type":"keyword"}], "source":"Twitter", "report_type":"tweet_content", "name":"Test Report"}' "https://api.affin.io/v1/campaigns/create_report"
 
 curl -H "Content-Type: application/json" -X POST -d '{"api_key":"YOUR_API_KEY", "urls": ["affinio.com", "github.com"], "source":"Twitter", "report_type":"url_share", "name":"Test Report"}' "https://api.affin.io/v1/campaigns/create_report"
@@ -72,15 +76,17 @@ Parameter | Default | Description
 api_key | YOUR_API_KEY | Your API key
 source | Twitter | Available sources: Twitter, Instagram, Pinterest
 report_type | network_graph | Available report types: network_graph, tweet_content and url_share
-followers_of | NULL | Required when network_graph is selected as report_type
+followers_of | NULL | Required when network_graph is selected as report_type. Separated by comma or space for multiple handles.
 bio_location | NULL | Optional for network_graph type, not required for other report types
 bio_keywords | NULL | Optional for network_graph type, not required for other report types
 track_terms | NULL | Required when tweet_content is selected as report_type
 urls | NULL | Required when url_share is selected as report_type
 gnip_query | NULL | Optional parameter only available for Twitter
 number_of_clusters | 8 | Optional
-minInfluencerFollowers | NULL | Optional
-maxInfluencerFollowers | NULL | Optional
+min_influencer_followers | NULL | Optional
+max_influencer_followers | NULL | Optional
+followers_intersection | false | Optional. Set to true for multiple handles follower intersection. 
+
 
 <aside class="notice">
 Possible report_type include "network_graph", "tweet_content" and "url_share".
@@ -90,6 +96,9 @@ The track_terms field should be an array of terms. Each term is contains a term 
 </aside>
 <aside class="notice">
 The urls field should be an array of url. 
+</aside>
+<aside class="notice">
+The followers_intersection is false by default. Set it to be true when analyzing the intersection of multiple handles' followers. 
 </aside>
 
 
