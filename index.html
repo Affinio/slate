@@ -67,6 +67,10 @@ We are limiting access to our API to specific partners at the present time. Plea
 <h2 id="create-a-report">Create a report</h2>
 <pre class="highlight shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <span class="s1">'{"api_key":"YOUR_API_KEY", "followers_of":"affinio", "source":"Twitter", "report_type":"network_graph", "name":"Test Report", "number_of_clusters":"8"}'</span> <span class="s2">"https://api.affin.io/v1/campaigns/create_report"</span>
 
+curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <span class="s1">'{"api_key":"YOUR_API_KEY", "followers_of":"walmart,amazon", "source":"Twitter", "report_type":"network_graph", "name":"Followers of Walmart or Amazon", "number_of_clusters":"8"}'</span> <span class="s2">"https://api.affin.io/v1/campaigns/create_report"</span>
+
+curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <span class="s1">'{"api_key":"YOUR_API_KEY", "followers_of":"walmart,amazon", "source":"Twitter", "report_type":"network_graph", "name":"Followers of Walmart and Amazon", "number_of_clusters":"8", "followers_intersection":"true"}'</span> <span class="s2">"https://api.affin.io/v1/campaigns/create_report"</span>
+
 curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <span class="s1">'{"api_key":"YOUR_API_KEY", "gnip_query": "affinio", "track_terms":[{"term":"affinio", "type":"keyword"}], "source":"Twitter", "report_type":"tweet_content", "name":"Test Report"}'</span> <span class="s2">"https://api.affin.io/v1/campaigns/create_report"</span>
 
 curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <span class="s1">'{"api_key":"YOUR_API_KEY", "urls": ["affinio.com", "github.com"], "source":"Twitter", "report_type":"url_share", "name":"Test Report"}'</span> <span class="s2">"https://api.affin.io/v1/campaigns/create_report"</span>
@@ -116,7 +120,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 <tr>
 <td>followers_of</td>
 <td>NULL</td>
-<td>Required when network_graph is selected as report_type</td>
+<td>Required when network_graph is selected as report_type. Separated by comma or space for multiple handles.</td>
 </tr>
 <tr>
 <td>bio_location</td>
@@ -149,14 +153,19 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 <td>Optional</td>
 </tr>
 <tr>
-<td>minInfluencerFollowers</td>
+<td>min_influencer_followers</td>
 <td>NULL</td>
 <td>Optional</td>
 </tr>
 <tr>
-<td>maxInfluencerFollowers</td>
+<td>max_influencer_followers</td>
 <td>NULL</td>
 <td>Optional</td>
+</tr>
+<tr>
+<td>followers_intersection</td>
+<td>false</td>
+<td>Optional. Set to true for multiple handles follower intersection.</td>
 </tr>
 </tbody></table>
 
@@ -170,6 +179,10 @@ The track_terms field should be an array of terms. Each term is contains a term 
 
 <aside class="notice">
 The urls field should be an array of url. 
+</aside>
+
+<aside class="notice">
+The followers_intersection is false by default. Set it to be true when analyzing the intersection of multiple handles&rsquo; followers. 
 </aside>
 
 <h2 id="get-my-reports-and-public-reports">Get My Reports (and Public Reports)</h2>
