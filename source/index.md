@@ -1111,7 +1111,7 @@ metric | 'hashtag' | The type of metric you're looking up
 ids | NULL | Tribe ids separated by comma. Note: If no tribe ids are passed in, all user owned campaigns will be searched. 
 
 <aside class="notice">
-Possible metrics include "hashtag", "mention", "keyword", "bio_keyword", "location", "url", and "domain".
+Possible metrics include "hashtag", "mention", "tweet_keyword", "bio_keyword", "location", "url", and "domain".
 </aside>
 
 
