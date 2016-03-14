@@ -120,7 +120,7 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 <tr>
 <td>followers_of</td>
 <td>NULL</td>
-<td>Required when network_graph is selected as report_type. Separated by comma or space for multiple handles.</td>
+<td>Required when network_graph is selected as report_type. Separated by comma for multiple handles.</td>
 </tr>
 <tr>
 <td>bio_location</td>
@@ -171,6 +171,10 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 
 <aside class="notice">
 Possible report_type include &ldquo;network_graph&rdquo;, &ldquo;tweet_content&rdquo; and &ldquo;url_share&rdquo;.
+</aside>
+
+<aside class="notice">
+followers_of could be a string of handles, &ldquo;amazon,walmart,ebay&rdquo;, or a string of user ids, &ldquo;12345,12346,12347&rdquo;, or a mixed string of handles and ids, like &ldquo;affinio,12345,walmart,amazon,23456&rdquo;
 </aside>
 
 <aside class="notice">
