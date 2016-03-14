@@ -76,7 +76,7 @@ Parameter | Default | Description
 api_key | YOUR_API_KEY | Your API key
 source | Twitter | Available sources: Twitter, Instagram, Pinterest
 report_type | network_graph | Available report types: network_graph, tweet_content and url_share
-followers_of | NULL | Required when network_graph is selected as report_type. Separated by comma or space for multiple handles.
+followers_of | NULL | Required when network_graph is selected as report_type. Separated by comma for multiple handles.
 bio_location | NULL | Optional for network_graph type, not required for other report types
 bio_keywords | NULL | Optional for network_graph type, not required for other report types
 track_terms | NULL | Required when tweet_content is selected as report_type
@@ -90,6 +90,9 @@ followers_intersection | false | Optional for network_graph type. Set to true fo
 
 <aside class="notice">
 Possible report_type include "network_graph", "tweet_content" and "url_share".
+</aside>
+<aside class="notice">
+followers_of could be a string of handles, "amazon,walmart,ebay", or a string of user ids, "12345,12346,12347", or a mixed string of handles and ids, like "affinio,12345,walmart,amazon,23456"
 </aside>
 <aside class="notice">
 The track_terms field should be an array of terms. Each term is contains a term name and a type. Possible term types include: keyword, hashtag and mention. 
