@@ -339,6 +339,7 @@ id | n/a | A campaign id or multiple campaign ids separated by comma.
 
 ```shell
 curl "https://api.affin.io/v1/content/top_hashtags?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/v1/content/top_hashtags?api_key=YOUR_API_KEY&tribe_id=12345_all"
 ```
 
 > ###Expected Return
@@ -380,13 +381,16 @@ Parameter | Default | Description
 api_key | n/a | Your API key
 tribe_id | n/a | The ID of the tribe you're trying to retrieve
 
-
+<aside class="notice">
+In order to get the "all" tribes data, please set the tribe id to be "CampaignID_all" like: 12345_all in curl example.
+</aside>
 
 
 ## Top Mentions
 
 ```shell
 curl "https://api.affin.io/v1/content/top_mentions?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/v1/content/top_mentions?api_key=YOUR_API_KEY&tribe_id=12345_all"
 ```
 
 > ###Expected Return
@@ -433,7 +437,7 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 
 ```shell
 curl "https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&tribe_id=12345_10"
-
+curl "https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&tribe_id=12345_all"
 curl "https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&tribe_id=12345_10&include_tag=true&network=twitter"
 ```
 
@@ -490,6 +494,7 @@ Available sort_by values: "relevance_score" and "affinity_score".
 
 ```shell
 curl "https://api.affin.io/v1/content/top_tweetkeywords?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/v1/content/top_tweetkeywords?api_key=YOUR_API_KEY&tribe_id=12345_all"
 ```
 
 > ###Expected Return
@@ -536,6 +541,8 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 
 ```shell
 curl "https://api.affin.io/v1/content/top_biokeywords?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/v1/content/top_biokeywords?api_key=YOUR_API_KEY&tribe_id=12345_all"
+
 ```
 
 > ###Expected Return
@@ -583,6 +590,7 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 
 ```shell
 curl "https://api.affin.io/v1/content/top_categories?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/v1/content/top_categories?api_key=YOUR_API_KEY&tribe_id=12345_all"
 ```
 
 > ###Expected Return
@@ -629,6 +637,7 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 
 ```shell
 curl "https://api.affin.io/v1/content/top_apps?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/v1/content/top_apps?api_key=YOUR_API_KEY&tribe_id=12345_all"
 ```
 
 > ###Expected Return
@@ -677,6 +686,7 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 
 ```shell
 curl "https://api.affin.io/v1/content/top_favorites?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/v1/content/top_favorites?api_key=YOUR_API_KEY&tribe_id=12345_all"
 ```
 
 > ###Expected Return
@@ -723,6 +733,7 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 
 ```shell
 curl "https://api.affin.io/v1/content/top_locations?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/v1/content/top_locations?api_key=YOUR_API_KEY&tribe_id=12345_all"
 ```
 
 > ###Expected Return
@@ -770,6 +781,7 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 
 ```shell
 curl "https://api.affin.io/v1/content/top_urls?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/v1/content/top_urls?api_key=YOUR_API_KEY&tribe_id=12345_all"
 ```
 
 > ###Expected Return
@@ -817,6 +829,7 @@ tribe_id | n/a | The ID of the tribe you're trying to retrieve
 
 ```shell
 curl "https://api.affin.io/v1/content/top_domains?api_key=YOUR_API_KEY&tribe_id=12345_10"
+curl "https://api.affin.io/v1/content/top_domains?api_key=YOUR_API_KEY&tribe_id=12345_all"
 ```
 
 > ###Expected Return
