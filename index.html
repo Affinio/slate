@@ -167,10 +167,15 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 <td>false</td>
 <td>Optional for network_graph type. Set to true for multiple handles follower intersection.</td>
 </tr>
+<tr>
+<td>csv_data</td>
+<td>NULL</td>
+<td>A string of user ids separated by comma. Required by upload_csv report type.</td>
+</tr>
 </tbody></table>
 
 <aside class="notice">
-Possible report_type include &ldquo;network_graph&rdquo;, &ldquo;tweet_content&rdquo; and &ldquo;url_share&rdquo;.
+Available report_type: &ldquo;network_graph&rdquo;, &ldquo;tweet_content&rdquo;, &ldquo;url_share&rdquo; and &ldquo;upload_csv&rdquo;.
 </aside>
 
 <aside class="notice">
@@ -187,6 +192,10 @@ The urls field should be an array of url.
 
 <aside class="notice">
 The followers_intersection is false by default. Set it to be true when analyzing the intersection of multiple handles&rsquo; followers. 
+</aside>
+
+<aside class="notice">
+For upload_csv reports, please pass in at least 500 user ids. 
 </aside>
 
 <h2 id="get-my-reports-and-public-reports">Get My Reports (and Public Reports)</h2>
