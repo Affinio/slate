@@ -194,7 +194,7 @@ curl "https://api.affin.io/v1/campaigns/campaigns?api_key=YOUR_API_KEY&id=12345"
       "name": "TribeName2"
     }
   ]
-}t
+}
 ```
 
 This endpoint retrieves basic details about a given report to which you have access.
