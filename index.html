@@ -469,6 +469,7 @@ from defaults to 0, and size defaults to 10.</p>
 
 <h2 id="top-hashtags">Top Hashtags</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_hashtags?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
+curl <span class="s2">"https://api.affin.io/v1/content/top_hashtags?api_key=YOUR_API_KEY&amp;tribe_id=12345_all"</span>
 </code></pre>
 
 <blockquote>
@@ -524,8 +525,13 @@ from defaults to 0, and size defaults to 10.</p>
 </tr>
 </tbody></table>
 
+<aside class="notice">
+In order to get the &ldquo;all&rdquo; tribes data, please set the tribe id to be &ldquo;CampaignID_all&rdquo; like: 12345_all in curl example.
+</aside>
+
 <h2 id="top-mentions">Top Mentions</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_mentions?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
+curl <span class="s2">"https://api.affin.io/v1/content/top_mentions?api_key=YOUR_API_KEY&amp;tribe_id=12345_all"</span>
 </code></pre>
 
 <blockquote>
@@ -583,7 +589,7 @@ from defaults to 0, and size defaults to 10.</p>
 
 <h2 id="top-influencers">Top Influencers</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
-
+curl <span class="s2">"https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&amp;tribe_id=12345_all"</span>
 curl <span class="s2">"https://api.affin.io/v1/content/top_influencers?api_key=YOUR_API_KEY&amp;tribe_id=12345_10&amp;include_tag=true&amp;network=twitter"</span>
 </code></pre>
 
@@ -661,6 +667,7 @@ Available sort_by values: &ldquo;relevance_score&rdquo; and &ldquo;affinity_scor
 
 <h2 id="top-tweet-keywords">Top Tweet Keywords</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_tweetkeywords?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
+curl <span class="s2">"https://api.affin.io/v1/content/top_tweetkeywords?api_key=YOUR_API_KEY&amp;tribe_id=12345_all"</span>
 </code></pre>
 
 <blockquote>
@@ -718,6 +725,8 @@ Available sort_by values: &ldquo;relevance_score&rdquo; and &ldquo;affinity_scor
 
 <h2 id="top-bio-keywords">Top Bio Keywords</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_biokeywords?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
+curl <span class="s2">"https://api.affin.io/v1/content/top_biokeywords?api_key=YOUR_API_KEY&amp;tribe_id=12345_all"</span>
+
 </code></pre>
 
 <blockquote>
@@ -775,6 +784,7 @@ Available sort_by values: &ldquo;relevance_score&rdquo; and &ldquo;affinity_scor
 
 <h2 id="top-categories">Top Categories</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_categories?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
+curl <span class="s2">"https://api.affin.io/v1/content/top_categories?api_key=YOUR_API_KEY&amp;tribe_id=12345_all"</span>
 </code></pre>
 
 <blockquote>
@@ -832,6 +842,7 @@ Available sort_by values: &ldquo;relevance_score&rdquo; and &ldquo;affinity_scor
 
 <h2 id="top-apps">Top Apps</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_apps?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
+curl <span class="s2">"https://api.affin.io/v1/content/top_apps?api_key=YOUR_API_KEY&amp;tribe_id=12345_all"</span>
 </code></pre>
 
 <blockquote>
@@ -889,6 +900,7 @@ Available sort_by values: &ldquo;relevance_score&rdquo; and &ldquo;affinity_scor
 
 <h2 id="top-favorites">Top Favorites</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_favorites?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
+curl <span class="s2">"https://api.affin.io/v1/content/top_favorites?api_key=YOUR_API_KEY&amp;tribe_id=12345_all"</span>
 </code></pre>
 
 <blockquote>
@@ -946,6 +958,7 @@ Available sort_by values: &ldquo;relevance_score&rdquo; and &ldquo;affinity_scor
 
 <h2 id="top-locations">Top Locations</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_locations?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
+curl <span class="s2">"https://api.affin.io/v1/content/top_locations?api_key=YOUR_API_KEY&amp;tribe_id=12345_all"</span>
 </code></pre>
 
 <blockquote>
@@ -1003,6 +1016,7 @@ Available sort_by values: &ldquo;relevance_score&rdquo; and &ldquo;affinity_scor
 
 <h2 id="top-urls">Top URLs</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_urls?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
+curl <span class="s2">"https://api.affin.io/v1/content/top_urls?api_key=YOUR_API_KEY&amp;tribe_id=12345_all"</span>
 </code></pre>
 
 <blockquote>
@@ -1060,6 +1074,7 @@ Available sort_by values: &ldquo;relevance_score&rdquo; and &ldquo;affinity_scor
 
 <h2 id="top-domains">Top Domains</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://api.affin.io/v1/content/top_domains?api_key=YOUR_API_KEY&amp;tribe_id=12345_10"</span>
+curl <span class="s2">"https://api.affin.io/v1/content/top_domains?api_key=YOUR_API_KEY&amp;tribe_id=12345_all"</span>
 </code></pre>
 
 <blockquote>
