@@ -85,11 +85,12 @@ gnip_query | NULL | Optional parameter only available for Twitter
 number_of_clusters | 8 | Optional
 min_influencer_followers | NULL | Optional
 max_influencer_followers | NULL | Optional
-followers_intersection | false | Optional for network_graph type. Set to true for multiple handles follower intersection. 
+followers_intersection | false | Optional for network_graph type. Set to true for multiple handles follower intersection.
+csv_data | NULL | A string of user ids separated by comma. Required by upload_csv report type.
 
 
 <aside class="notice">
-Possible report_type include "network_graph", "tweet_content" and "url_share".
+Available report_type: "network_graph", "tweet_content", "url_share" and "upload_csv".
 </aside>
 <aside class="notice">
 followers_of could be a string of handles, "amazon,walmart,ebay", or a string of user ids, "12345,12346,12347", or a mixed string of handles and ids, like "affinio,12345,walmart,amazon,23456"
@@ -102,6 +103,9 @@ The urls field should be an array of url.
 </aside>
 <aside class="notice">
 The followers_intersection is false by default. Set it to be true when analyzing the intersection of multiple handles' followers. 
+</aside>
+<aside class="notice">
+For upload_csv reports, please pass in at least 500 user ids. 
 </aside>
 
 
