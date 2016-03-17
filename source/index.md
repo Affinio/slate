@@ -430,6 +430,9 @@ Parameter | Default | Description
 api_key | n/a | Your API key
 tribe_id | n/a | The ID of the tribe you're trying to retrieve
 
+<aside class="notice">
+In order to get the "all" tribes data, please set the tribe id to be "CampaignID_all" like 12345_all.
+</aside>
 
 ## Top Influencers
 
@@ -483,7 +486,9 @@ sort_by | relevance_score | Optional parameter for sorting influencers.
 <aside class="notice">
 Available sort_by values: "relevance_score" and "affinity_score".
 </aside>
-
+<aside class="notice">
+In order to get the "all" tribes data, please set the tribe id to be "CampaignID_all" like 12345_all.
+</aside>
 
 
 
@@ -532,6 +537,9 @@ Parameter | Default | Description
 api_key | n/a | Your API key
 tribe_id | n/a | The ID of the tribe you're trying to retrieve
 
+<aside class="notice">
+In order to get the "all" tribes data, please set the tribe id to be "CampaignID_all" like 12345_all.
+</aside>
 
 ## Top Bio Keywords
 
@@ -578,6 +586,9 @@ Parameter | Default | Description
 api_key | n/a | Your API key
 tribe_id | n/a | The ID of the tribe you're trying to retrieve
 
+<aside class="notice">
+In order to get the "all" tribes data, please set the tribe id to be "CampaignID_all" like 12345_all.
+</aside>
 
 
 ## Top Categories
@@ -625,6 +636,9 @@ Parameter | Default | Description
 api_key | n/a | Your API key
 tribe_id | n/a | The ID of the tribe you're trying to retrieve
 
+<aside class="notice">
+In order to get the "all" tribes data, please set the tribe id to be "CampaignID_all" like 12345_all.
+</aside>
 
 ## Top Apps
 
@@ -671,6 +685,9 @@ Parameter | Default | Description
 api_key | n/a | Your API key
 tribe_id | n/a | The ID of the tribe you're trying to retrieve
 
+<aside class="notice">
+In order to get the "all" tribes data, please set the tribe id to be "CampaignID_all" like 12345_all.
+</aside>
 
 
 
@@ -719,6 +736,9 @@ Parameter | Default | Description
 api_key | n/a | Your API key
 tribe_id | n/a | The ID of the tribe you're trying to retrieve
 
+<aside class="notice">
+In order to get the "all" tribes data, please set the tribe id to be "CampaignID_all" like 12345_all.
+</aside>
 
 ## Top Locations
 
@@ -765,6 +785,9 @@ Parameter | Default | Description
 api_key | n/a | Your API key
 tribe_id | n/a | The ID of the tribe you're trying to retrieve
 
+<aside class="notice">
+In order to get the "all" tribes data, please set the tribe id to be "CampaignID_all" like 12345_all.
+</aside>
 
 
 ## Top URLs
@@ -812,7 +835,9 @@ Parameter | Default | Description
 api_key | n/a | Your API key
 tribe_id | n/a | The ID of the tribe you're trying to retrieve
 
-
+<aside class="notice">
+In order to get the "all" tribes data, please set the tribe id to be "CampaignID_all" like 12345_all.
+</aside>
 
 ## Top Domains
 
@@ -859,7 +884,9 @@ Parameter | Default | Description
 api_key | n/a | Your API key
 tribe_id | n/a | The ID of the tribe you're trying to retrieve
 
-
+<aside class="notice">
+In order to get the "all" tribes data, please set the tribe id to be "CampaignID_all" like 12345_all.
+</aside>
 
 
 
