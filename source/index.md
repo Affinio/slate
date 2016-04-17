@@ -79,9 +79,9 @@ report_type | network_graph | Available report types: network_graph, tweet_conte
 followers_of | NULL | Required when network_graph is selected as report_type. Separated by comma for multiple handles.
 bio_location | NULL | Optional for network_graph type, not required for other report types
 bio_keywords | NULL | Optional for network_graph type, not required for other report types
-track_terms | NULL | Required when tweet_content is selected as report_type
+gnip_query | NULL | Required when tweet_content is selected as report_type
 urls | NULL | Required when url_share is selected as report_type
-gnip_query | NULL | Optional parameter only available for Twitter
+track_terms | NULL | Optional parameter only available for Twitter
 number_of_clusters | 8 | Optional
 min_influencer_followers | NULL | Optional
 max_influencer_followers | NULL | Optional
