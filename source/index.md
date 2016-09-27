@@ -87,6 +87,7 @@ min_influencer_followers | NULL | Optional
 max_influencer_followers | NULL | Optional
 followers_intersection | false | Optional for network_graph type. Set to true for multiple handles follower intersection.
 csv_data | NULL | A string of user ids separated by comma. Required by upload_csv report type.
+callback_url | NULL | Will be invoked by the API method when report creation is done. 
 
 
 <aside class="notice">
@@ -106,6 +107,9 @@ The followers_intersection is false by default. Set it to be true when analyzing
 </aside>
 <aside class="notice">
 For upload_csv reports, please pass in at least 500 user ids. 
+</aside>
+<aside class="notice">
+With the callback_url the HTTPS connection will be terminated immediately and a report id will be returned in the response body. After the report creation is over Affinio will `POST` a message to the callback_url specified in your request in a JSON format application/json.
 </aside>
 
 
