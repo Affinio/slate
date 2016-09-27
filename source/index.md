@@ -109,7 +109,7 @@ The followers_intersection is false by default. Set it to be true when analyzing
 For upload_csv reports, please pass in at least 500 user ids. 
 </aside>
 <aside class="notice">
-With the callback_url the HTTPS connection will be terminated immediately and a report id will be returned in the response body. After the report creation is over Affinio will `POST` a message to the callback_url specified in your request in a JSON format application/json.
+With the callback_url the HTTPS connection will be terminated immediately and a report id will be returned in the response body. After the report creation is over Affinio will **POST** a message to the callback_url specified in your request in a JSON format application/json.
 </aside>
 
 
@@ -1033,67 +1033,6 @@ size | 10 | The maximum amount of campaigns to be returned.
 
 
 
-## Tribes containing a Member
-
-```shell
-curl "https://api.affin.io/v1/affinity_search/contains_member?api_key=YOUR_API_KEY&handle=phil_renaud"
-```
-
-> ###Expected Return
-
-```json
-{
-  "total": 3,
-  "returned": 3,
-  "hits":[
-    {
-      "tribe":"Halifax Locals",
-      "report":"@Collide_Halifax followers",
-      "tribe_id":"12345_10",
-      "report_id":"12345"
-    },
-    {
-      "tribe":"Designers/Devs",
-      "report":"@Collide_Halifax followers",
-      "tribe_id":"12345_3",
-      "report_id":"12345"
-    },
-    {
-      "tribe":"Ad Agency Alumni",
-      "report":"Formerly Phoenician",
-      "tribe_id":"12346_10",
-      "report_id":"12346"
-    }
-  ]
-}
-```
-
-Finds all tribes to which a given user belongs.
-
-Note: Pagination of results can be done by using the from and size parameters. The from parameter defines the offset from the first result you want to fetch. The size parameter allows you to configure the maximum amount of hits to be returned.
-from defaults to 0, and size defaults to 10.
-
-
-
-### HTTP Request
-
-`GET http://api.affin.io/v1/affinity_search/contains_member`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-api_key | n/a | Your API Key
-handle | n/a | The handle of the user you're looking for
-ids | NULL | Tribe ids separated by comma. Note: If no tribe ids are passed in, all user owned campaigns will be searched. 
-from | 0 | The offset from the first result you want to fetch. 
-size | 10 | The maximum amount of campaigns to be returned.
-
-
-
-
-
-
 ## Tribes that use a term
 
 ```shell
@@ -1153,53 +1092,6 @@ ids | NULL | Tribe ids separated by comma. Note: If no tribe ids are passed in, 
 Possible metrics include "hashtag", "mention", "tweet_keyword", "bio_keyword", "location", "url", and "domain".
 </aside>
 
-
-
-
-
-
-
-
-
-
-
-
-
-# Cross-Platform API
-
-## All known Social Media accounts of a given user
-
-```shell
-curl "https://api.affin.io/v1/cross_platform/cross_platform?api_key=YOUR_API_KEY&network=twitter&handle=phil_renaud"
-```
-
-> ###Expected Return
-
-```json
-{
-  "twitter":"phil_renaud",
-  "twitter_id":"123456789",
-  "instagram":"phil_renaud",
-  "youtube":null,
-  "facebook":"philrenaud",
-  "pinterest":"phil_renaud",
-  "googleplus":"phil_renaud",
-  "tumblr":"philrenaud"
-}
-```
-
-Finds all social media account handles / IDs for a given user. Assumes twitter by search.
-
-### HTTP Request
-
-`GET http://api.affin.io/v1/cross_platform/cross_platform
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-handle | n/a | The handles of users you're looking for, handles are separated by comma
-network | "twitter" | The network that the aforementioned handle belongs to
 
 
 
