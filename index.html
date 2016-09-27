@@ -87,6 +87,18 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
+<blockquote>
+<h3 id="sample-callback-request">Sample Callback Request</h3>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="s2">"123456"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"REPORT NAME"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"date_created"</span><span class="p">:</span><span class="s2">"2016-09-26T18:39:40Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"state"</span><span class="p">:</span><span class="s2">"completed"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"state_detail"</span><span class="p">:</span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</blockquote>
+
 <p>This endpoint creates a report.</p>
 
 <h3 id="http-request">HTTP Request</h3>
@@ -179,11 +191,9 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 </tr>
 </tbody></table>
 
-<h3 id="callback-url">Callback URL</h3>
+<h3 id="callback-url-parameters">Callback URL Parameters</h3>
 
 <p>With the callback_url the HTTPS connection will be terminated immediately and a report id will be returned in the response body. After the report creation is over Affinio will <strong>POST</strong> a message to the callback_url specified in your request in a JSON format application/json.</p>
-
-<h4 id="callback-post-parameters">Callback POST parameters</h4>
 
 <table><thead>
 <tr>
@@ -212,16 +222,6 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 <td>Empty if report successfully. Error message here if report failed.</td>
 </tr>
 </tbody></table>
-
-<h4 id="callback-sample-request">Callback Sample Request</h4>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"id"</span><span class="p">:</span><span class="s2">"123456"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"REPORT NAME"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"date_created"</span><span class="p">:</span><span class="s2">"2016-09-26T18:39:40Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"state"</span><span class="p">:</span><span class="s2">"completed"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"state_detail"</span><span class="p">:</span><span class="s2">""</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
 
 <aside class="notice">
 Available report_type: &ldquo;network_graph&rdquo;, &ldquo;tweet_content&rdquo;, &ldquo;url_share&rdquo; and &ldquo;upload_csv&rdquo;.
