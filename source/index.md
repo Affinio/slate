@@ -92,6 +92,18 @@ callback_url | NULL | Optional. Will be invoked by the API method when report cr
 ###Callback URL Parameters
 With the callback_url the HTTPS connection will be terminated immediately and a report id will be returned in the response body. After the report creation is over Affinio will **POST** a message to the callback_url specified in your request in a JSON format application/json.
 
+
+> ###Sample Callback Request
+
+```json
+{
+  "status": 200,
+  "message": "Request to create a new report is submitted successfully!",
+  "campaign_id": 123456, 
+  "campaign_name": "Test Report"
+}
+```
+
 Parameter | Description
 -------------- | -------------- 
 id | Report id
