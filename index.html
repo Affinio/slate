@@ -183,6 +183,17 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 
 <p>With the callback_url the HTTPS connection will be terminated immediately and a report id will be returned in the response body. After the report creation is over Affinio will <strong>POST</strong> a message to the callback_url specified in your request in a JSON format application/json.</p>
 
+<blockquote>
+<h3 id="sample-callback-request">Sample Callback Request</h3>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Request to create a new report is submitted successfully!"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123456</span><span class="p">,</span><span class="w"> 
+  </span><span class="nt">"campaign_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Report"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -241,7 +252,7 @@ For upload_csv reports, please pass in at least 500 user ids.
 
 <blockquote>
 <h3 id="expected-return">Expected Return</h3>
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
+<pre class="highlight json"><code><span class="err">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12345</span><span class="p">,</span><span class="w">
     </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Affinio Followers Demo Report"</span><span class="p">,</span><span class="w">
@@ -253,7 +264,7 @@ For upload_csv reports, please pass in at least 500 user ids.
     </span><span class="p">},</span><span class="w">
     </span><span class="nt">"members_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">999999</span><span class="p">,</span><span class="w">
     </span><span class="nt">"started"</span><span class="p">:</span><span class="w"> </span><span class="mi">1428682154</span><span class="w">
-  </span><span class="p">},</span><span class="w">
+  </span><span class="p">}</span><span class="err">,</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12346</span><span class="p">,</span><span class="w">
     </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Affinio's Test Report"</span><span class="p">,</span><span class="w">
@@ -266,7 +277,7 @@ For upload_csv reports, please pass in at least 500 user ids.
     </span><span class="nt">"members_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">999999</span><span class="p">,</span><span class="w">
     </span><span class="nt">"started"</span><span class="p">:</span><span class="w"> </span><span class="mi">14286821341</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+</span><span class="err">]</span><span class="w">
 </span></code></pre>
 </blockquote>
 
@@ -332,17 +343,17 @@ from defaults to 0, and size defaults to 10.</p>
   </span><span class="p">},</span><span class="w">
   </span><span class="nt">"members_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">999999</span><span class="p">,</span><span class="w">
   </span><span class="nt">"started"</span><span class="p">:</span><span class="w"> </span><span class="mi">1428682154</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"tribes"</span><span class="p">:[</span><span class="w">
+  </span><span class="nt">"tribes"</span><span class="p">:</span><span class="err">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345_0"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TribeName1"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
+    </span><span class="err">{</span><span class="w">
       </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345_1"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TribeName2"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
+  </span><span class="err">]</span><span class="w">
+</span><span class="err">}</span><span class="w">
 </span></code></pre>
 </blockquote>
 
@@ -522,25 +533,25 @@ from defaults to 0, and size defaults to 10.</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"hashtags"</span><span class="p">:[</span><span class="w">
+  </span><span class="nt">"hashtags"</span><span class="p">:</span><span class="err">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MH17"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">89</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
+    </span><span class="err">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gaza"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">76</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+    </span><span class="p">}</span><span class="err">,</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WorldCupFinal"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">76</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+    </span><span class="p">}</span><span class="err">,</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"India"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">74</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
+  </span><span class="err">]</span><span class="w">
+</span><span class="err">}</span><span class="w">
 </span></code></pre>
 
 <p>Retrieves the top 100 hashtags for a given tribe.</p>
@@ -583,25 +594,25 @@ In order to get the &ldquo;all&rdquo; tribes data, please set the tribe id to be
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"mentions"</span><span class="p">:[</span><span class="w">
+  </span><span class="nt">"mentions"</span><span class="p">:</span><span class="err">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"narendramodi"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">132</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
+    </span><span class="err">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timesofindia"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">122</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+    </span><span class="p">}</span><span class="err">,</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YouTube"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+    </span><span class="p">}</span><span class="err">,</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PMOIndia"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
+  </span><span class="err">]</span><span class="w">
+</span><span class="err">}</span><span class="w">
 </span></code></pre>
 
 <p>Retrieves the top mentions for a given tribe.</p>
@@ -645,25 +656,25 @@ curl <span class="s2">"https://api.affin.io/v1/content/top_influencers?api_key=Y
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"influencers"</span><span class="p">:[</span><span class="w">
+  </span><span class="nt">"influencers"</span><span class="p">:</span><span class="err">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11740902</span><span class="p">,</span><span class="w">
       </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tim Ferriss"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"screen_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tferriss"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"relevance_score"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
       </span><span class="nt">"affinity_socre"</span><span class="p">:</span><span class="w"> </span><span class="mi">62</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"tags"</span><span class="p">:[</span><span class="s2">"news"</span><span class="p">]</span><span class="w">
+      </span><span class="nt">"tags"</span><span class="p">:</span><span class="err">[</span><span class="s2">"news"</span><span class="err">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
+    </span><span class="err">{</span><span class="w">
       </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">115485051</span><span class="p">,</span><span class="w">
       </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Conan O'Brien"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"screen_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ConanOBrien"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"relevance_score"</span><span class="p">:</span><span class="w"> </span><span class="mi">78</span><span class="p">,</span><span class="w">
       </span><span class="nt">"affinity_socre"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"tags"</span><span class="p">:[</span><span class="s2">"brands"</span><span class="p">,</span><span class="w"> </span><span class="s2">"global"</span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
+      </span><span class="nt">"tags"</span><span class="p">:</span><span class="err">[</span><span class="s2">"brands"</span><span class="p">,</span><span class="w"> </span><span class="nt">"global"</span><span class="err">]</span><span class="w">
+    </span><span class="err">}</span><span class="w">
+  </span><span class="err">]</span><span class="w">
+</span><span class="err">}</span><span class="w">
 </span></code></pre>
 
 <p>Retrieves the top 1000 influencers for a given tribe.</p>
@@ -725,25 +736,25 @@ In order to get the &ldquo;all&rdquo; tribes data, please set the tribe id to be
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"tweet_keywords"</span><span class="p">:[</span><span class="w">
+  </span><span class="nt">"tweet_keywords"</span><span class="p">:</span><span class="err">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"people"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">152</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
+    </span><span class="err">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"roof"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">144</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+    </span><span class="p">}</span><span class="err">,</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"time"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">140</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+    </span><span class="p">}</span><span class="err">,</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"today"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">132</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
+  </span><span class="err">]</span><span class="w">
+</span><span class="err">}</span><span class="w">
 </span></code></pre>
 
 <p>Retrieves the top tweet keywords for a given tribe.</p>
@@ -786,25 +797,25 @@ In order to get the &ldquo;all&rdquo; tribes data, please set the tribe id to be
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"bio_keywords"</span><span class="p">:[</span><span class="w">
+  </span><span class="nt">"bio_keywords"</span><span class="p">:</span><span class="err">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"writer"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
+    </span><span class="err">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nyc"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+    </span><span class="p">}</span><span class="err">,</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nerd"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+    </span><span class="p">}</span><span class="err">,</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"student"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="err">,</span><span class="w">
+  </span><span class="err">]</span><span class="w">
+</span><span class="err">}</span><span class="w">
 </span></code></pre>
 
 <p>Retrieves the top bio keywords for a given tribe.</p>
@@ -847,25 +858,25 @@ In order to get the &ldquo;all&rdquo; tribes data, please set the tribe id to be
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"categories"</span><span class="p">:[</span><span class="w">
+  </span><span class="nt">"categories"</span><span class="p">:</span><span class="err">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gaming"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">78</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
+    </span><span class="err">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Services"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+    </span><span class="p">}</span><span class="err">,</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Food/Travel"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">59</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+    </span><span class="p">}</span><span class="err">,</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Health"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
+  </span><span class="err">]</span><span class="w">
+</span><span class="err">}</span><span class="w">
 </span></code></pre>
 
 <p>Retrieves the top categories for a given tribe.</p>
@@ -908,25 +919,25 @@ In order to get the &ldquo;all&rdquo; tribes data, please set the tribe id to be
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"apps"</span><span class="p">:[</span><span class="w">
+  </span><span class="nt">"apps"</span><span class="p">:</span><span class="err">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"Twitter for iPhone"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">910</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
+    </span><span class="err">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"Twitter for Websites"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">845</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+    </span><span class="p">}</span><span class="err">,</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"Twitter for Android"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">331</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+    </span><span class="p">}</span><span class="err">,</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"Twitter for iPad"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">313</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
+  </span><span class="err">]</span><span class="w">
+</span><span class="err">}</span><span class="w">
 </span></code></pre>
 
 <p>Retrieves the top apps for a given tribe.</p>
@@ -969,25 +980,25 @@ In order to get the &ldquo;all&rdquo; tribes data, please set the tribe id to be
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"favorites"</span><span class="p">:[</span><span class="w">
+  </span><span class="nt">"favorites"</span><span class="p">:</span><span class="err">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"644193755814342656"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">157648</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
+    </span><span class="err">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"650409725813780482"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">119080</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+    </span><span class="p">}</span><span class="err">,</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"649653419620352000"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">115956</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+    </span><span class="p">}</span><span class="err">,</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="s2">"650999329700868096"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="mi">103008</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
+  </span><span class="err">]</span><span class="w">
+</span><span class="err">}</span><span class="w">
 </span></code></pre>
 
 <p>Retrieves the top favorites for a given tribe.</p>
@@ -1030,25 +1041,25 @@ In order to get the &ldquo;all&rdquo; tribes data, please set the tribe id to be
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"locations"</span><span class="p">:[</span><span class="w">
+  </span><span class="nt">"locations"</span><span class="p">:</span><span class="err">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"London"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">85</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
+    </span><span class="err">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Los Angeles"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">77</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+    </span><span class="p">}</span><span class="err">,</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">64</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+    </span><span class="p">}</span><span class="err">,</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Toronto"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">49</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
+  </span><span class="err">]</span><span class="w">
+</span><span class="err">}</span><span class="w">
 </span></code></pre>
 
 <p>Retrieves the top locations for a given tribe.</p>
@@ -1091,25 +1102,25 @@ In order to get the &ldquo;all&rdquo; tribes data, please set the tribe id to be
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"urls"</span><span class="p">:[</span><span class="w">
+  </span><span class="nt">"urls"</span><span class="p">:</span><span class="err">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.si.com/nba/2014/07/11/lebron-james-cleveland-cavaliers"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
+    </span><span class="err">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://twitter.com/i/t/worldcup"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+    </span><span class="p">}</span><span class="err">,</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://bit.ly/1zu0IHz"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+    </span><span class="p">}</span><span class="err">,</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://vine.co/v/MtZ2xhIjDPe"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
+  </span><span class="err">]</span><span class="w">
+</span><span class="err">}</span><span class="w">
 </span></code></pre>
 
 <p>Retrieves the top URLs for a given tribe.</p>
@@ -1152,25 +1163,25 @@ In order to get the &ldquo;all&rdquo; tribes data, please set the tribe id to be
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"domains"</span><span class="p">:[</span><span class="w">
+  </span><span class="nt">"domains"</span><span class="p">:</span><span class="err">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"twitter.com"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">78</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
+    </span><span class="err">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"washingtonpost.com"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+    </span><span class="p">}</span><span class="err">,</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"theguardian.com"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+    </span><span class="p">}</span><span class="err">,</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"term"</span><span class="p">:</span><span class="w"> </span><span class="s2">"theatlantic.com"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
+  </span><span class="err">]</span><span class="w">
+</span><span class="err">}</span><span class="w">
 </span></code></pre>
 
 <p>Retrieves the top domains for a given tribe.</p>
@@ -1211,43 +1222,43 @@ In order to get the &ldquo;all&rdquo; tribes data, please set the tribe id to be
 <blockquote>
 <h3 id="expected-return">Expected Return</h3>
 </blockquote>
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
+<pre class="highlight json"><code><span class="err">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nt">"users"</span><span class="p">:</span><span class="w"> </span><span class="err">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">74286565</span><span class="p">,</span><span class="w">
         </span><span class="nt">"screen_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Microsoft"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"followers_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">6553243</span><span class="w">
       </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
+    </span><span class="err">]</span><span class="p">,</span><span class="w">
     </span><span class="nt">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">142211</span><span class="w">
-  </span><span class="p">},</span><span class="w">
+  </span><span class="p">}</span><span class="err">,</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nt">"users"</span><span class="p">:</span><span class="w"> </span><span class="err">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8633582</span><span class="p">,</span><span class="w">
         </span><span class="nt">"screen_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Linux"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"followers_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">177523</span><span class="w">
       </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
+    </span><span class="err">]</span><span class="p">,</span><span class="w">
     </span><span class="nt">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">1070</span><span class="w">
-  </span><span class="p">},</span><span class="w">
+  </span><span class="p">}</span><span class="err">,</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nt">"users"</span><span class="p">:</span><span class="w"> </span><span class="err">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">74286565</span><span class="p">,</span><span class="w">
         </span><span class="nt">"screen_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Microsoft"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"followers_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">6553243</span><span class="w">
       </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
+      </span><span class="err">{</span><span class="w">
         </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8633582</span><span class="p">,</span><span class="w">
         </span><span class="nt">"screen_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Linux"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"followers_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">177523</span><span class="w">
       </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nt">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">669</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+    </span><span class="err">],</span><span class="w">
+    </span><span class="s2">"size"</span><span class="err">:</span><span class="w"> </span><span class="mi">669</span><span class="w">
+  </span><span class="err">}</span><span class="w">
+</span><span class="err">]</span><span class="w">
 </span></code></pre>
 
 <p>Retrieves the competitive breakdown for a given tribe.</p>
@@ -1290,27 +1301,27 @@ curl <span class="s2">"https://api.affin.io/v1/affinity_search/influenced_by?api
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"hits"</span><span class="p">:[</span><span class="w">
+  </span><span class="nt">"hits"</span><span class="p">:</span><span class="err">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Halifax Locals"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"@Collide_Halifax followers"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"tribeid"</span><span class="p">:</span><span class="s2">"12345_10"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"campaignid"</span><span class="p">:</span><span class="s2">"12345"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
+    </span><span class="err">{</span><span class="w">
       </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Designers/Devs"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"@Collide_Halifax followers"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"tribe_id"</span><span class="p">:</span><span class="s2">"12345_3"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"report_id"</span><span class="p">:</span><span class="s2">"12345"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+    </span><span class="p">}</span><span class="err">,</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Ad Agency Alumni"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"Formerly Phoenician"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"tribe_id"</span><span class="p">:</span><span class="s2">"12346_10"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"report_id"</span><span class="p">:</span><span class="s2">"12346"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
+  </span><span class="err">]</span><span class="w">
+</span><span class="err">}</span><span class="w">
 </span></code></pre>
 
 <p>Finds all tribes over which a given user has significant influence.</p>
@@ -1367,7 +1378,7 @@ from defaults to 0, and size defaults to 10.</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"hits"</span><span class="p">:[</span><span class="w">
+  </span><span class="nt">"hits"</span><span class="p">:</span><span class="err">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Halifax Locals"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"@Collide_Halifax followers"</span><span class="p">,</span><span class="w">
@@ -1376,14 +1387,14 @@ from defaults to 0, and size defaults to 10.</p>
       </span><span class="nt">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
       </span><span class="nt">"number_using"</span><span class="p">:</span><span class="w"> </span><span class="mi">435</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
+    </span><span class="err">{</span><span class="w">
       </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Designers/Devs"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"@Collide_Halifax followers"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"tribe_id"</span><span class="p">:</span><span class="s2">"12345_3"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"report_id"</span><span class="p">:</span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
       </span><span class="nt">"number_using"</span><span class="p">:</span><span class="w"> </span><span class="mi">435</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+    </span><span class="p">}</span><span class="err">,</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"tribe"</span><span class="p">:</span><span class="s2">"Ad Agency Alumni"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"report"</span><span class="p">:</span><span class="s2">"Formerly Phoenician"</span><span class="p">,</span><span class="w">
@@ -1392,8 +1403,8 @@ from defaults to 0, and size defaults to 10.</p>
       </span><span class="nt">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
       </span><span class="nt">"number_using"</span><span class="p">:</span><span class="w"> </span><span class="mi">435</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
+  </span><span class="err">]</span><span class="w">
+</span><span class="err">}</span><span class="w">
 </span></code></pre>
 
 <p>Finds all tribes using a specific term (hashtag, mention, etc.)</p>
