@@ -63,6 +63,17 @@ curl -H "Content-Type: application/json" -X POST -d '{"api_key":"YOUR_API_KEY", 
 }
 ```
 
+> ###Sample Callback Request
+```
+{
+  "id":"123456",
+  "name":"REPORT NAME",
+  "date_created":"2016-09-26T18:39:40Z",
+  "state":"completed",
+  "state_detail":""
+}
+```
+
 This endpoint creates a report.
 
 ### HTTP Request
@@ -89,10 +100,8 @@ followers_intersection | false | Optional for network_graph type. Set to true fo
 csv_data | NULL | A string of user ids separated by comma. Required by upload_csv report type.
 callback_url | NULL | Optional. Will be invoked by the API method when report creation is done. 
 
-###Callback URL
+###Callback URL Parameters
 With the callback_url the HTTPS connection will be terminated immediately and a report id will be returned in the response body. After the report creation is over Affinio will **POST** a message to the callback_url specified in your request in a JSON format application/json.
-
-####Callback POST parameters
 
 Parameter | Description
 -------------- | -------------- 
@@ -101,17 +110,6 @@ name | Report name
 date_created | The date a report is created
 state | The final state of the report. Available states: completed, failed
 state_detail | Empty if report successfully. Error message here if report failed. 
-
-####Callback Sample Request
-```
-{
-  "id":"123456",
-  "name":"REPORT NAME",
-  "date_created":"2016-09-26T18:39:40Z",
-  "state":"completed",
-  "state_detail":""
-}
-```
 
 <aside class="notice">
 Available report_type: "network_graph", "tweet_content", "url_share" and "upload_csv".
