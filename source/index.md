@@ -63,15 +63,6 @@ curl -H "Content-Type: application/json" -X POST -d '{"api_key":"YOUR_API_KEY", 
 }
 ```
 
-```json
-{
-  "status": 200,
-  "message": "Request to create a new report is submitted successfully!",
-  "campaign_id": 123456, 
-  "campaign_name": "Test Report"
-}
-```
-
 This endpoint creates a report.
 
 ### HTTP Request
