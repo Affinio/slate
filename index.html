@@ -172,6 +172,11 @@ curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <spa
 <td>NULL</td>
 <td>A string of user ids separated by comma. Required by upload_csv report type.</td>
 </tr>
+<tr>
+<td>callback_url</td>
+<td>NULL</td>
+<td>Will be invoked by the API method when report creation is done.</td>
+</tr>
 </tbody></table>
 
 <aside class="notice">
@@ -196,6 +201,10 @@ The followers_intersection is false by default. Set it to be true when analyzing
 
 <aside class="notice">
 For upload_csv reports, please pass in at least 500 user ids. 
+</aside>
+
+<aside class="notice">
+With the callback_url the HTTPS connection will be terminated immediately and a report id will be returned in the response body. After the report creation is over Affinio will `POST` a message to the callback_url specified in your request in a JSON format application/json.
 </aside>
 
 <h2 id="get-my-reports-and-public-reports">Get My Reports (and Public Reports)</h2>
