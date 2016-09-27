@@ -63,17 +63,6 @@ curl -H "Content-Type: application/json" -X POST -d '{"api_key":"YOUR_API_KEY", 
 }
 ```
 
-###Sample Callback Request
-```
-{
-  "id":"123456",
-  "name":"REPORT NAME",
-  "date_created":"2016-09-26T18:39:40Z",
-  "state":"completed",
-  "state_detail":""
-}
-```
-
 This endpoint creates a report.
 
 ### HTTP Request
