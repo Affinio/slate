@@ -87,7 +87,7 @@ min_influencer_followers | NULL | Optional
 max_influencer_followers | NULL | Optional
 followers_intersection | false | Optional for network_graph type. Set to true for multiple handles follower intersection.
 csv_data | NULL | A string of user ids separated by comma. Required by upload_csv report type.
-callback_url | NULL | Will be invoked by the API method when report creation is done. 
+callback_url | NULL | Optional. Will be invoked by the API method when report creation is done. 
 
 
 <aside class="notice">
