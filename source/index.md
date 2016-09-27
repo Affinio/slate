@@ -63,7 +63,7 @@ curl -H "Content-Type: application/json" -X POST -d '{"api_key":"YOUR_API_KEY", 
 }
 ```
 
-> ###Sample Callback Request
+###Sample Callback Request
 ```
 {
   "id":"123456",
@@ -129,8 +129,6 @@ The followers_intersection is false by default. Set it to be true when analyzing
 <aside class="notice">
 For upload_csv reports, please pass in at least 500 user ids. 
 </aside>
-
-
 
 
 
